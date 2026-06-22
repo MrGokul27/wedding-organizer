@@ -241,7 +241,7 @@
     showToast("💌 Your wish has been sent to the happy couple!", "success");
 
     setTimeout(() => {
-      window.location.href = "/pages/common/404.html";
+      window.location.href = "pages/common/404.html";
     }, 1000);
   });
 })();
@@ -425,6 +425,6 @@ document.addEventListener("click", function (e) {
     href.startsWith("javascript:")
   ) {
     e.preventDefault();
-    window.location.href = "/pages/common/404.html";
+    window.location.href = "pages/common/404.html";
   }
 });
