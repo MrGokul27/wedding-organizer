@@ -1,0 +1,298 @@
+:root {
+  --primary: #7a5365;
+  --primary-container: #d4a5b9;
+  --on-primary: #ffffff;
+  --on-primary-container: #5d3a4a;
+  --on-surface: #1b1c1a;
+  --on-surface-variant: #4f4448;
+  --outline-variant: #d2c2c7;
+  --muted-gold: #b59410;
+  --cream-bg: #fdfbf7;
+  --soft-rose: #fce7f3;
+  --surface-lowest: #ffffff;
+  --font-display: "Playfair Display", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+}
+
+/* ─── Base ───────────────────────────────────────── */
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  background-color: var(--cream-bg);
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ─── Material Icons ─────────────────────────────── */
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 300,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+/* ─── Floral watermarks ──────────────────────────── */
+.floral-watermark {
+  opacity: 0.04;
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
+  transition: transform 0.1s ease-out;
+}
+.floral-watermark .material-symbols-outlined {
+  color: var(--primary);
+  font-size: clamp(140px, 22vw, 240px);
+  line-height: 1;
+}
+.floral-tl {
+  top: -20px;
+  left: -20px;
+}
+.floral-br {
+  bottom: -20px;
+  right: -20px;
+}
+
+/* ─── Petal container ────────────────────────────── */
+#petal-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+.floating-petal {
+  position: absolute;
+  background: var(--soft-rose);
+  border-radius: 50% 0 50% 50%;
+  opacity: 0.6;
+  animation: floatPetal linear infinite;
+}
+@keyframes floatPetal {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(80px, 800px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ─── Fade-in entrance ───────────────────────────── */
+.fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Arched image ───────────────────────────────── */
+.arched-image {
+  border-radius: 500px 500px 0 0;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  width: 100%;
+  position: relative;
+  background: var(--surface-lowest);
+  border: 1px solid rgba(210, 194, 199, 0.3);
+  box-shadow: 0 4px 24px rgba(122, 83, 101, 0.07);
+}
+.arched-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+  display: block;
+}
+.arched-image:hover img {
+  transform: scale(1.05);
+}
+.arched-image .img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(253, 251, 247, 0.4), transparent);
+  pointer-events: none;
+}
+
+/* ─── Error badge ─────────────────────────────────── */
+.error-badge {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 0.4rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(210, 194, 199, 0.25);
+  box-shadow: 0 2px 12px rgba(122, 83, 101, 0.08);
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted-gold);
+}
+
+/* ─── Typography ─────────────────────────────────── */
+.display-title-404 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-size: clamp(7.5rem, 10vw, 8.5rem);
+}
+.display-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+}
+.kicker-text {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--on-surface-variant);
+  font-style: italic;
+}
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-gold);
+}
+
+/* ─── Divider ─────────────────────────────────────── */
+.gradient-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(210, 194, 199, 0.4),
+    transparent
+  );
+  width: 100%;
+  border: none;
+}
+
+/* ─── Primary CTA button ─────────────────────────── */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.25rem;
+  background: var(--primary);
+  color: var(--on-primary);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 2px 10px rgba(122, 83, 101, 0.12);
+  transition:
+    background 0.25s,
+    color 0.25s,
+    box-shadow 0.25s,
+    transform 0.2s;
+}
+.btn-cta:hover {
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+  box-shadow: 0 8px 24px rgba(122, 83, 101, 0.18);
+  transform: translateY(-2px);
+}
+
+.btn-secondary-cta {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(122, 83, 101, 0.25);
+  box-shadow: none;
+}
+
+.btn-secondary-cta:hover {
+  background: rgba(122, 83, 101, 0.08);
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* ─── Nav link cards ─────────────────────────────── */
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: var(--on-surface-variant);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition:
+    background 0.25s,
+    color 0.25s;
+  gap: 0.35rem;
+}
+.nav-card .material-symbols-outlined {
+  color: var(--primary);
+  font-size: 1.6rem;
+  transition: transform 0.25s;
+}
+.nav-card:hover {
+  background: rgba(252, 231, 243, 0.35);
+  color: var(--primary);
+}
+.nav-card:hover .material-symbols-outlined {
+  transform: scale(1.12);
+}
+
+/* ─── Main content z-index ───────────────────────── */
+main {
+  position: relative;
+  z-index: 20;
+}
+
+/* ─── Responsive image max-width ─────────────────── */
+.arch-wrap {
+  max-width: 380px;
+  width: 100%;
+}
+@media (max-width: 575.98px) {
+  .arch-wrap {
+    max-width: 280px;
+  }
+}
+@media (min-width: 768px) {
+  .arch-wrap {
+    max-width: 420px;
+  }
+}
