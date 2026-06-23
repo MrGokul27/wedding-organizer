@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planning Packages | Stackly Weddings</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <style>
+      /* ── Pricing cards ── */
+      .pricing-card {
+        background: var(--color-surface-low);
+        border-radius: 1.25rem;
+        padding: 2.5rem 2rem;
+        border: 1.5px solid transparent;
+        transition:
+          transform 0.4s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .pricing-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--color-primary-mid);
+        box-shadow: 0 24px 48px rgba(122, 83, 101, 0.1);
+      }
+      .pricing-card.featured {
+        background: #fff;
+        border-color: var(--color-muted-gold);
+        box-shadow: 0 24px 60px rgba(122, 83, 101, 0.14);
+        transform: scale(1.03);
+        position: relative;
+        z-index: 2;
+      }
+      .pricing-card.featured:hover {
+        transform: scale(1.03) translateY(-6px);
+      }
+
+      .featured-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: var(--color-muted-gold);
+        color: #fff;
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 0.4rem 1rem;
+        border-radius: 0 1.25rem 0 1.25rem;
+      }
+
+      .price-amount {
+        font-family: var(--font-display);
+        font-size: 2.25rem;
+        font-weight: 500;
+        color: var(--color-primary);
+      }
+      .price-amount.featured {
+        color: var(--color-muted-gold);
+        font-size: 2.75rem;
+      }
+      .price-unit {
+        color: var(--color-muted-text);
+        font-size: 0.875rem;
+      }
+
+      .pkg-name {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+      .pkg-name.featured-name {
+        color: var(--color-primary);
+      }
+
+      .pkg-desc {
+        font-style: italic;
+        color: var(--color-muted-text);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .feature-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 0.875rem;
+        font-size: 0.9rem;
+      }
+      .feature-list li .material-symbols-outlined {
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .feature-list li.active .material-symbols-outlined {
+        color: var(--color-muted-gold);
+      }
+      .feature-list li.inactive {
+        color: var(--color-muted-text);
+        opacity: 0.55;
+      }
+      .feature-list li.inactive .material-symbols-outlined {
+        color: inherit;
+      }
+      .star-icon {
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      /* ── Detail Difference section ── */
+      .detail-section {
+        background: rgba(233, 213, 255, 0.15);
+        border-radius: 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .detail-blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        pointer-events: none;
+      }
+      .detail-blob-1 {
+        width: 260px;
+        height: 260px;
+        background: rgba(252, 231, 243, 0.35);
+        top: -80px;
+        right: -80px;
+      }
+      .detail-blob-2 {
+        width: 260px;
+        height: 260px;
+        background: rgba(233, 213, 255, 0.35);
+        bottom: -80px;
+        left: -80px;
+      }
+
+      .detail-mini-card {
+        background: #fff;
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      }
+      .float-anim {
+        animation: floatCard 6s ease-in-out infinite;
+      }
+      .float-anim-delayed {
+        animation: floatCard 6s ease-in-out 1s infinite;
+      }
+      @keyframes floatCard {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .view-comparison-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+        text-decoration: none;
+        border-bottom: 1.5px solid var(--color-primary);
+        padding-bottom: 2px;
+        transition: gap 0.2s;
+      }
+      .view-comparison-link:hover {
+        gap: 0.7rem;
+        color: var(--color-primary);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main style="padding-top: 5.5rem">
+      <!-- ── Hero ── -->
+      <header class="text-center pt-5 pb-5 px-3">
+        <div class="container" style="max-width: 800px">
+          <span class="page-kicker d-block mb-3">Investment</span>
+          <h1 class="page-title mb-4">Planning Packages</h1>
+          <p
+            class="mx-auto"
+            style="
+              max-width: 580px;
+              font-size: 1.05rem;
+              line-height: 1.75;
+              color: var(--color-muted-text);
+            "
+          >
+            Tailored experiences for every stage of your journey. From final
+            coordination to comprehensive full-service management.
+          </p>
+        </div>
+      </header>
+
+      <!-- ── Pricing Cards ── -->
+      <section class="pb-5">
+        <div class="container px-3 px-md-4" style="max-width: 1100px">
+          <div class="row g-4 align-items-start">
+            <!-- Silver -->
+            <div class="col-12 col-md-4">
+              <div class="pricing-card reveal">
+                <div class="mb-4">
+                  <p class="pkg-name mb-1">Silver</p>
+                  <p class="pkg-desc mb-0">
+                    Day-of coordination and basic decor guidance.
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <span class="price-amount">$2,500</span>
+                  <span class="price-unit">/ event</span>
+                </div>
+                <ul class="feature-list flex-grow-1 mb-4">
+                  <li class="active">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    Final 4-week coordination
+                  </li>
+                  <li class="active">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    Timeline development
+                  </li>
+                  <li class="active">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    Basic decor consultation
+                  </li>
+                  <li class="inactive">
+                    <span class="material-symbols-outlined">close</span>
+                    Vendor sourcing
+                  </li>
+                </ul>
+                <button class="btn-outline-primary w-100">Get Quote</button>
+              </div>
+            </div>
+
+            <!-- Platinum (featured) -->
+            <div class="col-12 col-md-4">
+              <div class="pricing-card featured reveal position-relative">
+                <span class="featured-badge">Most Requested</span>
+                <div class="mb-4 mt-3">
+                  <p class="pkg-name featured-name mb-1">Platinum</p>
+                  <p class="pkg-desc mb-0">
+                    Complete full-service planning, luxury decor, and concierge
+                    services.
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <span class="price-amount featured">$8,500</span>
+                  <span class="price-unit">/ event</span>
+                </div>
+                <ul class="feature-list flex-grow-1 mb-4">
+                  <li class="active">
+                    <span class="material-symbols-outlined star-icon"
+                      >stars</span
+                    >
+                    <strong>Unlimited planning sessions</strong>
+                  </li>
+                  <li class="active">
+                    <span class="material-symbols-outlined star-icon"
+                      >stars</span
+                    >
+                    End-to-end vendor management
+                  </li>
+                  <li class="active">
+                    <span class="material-symbols-outlined star-icon"
+                      >stars</span
+                    >
+                    Bespoke luxury floral design
+                  </li>
+                  <li class="active">
+                    <span class="material-symbols-outlined star-icon"
+                      >stars</span
+                    >
+                    VIP Guest concierge service
+                  </li>
+                  <li class="active">
+                    <span class="material-symbols-outlined star-icon"
+                      >stars</span
+                    >
+                    Multi-day event coordination
+                  </li>
+                </ul>
+                <button class="btn-primary-c w-100">Get Quote</button>
+              </div>
+            </div>
+
+            <!-- Gold -->
+            <div class="col-12 col-md-4">
+              <div class="pricing-card reveal">
+                <div class="mb-4">
+                  <p class="pkg-name mb-1">Gold</p>
+                  <p class="pkg-desc mb-0">
+                    Partial planning, vendor management, and floral design.
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <span class="price-amount">$4,800</span>
+                  <span class="price-unit">/ event</span>
+                </div>
+                <ul class="feature-list flex-grow-1 mb-4">
+                  <li class="active">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    Partial 6-month planning
+                  </li>
+                  <li class="active">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    Curation of vendor selection
+                  </li>
+                  <li class="active">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    Standard floral &amp; decor design
+                  </li>
+                  <li class="active">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    Rehearsal dinner management
+                  </li>
+                </ul>
+                <button class="btn-outline-primary w-100">Get Quote</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Detail Difference ── -->
+      <section class="py-5 mt-3">
+        <div class="container px-3 px-md-4" style="max-width: 1100px">
+          <div class="detail-section p-4 p-md-5">
+            <div class="detail-blob detail-blob-1"></div>
+            <div class="detail-blob detail-blob-2"></div>
+            <div
+              class="row g-5 align-items-center position-relative"
+              style="z-index: 1"
+            >
+              <!-- Left copy -->
+              <div class="col-12 col-md-6">
+                <h2 class="section-title mb-4">The Detail Difference</h2>
+                <p
+                  style="
+                    font-size: 1rem;
+                    line-height: 1.75;
+                    color: var(--color-muted-text);
+                  "
+                  class="mb-4"
+                >
+                  Not sure which path is right for you? Every wedding is unique.
+                  We offer complimentary discovery calls to discuss your vision
+                  and pair you with the perfect level of support.
+                </p>
+                <a href="contact.html" class="view-comparison-link">
+                  Schedule a Discovery Call
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 1rem"
+                    >arrow_forward</span
+                  >
+                </a>
+              </div>
+
+              <!-- Right mini-cards -->
+              <div class="col-12 col-md-6">
+                <div class="row g-3">
+                  <div class="col-6">
+                    <div class="detail-mini-card float-anim">
+                      <span
+                        class="material-symbols-outlined text-gold d-block mb-2"
+                        style="font-size: 2rem"
+                        >local_florist</span
+                      >
+                      <h5
+                        class="font-display mb-1"
+                        style="color: var(--color-primary); font-size: 1.1rem"
+                      >
+                        Artistry
+                      </h5>
+                      <p
+                        class="mb-0"
+                        style="
+                          font-size: 0.85rem;
+                          color: var(--color-muted-text);
+                          line-height: 1.55;
+                        "
+                      >
+                        Hand-selected textures and seasonal blooms.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="detail-mini-card float-anim-delayed">
+                      <span
+                        class="material-symbols-outlined text-gold d-block mb-2"
+                        style="font-size: 2rem"
+                        >event_available</span
+                      >
+                      <h5
+                        class="font-display mb-1"
+                        style="color: var(--color-primary); font-size: 1.1rem"
+                      >
+                        Precision
+                      </h5>
+                      <p
+                        class="mb-0"
+                        style="
+                          font-size: 0.85rem;
+                          color: var(--color-muted-text);
+                          line-height: 1.55;
+                        "
+                      >
+                        Minute-by-minute execution of your dream.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer injected here -->
+    <div id="footer-container"></div>
+
+    <div class="custom-cursor"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Shared component loader -->
+    <script src="../assets/js/load-component.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

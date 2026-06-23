@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get In Touch | Stackly Weddings</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <style>
+      /* ── Contact form panel ── */
+      .form-panel {
+        background: var(--color-surface-low);
+        border-top-left-radius: 500px;
+        border-top-right-radius: 500px;
+        border: 1px solid rgba(210, 194, 199, 0.3);
+        box-shadow: 0 20px 30px -10px rgba(122, 83, 101, 0.08);
+      }
+
+      /* Underline inputs */
+      .input-underline {
+        background: transparent;
+        border: none;
+        border-bottom: 1.5px solid var(--color-outline);
+        border-radius: 0;
+        padding: 0.5rem 0;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: var(--color-on-surface);
+        transition: border-color var(--transition-base);
+        width: 100%;
+      }
+      .input-underline::placeholder {
+        color: rgba(79, 68, 72, 0.4);
+      }
+      .input-underline:focus {
+        outline: none;
+        box-shadow: none;
+        border-bottom-color: var(--color-primary);
+      }
+
+      .form-label-custom {
+        font-family: var(--font-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-muted-text);
+        margin-bottom: 0.35rem;
+        display: block;
+      }
+      .form-label-custom.focused {
+        color: var(--color-primary);
+      }
+
+      /* RSVP card */
+      .rsvp-card {
+        background: var(--color-surface);
+        border: 1px solid rgba(210, 194, 199, 0.25);
+        border-radius: 0.75rem;
+        padding: 1.75rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      }
+
+      .rsvp-radio {
+        accent-color: var(--color-primary);
+        width: 18px;
+        height: 18px;
+      }
+
+      .select-themed {
+        background: var(--color-surface-cont);
+        border: 1px solid var(--color-outline);
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        font-family: var(--font-body);
+        font-size: 0.875rem;
+        color: var(--color-on-surface);
+        width: 100%;
+        transition: border-color var(--transition-base);
+      }
+      .select-themed:focus {
+        outline: none;
+        border-color: var(--color-primary);
+      }
+
+      /* Divider inside panel */
+      .form-divider {
+        border-color: rgba(210, 194, 199, 0.3);
+      }
+
+      /* Right column arched image */
+      .contact-img-wrap {
+        border-top-left-radius: 500px;
+        border-top-right-radius: 500px;
+        overflow: hidden;
+        position: relative;
+        background: rgba(233, 213, 255, 0.2);
+      }
+      .contact-img-wrap img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        height: 480px;
+        transition: transform 1s ease;
+      }
+      .contact-img-wrap:hover img {
+        transform: scale(1.04);
+      }
+      .contact-img-accent {
+        position: absolute;
+        inset: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-top-left-radius: 500px;
+        border-top-right-radius: 500px;
+        pointer-events: none;
+      }
+
+      /* Map placeholder */
+      .map-card {
+        border-radius: 1rem;
+        overflow: hidden;
+        border: 1px solid rgba(210, 194, 199, 0.2);
+        filter: grayscale(1) opacity(0.8);
+        transition: filter var(--transition-base);
+        cursor: pointer;
+        height: 180px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .map-card:hover {
+        filter: grayscale(0) opacity(1);
+      }
+      .map-badge {
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 9999px;
+        padding: 0.4rem 1.25rem;
+        font-family: var(--font-body);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Contact detail icon + text */
+      .contact-detail-icon {
+        color: var(--color-primary);
+        font-size: 1.3rem;
+        flex-shrink: 0;
+      }
+
+      /* Social links */
+      .social-circle {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: #fff;
+        border: 1px solid rgba(210, 194, 199, 0.3);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-primary);
+        text-decoration: none;
+        transition:
+          background var(--transition-base),
+          color var(--transition-base);
+      }
+      .social-circle:hover {
+        background: var(--color-primary);
+        color: #fff;
+      }
+
+      /* Floating petal decoration */
+      .petal-deco {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0.08;
+        pointer-events: none;
+        animation: floatPetal 6s ease-in-out infinite;
+      }
+      @keyframes floatPetal {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(10deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main style="padding-top: 5.5rem">
+      <!-- ── Hero ── -->
+      <header class="text-center pt-5 pb-4 px-3 position-relative">
+        <div class="petal-deco d-none d-lg-block">
+          <span
+            class="material-symbols-outlined"
+            style="font-size: 7rem; color: var(--color-primary)"
+            >local_florist</span
+          >
+        </div>
+        <div class="container" style="max-width: 800px">
+          <span class="page-kicker d-block mb-3">Sukun Wedding Organizer</span>
+          <h1
+            class="section-title mb-4"
+            style="font-size: clamp(2rem, 5vw, 2.75rem)"
+          >
+            Get In Touch
+          </h1>
+          <p
+            class="mx-auto"
+            style="
+              max-width: 560px;
+              font-size: 1.05rem;
+              line-height: 1.75;
+              color: var(--color-muted-text);
+            "
+          >
+            We believe every love story is unique and deserves to be told with
+            elegance. Let's start planning your dream celebration together.
+          </p>
+        </div>
+      </header>
+
+      <!-- ── Main layout ── -->
+      <section class="py-4 pb-5">
+        <div class="container px-3 px-md-4" style="max-width: 1200px">
+          <div class="row g-5">
+            <!-- ── Left: forms ── -->
+            <div class="col-12 col-lg-7">
+              <div class="form-panel p-4 p-md-5">
+                <div style="max-width: 560px; margin: 0 auto">
+                  <!-- Contact form -->
+                  <h2
+                    class="section-title mb-4"
+                    style="
+                      font-size: 1.6rem;
+                      text-align: center;
+                      text-align: left;
+                    "
+                  >
+                    Send us a Message
+                  </h2>
+                  <form novalidate>
+                    <div class="row g-4 mb-4">
+                      <div class="col-12 col-sm-6">
+                        <label class="form-label-custom" for="contactName"
+                          >Name</label
+                        >
+                        <input
+                          id="contactName"
+                          type="text"
+                          class="input-underline"
+                          placeholder="Your full name"
+                        />
+                      </div>
+                      <div class="col-12 col-sm-6">
+                        <label class="form-label-custom" for="contactEmail"
+                          >Email</label
+                        >
+                        <input
+                          id="contactEmail"
+                          type="email"
+                          class="input-underline"
+                          placeholder="hello@example.com"
+                        />
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <label class="form-label-custom" for="contactSubject"
+                        >Subject</label
+                      >
+                      <input
+                        id="contactSubject"
+                        type="text"
+                        class="input-underline"
+                        placeholder="Wedding Planning / Inquiry"
+                      />
+                    </div>
+                    <div class="mb-4">
+                      <label class="form-label-custom" for="contactMessage"
+                        >Message</label
+                      >
+                      <textarea
+                        id="contactMessage"
+                        class="input-underline"
+                        rows="4"
+                        placeholder="Tell us about your special day..."
+                        style="resize: none"
+                      ></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary-c">
+                      Send Message
+                    </button>
+                  </form>
+
+                  <hr class="form-divider my-5" />
+
+                  <!-- RSVP -->
+                  <div>
+                    <div class="d-flex align-items-center gap-2 mb-4">
+                      <span class="material-symbols-outlined text-gold"
+                        >auto_awesome</span
+                      >
+                      <h2 class="section-title mb-0" style="font-size: 1.5rem">
+                        Guest RSVP
+                      </h2>
+                    </div>
+
+                    <div class="rsvp-card">
+                      <!-- Attendance -->
+                      <div class="mb-4">
+                        <p class="fw-semibold mb-3" style="font-size: 0.95rem">
+                          Are You Attending?
+                        </p>
+                        <div class="d-flex gap-4 flex-wrap">
+                          <label
+                            class="d-flex align-items-center gap-2"
+                            style="cursor: pointer"
+                          >
+                            <input
+                              type="radio"
+                              name="attending"
+                              class="rsvp-radio"
+                            />
+                            <span
+                              style="
+                                color: var(--color-muted-text);
+                                font-size: 0.9rem;
+                              "
+                              >Yes, I'll be there</span
+                            >
+                          </label>
+                          <label
+                            class="d-flex align-items-center gap-2"
+                            style="cursor: pointer"
+                          >
+                            <input
+                              type="radio"
+                              name="attending"
+                              class="rsvp-radio"
+                            />
+                            <span
+                              style="
+                                color: var(--color-muted-text);
+                                font-size: 0.9rem;
+                              "
+                              >Regretfully, No</span
+                            >
+                          </label>
+                        </div>
+                      </div>
+
+                      <!-- Dropdowns -->
+                      <div class="row g-3 mb-4">
+                        <div class="col-12 col-sm-6">
+                          <label class="form-label-custom"
+                            >Number of Guests</label
+                          >
+                          <select class="select-themed">
+                            <option>1 Guest</option>
+                            <option>2 Guests</option>
+                            <option>3 Guests</option>
+                            <option>Family (4+)</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                          <label class="form-label-custom"
+                            >Meal Preference</label
+                          >
+                          <select class="select-themed">
+                            <option>Standard</option>
+                            <option>Vegetarian</option>
+                            <option>Vegan</option>
+                            <option>Gluten-Free</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <button type="button" class="btn-outline-gold w-100">
+                        Confirm RSVP
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Right: illustration + details ── -->
+            <div class="col-12 col-lg-5 d-flex flex-column gap-4">
+              <!-- Arched image -->
+              <div class="contact-img-wrap reveal">
+                <img
+                  src="https://lh3.googleusercontent.com/aida/AP1WRLtvRenKLYnhFkemotLXFtjKxTowb6GDKgUYTIk1RecvBK6Bt5iVkVEeFNQ6ECOvL_N1tF5tzMAQ8eBltMvyJG72xI3UEDpNpchQjJ2n3nD45c6BLqmnf1ywp9vZms527vJcFkkj9m3iPT250hHqlfc10GTr2yrJVWyA2b5oDMKqnvdWNxbstr1nhkRZcW2o0rBoiJEcOAu6mVxAxelU_dDrEALipl6F67v8SQMX9h3KDV9UQYnfpHXVk2E"
+                  alt="Romantic illustration"
+                />
+                <div class="contact-img-accent"></div>
+              </div>
+
+              <!-- Details -->
+              <div class="d-flex flex-column gap-4">
+                <!-- Address -->
+                <div>
+                  <h4
+                    class="font-display mb-3"
+                    style="color: var(--color-primary); font-size: 1.2rem"
+                  >
+                    Office Hours
+                  </h4>
+                  <div class="d-flex gap-3 mb-3">
+                    <span class="material-symbols-outlined contact-detail-icon"
+                      >location_on</span
+                    >
+                    <div>
+                      <p class="form-label-custom mb-1">Our Studio</p>
+                      <p
+                        style="
+                          color: var(--color-muted-text);
+                          font-size: 0.9rem;
+                          line-height: 1.65;
+                        "
+                        class="mb-0"
+                      >
+                        4517 Washington Ave.<br />Manchester, Kentucky 39495
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-3">
+                    <span class="material-symbols-outlined contact-detail-icon"
+                      >mail</span
+                    >
+                    <div>
+                      <p class="form-label-custom mb-1">Email Us</p>
+                      <p
+                        style="
+                          color: var(--color-muted-text);
+                          font-size: 0.9rem;
+                        "
+                        class="mb-0"
+                      >
+                        sukun@gmail.com
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Social -->
+                <div>
+                  <p class="form-label-custom mb-3">Follow Our Journey</p>
+                  <div class="d-flex gap-3">
+                    <a href="#" class="social-circle"
+                      ><span
+                        class="material-symbols-outlined"
+                        style="font-size: 1.2rem"
+                        >public</span
+                      ></a
+                    >
+                    <a href="#" class="social-circle"
+                      ><span
+                        class="material-symbols-outlined"
+                        style="font-size: 1.2rem"
+                        >photo_camera</span
+                      ></a
+                    >
+                    <a href="#" class="social-circle"
+                      ><span
+                        class="material-symbols-outlined"
+                        style="font-size: 1.2rem"
+                        >play_circle</span
+                      ></a
+                    >
+                  </div>
+                </div>
+
+                <!-- Map -->
+                <div
+                  class="map-card"
+                  style="
+                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDbUzocRA1l5QbWgKKZUW_515iCtNBdwmS9XHkIfWTpli3R3WlyC92FU914WcIY_LJYnL1ndExnh_dn2mUrLxK-9Ch6mH3g7WzifPnq1kFHcZ-6YsuF-ci163HoOMMDA_0eU-NagFcAhHbpzg9y7TUvDACzklhLBbJp7EI1csoYd4_jkvg07or2G0wEmo2TdBXAv_T2YeMEM9otsPrUqIVT3GJTd1SA_aFXbGLiBgCxHqGuraBKSN63ziQZzkn7E-b59m4Gkoa7unM&quot;);
+                  "
+                >
+                  <span class="map-badge">View Map</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer injected here -->
+    <div id="footer-container"></div>
+
+    <div class="custom-cursor"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Shared component loader -->
+    <script src="../assets/js/load-component.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+      // Focus label highlight for underline inputs
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".input-underline").forEach((el) => {
+          const label = el.closest("div")?.querySelector(".form-label-custom");
+          el.addEventListener("focus", () => label?.classList.add("focused"));
+          el.addEventListener("blur", () => label?.classList.remove("focused"));
+        });
+      });
+    </script>
+  </body>
+</html>

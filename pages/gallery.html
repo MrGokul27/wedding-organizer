@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweet Memories | Gallery</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <style>
+      /* ── Gallery specific ── */
+      .gallery-item {
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+      }
+      .gallery-item img {
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+        display: block;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(122, 83, 101, 0.2);
+        backdrop-filter: blur(2px);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .overlay-btn {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background: rgba(251, 249, 245, 0.92);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-primary);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        transform: translateY(1rem);
+        transition: transform 0.4s ease;
+      }
+      .gallery-item:hover .overlay-btn {
+        transform: translateY(0);
+      }
+      .overlay-btn span {
+        font-size: 1.75rem;
+      }
+
+      .overlay-label {
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #fff;
+        margin-top: 0.75rem;
+      }
+
+      /* Heights */
+      .img-tall {
+        height: 600px;
+      }
+      .img-medium {
+        height: 400px;
+      }
+      .img-large {
+        height: 500px;
+      }
+      .img-wide {
+        height: 400px;
+      }
+
+      @media (max-width: 767.98px) {
+        .img-tall {
+          height: 360px;
+        }
+        .img-medium {
+          height: 260px;
+        }
+        .img-large {
+          height: 300px;
+        }
+        .img-wide {
+          height: 220px;
+        }
+      }
+
+      /* CTA */
+      .cta-section {
+        background: rgba(212, 165, 185, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header injected here -->
+    <div id="header-container"></div>
+
+    <main style="padding-top: 5.5rem">
+      <!-- ── Hero ── -->
+      <header class="text-center pt-5 pb-4 px-3">
+        <div class="container" style="max-width: 900px">
+          <span class="page-kicker d-block mb-3">Sukun Wedding Organizer</span>
+          <h1 class="page-title mb-4">Sweet Memories</h1>
+          <p class="page-subtitle mx-auto" style="max-width: 600px">
+            Our Captured Moments — A collection of love stories written in light
+            and shadow, celebrating timeless elegance.
+          </p>
+        </div>
+      </header>
+
+      <!-- ── Gallery Grid ── -->
+      <section class="py-5">
+        <div class="container px-3 px-md-4" style="max-width: 1200px">
+          <!-- Row 1: 8 + 4 -->
+          <div class="row g-4 mb-4">
+            <div class="col-12 col-md-8">
+              <div class="gallery-item arched-frame position-relative reveal">
+                <img
+                  class="img-tall"
+                  src="../assets/images/gallery/gallery-img-1.webp"
+                  alt="Romantic couple"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-btn">
+                    <span class="material-symbols-outlined">add</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="gallery-item arched-frame position-relative reveal">
+                <img
+                  class="img-tall"
+                  src="../assets/images/gallery/gallery-img-2.webp"
+                  alt="Bride and groom"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-btn">
+                    <span class="material-symbols-outlined">add</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: 4 + 4 + 4 -->
+          <div class="row g-4 mb-4">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="gallery-item rounded-card position-relative reveal">
+                <img
+                  class="img-medium"
+                  src="../assets/images/gallery/gallery-img-3.webp"
+                  alt="Wedding couple dance"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-btn">
+                    <span class="material-symbols-outlined">add</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="gallery-item arched-frame position-relative reveal">
+                <img
+                  class="img-medium"
+                  src="../assets/images/gallery/gallery-img-4.webp"
+                  alt="Couple walking"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-btn">
+                    <span class="material-symbols-outlined">add</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="gallery-item rounded-card position-relative reveal">
+                <img
+                  class="img-medium"
+                  src="../assets/images/gallery/gallery-img-5.webp"
+                  alt="Wedding lighting"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-btn">
+                    <span class="material-symbols-outlined">add</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3: 6 + 6 -->
+          <div class="row g-4 mb-4">
+            <div class="col-12 col-md-6">
+              <div class="gallery-item rounded-card position-relative reveal">
+                <img
+                  class="img-large"
+                  src="../assets/images/gallery/gallery-img-6.webp"
+                  alt="Couple silhouette"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-btn">
+                    <span class="material-symbols-outlined">add</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="gallery-item arched-frame position-relative reveal">
+                <img
+                  class="img-large"
+                  src="../assets/images/gallery/gallery-img-7.webp"
+                  alt="Sweet wedding portrait"
+                />
+                <div class="gallery-overlay">
+                  <div class="overlay-btn">
+                    <span class="material-symbols-outlined">add</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 4: Full width -->
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="gallery-item rounded-card position-relative reveal">
+                <img
+                  class="img-wide"
+                  src="../assets/images/gallery/gallery-img-8.webp"
+                  alt="Wedding rings detail"
+                  style="object-position: center 60%"
+                />
+                <div class="gallery-overlay">
+                  <div class="d-flex flex-column align-items-center">
+                    <div class="overlay-btn">
+                      <span class="material-symbols-outlined">add</span>
+                    </div>
+                    <span class="overlay-label">View Details</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CTA ── -->
+      <section class="cta-section py-5 text-center">
+        <div class="container py-4 px-3" style="max-width: 720px">
+          <h2 class="section-title mb-4">Start Your Journey With Us</h2>
+          <p
+            class="mb-5"
+            style="
+              font-size: 1.1rem;
+              line-height: 1.7;
+              color: var(--color-muted-text);
+            "
+          >
+            Let us transform your dream celebration into a breathtaking reality.
+            Our expert team is dedicated to crafting timeless memories that last
+            a lifetime.
+          </p>
+          <div
+            class="d-flex flex-column flex-sm-row gap-3 justify-content-center"
+          >
+            <a href="contact.html" class="btn-primary-c">Book a Consultation</a>
+            <a href="services.html" class="btn-outline-gold">Our Services</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer injected here -->
+    <div id="footer-container"></div>
+
+    <div class="custom-cursor"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Shared component loader -->
+    <script src="../assets/js/load-component.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+      // Parallax (desktop hover-capable devices only)
+      if (window.matchMedia("(hover: hover)").matches) {
+        document.addEventListener("mousemove", (e) => {
+          const mx = (e.clientX - window.innerWidth / 2) * 0.007;
+          const my = (e.clientY - window.innerHeight / 2) * 0.007;
+          document.querySelectorAll(".arched-frame img").forEach((img) => {
+            img.style.transform = `scale(1.02) translate(${mx}px, ${my}px)`;
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
