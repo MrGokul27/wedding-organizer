@@ -1646,3 +1646,194 @@ body.inner-page #mainNav {
   border-bottom: 1px solid var(--color-outline);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
 }
+
+/* ═══════════════════════════════════════════
+   Page Banner with Breadcrumbs
+   ─ Same size & UI across all inner pages ─
+   ─ Only the bg-image class changes per page─
+═══════════════════════════════════════════ */
+
+.page-banner {
+  position: relative;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* fallback color while image loads */
+  background-color: var(--color-primary);
+}
+
+/* ── bg image layer ── */
+.page-banner__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 8s ease;
+  transform: scale(1.05);
+}
+
+.page-banner:hover .page-banner__bg {
+  transform: scale(1);
+}
+
+/* ── dark overlay for legibility ── */
+.page-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(26, 12, 19, 0.62) 0%,
+    rgba(122, 83, 101, 0.45) 60%,
+    rgba(26, 12, 19, 0.55) 100%
+  );
+  z-index: 1;
+}
+
+/* ── decorative floral tint rings ── */
+.page-banner::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 216, 231, 0.15);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── content sits above overlays ── */
+.page-banner__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* ── kicker label ── */
+.page-banner__kicker {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  background: rgba(122, 83, 101, 0.35);
+  border: 1px solid rgba(255, 216, 231, 0.3);
+  border-radius: 999px;
+  padding: 0.3rem 1.1rem;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+/* ── page title ── */
+.page-banner__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ── divider ornament ── */
+.page-banner__ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.page-banner__ornament span {
+  display: block;
+  height: 1px;
+  width: 50px;
+  background: rgba(255, 216, 231, 0.45);
+}
+
+.page-banner__ornament i {
+  font-size: 0.8rem;
+  color: var(--color-primary-light);
+  opacity: 0.8;
+}
+
+/* ── breadcrumb ── */
+.page-banner__breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-banner__breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.page-banner__breadcrumb li a {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.page-banner__breadcrumb li a:hover {
+  color: var(--color-primary-light);
+}
+
+.page-banner__breadcrumb li.active {
+  color: var(--color-primary-light);
+}
+
+.page-banner__breadcrumb .sep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.65rem;
+}
+
+/* ── Unique background images per page ── */
+.page-banner--about .page-banner__bg {
+  background-image: url("https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&auto=format&fit=crop&q=80");
+}
+
+.page-banner--services .page-banner__bg {
+  background-image: url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1600&auto=format&fit=crop&q=80");
+}
+
+.page-banner--gallery .page-banner__bg {
+  background-image: url("https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1600&auto=format&fit=crop&q=80");
+}
+
+.page-banner--pricing .page-banner__bg {
+  background-image: url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1600&auto=format&fit=crop&q=80");
+}
+
+.page-banner--contact .page-banner__bg {
+  background-image: url("../images/contact-banner-img.webp");
+}
+
+/* ── Responsive ── */
+@media (max-width: 575.98px) {
+  .page-banner {
+    height: 320px;
+  }
+  .page-banner__title {
+    font-size: 1.8rem;
+  }
+}
