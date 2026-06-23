@@ -724,3 +724,15 @@ body {
   margin: 0;
   font-style: italic;
 }
+
+.back-home-link {
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-home-link:hover {
+  color: var(--primary-dark);
+  transform: translateX(-3px);
+}
