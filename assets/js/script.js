@@ -219,7 +219,12 @@
         : `We'll miss you, ${nameInput.value.split(" ")[0]}. Thank you for letting us know.`;
 
     showToast(msg, "success");
+
     form.reset();
+
+    setTimeout(() => {
+      window.location.href = "pages/common/404.html";
+    }, 2000);
   });
 })();
 
@@ -427,4 +432,11 @@ document.addEventListener("click", function (e) {
     e.preventDefault();
     window.location.href = "pages/common/404.html";
   }
+});
+
+/* ---- 15 Pre Loader ---- */
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("preloader").classList.add("hide");
+  }, 2000);
 });
