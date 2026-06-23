@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Master Schedule | Stackly Weddings</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Dashboard CSS -->
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+
+    <style>
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+      }
+      .calendar-cell {
+        min-height: 110px;
+        border-right: 1px solid rgba(210, 194, 199, 0.2);
+        border-bottom: 1px solid rgba(210, 194, 199, 0.2);
+        padding: 0.75rem;
+        transition: background-color 0.2s ease;
+        cursor: pointer;
+      }
+      .calendar-cell:hover {
+        background-color: var(--color-surface-low);
+      }
+      .calendar-cell:nth-child(7n) {
+        border-right: none;
+      }
+      .calendar-cell.active-cell {
+        background-color: rgba(122, 83, 101, 0.08) !important;
+        outline: 2px solid var(--color-primary);
+        outline-offset: -2px;
+      }
+      .agenda-item {
+        position: relative;
+        padding-left: 1.5rem;
+      }
+      .agenda-line {
+        position: absolute;
+        left: 0;
+        top: 5px;
+        bottom: 0;
+        width: 1px;
+        background-color: var(--color-outline);
+      }
+      .agenda-node {
+        position: absolute;
+        left: -4px;
+        top: 5px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        border: 2px solid #fff;
+      }
+      .agenda-node.gold {
+        background-color: var(--color-muted-gold);
+      }
+      .agenda-node.secondary-color {
+        background-color: #674bb5;
+      }
+      .floating-fab {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 60px;
+        height: 60px;
+        background-color: var(--color-muted-gold);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 10px 30px rgba(181, 148, 16, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1050;
+        transition: transform 0.3s ease;
+      }
+      .floating-fab:hover {
+        transform: scale(1.1);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-surface">
+    <div id="dashboard-wrapper">
+      <main class="dashboard-content">
+        <!-- Top header bar -->
+        <section class="row g-4 mb-4 align-items-center">
+          <div class="col-md-6 col-lg-7">
+            <div class="d-flex align-items-center gap-3">
+              <h2 class="font-playfair-display text-primary fw-bold mb-0">
+                September 2024
+              </h2>
+              <div class="d-flex gap-1">
+                <button class="btn btn-sm btn-light border rounded-circle p-1">
+                  <span class="material-symbols-outlined fs-6 align-middle"
+                    >chevron_left</span
+                  >
+                </button>
+                <button class="btn btn-sm btn-light border rounded-circle p-1">
+                  <span class="material-symbols-outlined fs-6 align-middle"
+                    >chevron_right</span
+                  >
+                </button>
+              </div>
+              <button
+                class="btn btn-sm btn-light border rounded-pill px-3 py-1 text-uppercase tracking-wider small"
+              >
+                Today
+              </button>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-5 d-flex gap-2 justify-content-md-end align-items-center"
+          >
+            <div
+              class="btn-group btn-group-sm rounded-pill p-1 bg-light border"
+              role="group"
+            >
+              <input
+                type="radio"
+                class="btn-check"
+                name="calView"
+                id="viewMonth"
+                checked
+              />
+              <label
+                class="btn btn-light rounded-pill px-3 py-1 text-primary small"
+                for="viewMonth"
+                >MONTHLY</label
+              >
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="calView"
+                id="viewWeek"
+              />
+              <label
+                class="btn btn-outline-light border-0 rounded-pill px-3 py-1 text-muted small"
+                for="viewWeek"
+                >WEEKLY</label
+              >
+            </div>
+            <button
+              class="btn btn-primary rounded-pill px-4 d-flex align-items-center gap-2"
+              data-bs-toggle="modal"
+              data-bs-target="#newEventModal"
+            >
+              <span class="material-symbols-outlined fs-5">add</span>
+              Add Event
+            </button>
+          </div>
+        </section>
+
+        <!-- Calendar & Agenda Content Grid -->
+        <section class="row g-4 mb-5">
+          <!-- Calendar Grid Card -->
+          <div class="col-lg-8">
+            <div class="card-luxury p-0 overflow-hidden">
+              <!-- Day labels header -->
+              <div class="calendar-grid bg-light border-bottom py-3">
+                <div
+                  class="text-center font-jakarta fw-bold text-muted"
+                  style="font-size: 11px"
+                >
+                  SUN
+                </div>
+                <div
+                  class="text-center font-jakarta fw-bold text-muted"
+                  style="font-size: 11px"
+                >
+                  MON
+                </div>
+                <div
+                  class="text-center font-jakarta fw-bold text-muted"
+                  style="font-size: 11px"
+                >
+                  TUE
+                </div>
+                <div
+                  class="text-center font-jakarta fw-bold text-muted"
+                  style="font-size: 11px"
+                >
+                  WED
+                </div>
+                <div
+                  class="text-center font-jakarta fw-bold text-muted"
+                  style="font-size: 11px"
+                >
+                  THU
+                </div>
+                <div
+                  class="text-center font-jakarta fw-bold text-muted"
+                  style="font-size: 11px"
+                >
+                  FRI
+                </div>
+                <div
+                  class="text-center font-jakarta fw-bold text-muted"
+                  style="font-size: 11px"
+                >
+                  SAT
+                </div>
+              </div>
+
+              <!-- Calendar Days -->
+              <div class="calendar-grid bg-white">
+                <!-- Prev Month Days -->
+                <div
+                  class="calendar-cell bg-light bg-opacity-30 text-muted opacity-50"
+                >
+                  25
+                </div>
+                <div
+                  class="calendar-cell bg-light bg-opacity-30 text-muted opacity-50"
+                >
+                  26
+                </div>
+                <div
+                  class="calendar-cell bg-light bg-opacity-30 text-muted opacity-50"
+                >
+                  27
+                </div>
+                <div
+                  class="calendar-cell bg-light bg-opacity-30 text-muted opacity-50"
+                >
+                  28
+                </div>
+                <div
+                  class="calendar-cell bg-light bg-opacity-30 text-muted opacity-50"
+                >
+                  29
+                </div>
+                <div
+                  class="calendar-cell bg-light bg-opacity-30 text-muted opacity-50"
+                >
+                  30
+                </div>
+                <div
+                  class="calendar-cell bg-light bg-opacity-30 text-muted opacity-50"
+                >
+                  31
+                </div>
+
+                <!-- Sept Days -->
+                <div class="calendar-cell relative">
+                  <span class="fw-semibold">01</span>
+                  <div class="mt-2">
+                    <div
+                      class="p-1 bg-lavender-mist bg-opacity-40 border-start border-2 border-secondary rounded text-primary truncate"
+                      style="
+                        font-size: 8px;
+                        font-weight: 700;
+                        color: #674bb5 !important;
+                      "
+                    >
+                      MENU TASTING: ELARA & SAM
+                    </div>
+                  </div>
+                </div>
+                <div class="calendar-cell">02</div>
+                <div class="calendar-cell">
+                  <span class="fw-semibold">03</span>
+                  <div class="mt-2">
+                    <div
+                      class="p-1 bg-warning bg-opacity-10 border-start border-2 border-warning rounded text-warning truncate"
+                      style="
+                        font-size: 8px;
+                        font-weight: 700;
+                        color: var(--color-muted-gold) !important;
+                      "
+                    >
+                      SITE: CRYSTAL COVE
+                    </div>
+                  </div>
+                </div>
+                <div class="calendar-cell">04</div>
+                <div class="calendar-cell">05</div>
+                <div class="calendar-cell">06</div>
+                <div class="calendar-cell bg-primary-container bg-opacity-10">
+                  <span class="fw-bold text-primary">07</span>
+                  <div class="mt-2">
+                    <div
+                      class="p-1 bg-primary text-white rounded truncate"
+                      style="font-size: 8px; font-weight: 700"
+                    >
+                      WEDDING: SOFIA & JULIAN
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="calendar-cell">08</div>
+                <div class="calendar-cell">09</div>
+                <div class="calendar-cell active-cell">
+                  <span class="fw-bold text-primary">10</span>
+                  <div class="position-absolute bottom-2 end-2 d-flex gap-1">
+                    <span
+                      class="w-1.5 h-1.5 bg-primary rounded-circle"
+                      style="width: 5px; height: 5px"
+                    ></span>
+                    <span
+                      class="w-1.5 h-1.5 bg-warning rounded-circle"
+                      style="width: 5px; height: 5px"
+                    ></span>
+                  </div>
+                </div>
+                <div class="calendar-cell">11</div>
+                <div class="calendar-cell">12</div>
+                <div class="calendar-cell">13</div>
+                <div class="calendar-cell">14</div>
+
+                <!-- Week 3 -->
+                <div class="calendar-cell">15</div>
+                <div class="calendar-cell">16</div>
+                <div class="calendar-cell">17</div>
+                <div class="calendar-cell">
+                  <span class="fw-semibold">18</span>
+                  <div class="mt-2">
+                    <div
+                      class="p-1 bg-lavender-mist bg-opacity-40 border-start border-2 border-secondary rounded text-primary truncate"
+                      style="
+                        font-size: 8px;
+                        font-weight: 700;
+                        color: #674bb5 !important;
+                      "
+                    >
+                      CAKE DESIGN SESSION
+                    </div>
+                  </div>
+                </div>
+                <div class="calendar-cell">19</div>
+                <div class="calendar-cell">20</div>
+                <div class="calendar-cell">21</div>
+
+                <!-- Week 4 -->
+                <div class="calendar-cell">22</div>
+                <div class="calendar-cell">23</div>
+                <div class="calendar-cell">24</div>
+                <div class="calendar-cell">25</div>
+                <div class="calendar-cell">26</div>
+                <div class="calendar-cell">27</div>
+                <div class="calendar-cell">28</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Daily Agenda Sidebar -->
+          <div class="col-lg-4">
+            <div class="d-flex flex-column gap-4 h-100">
+              <!-- Selected Date Panel -->
+              <div
+                class="card-luxury p-4 bg-primary text-white position-relative overflow-hidden"
+              >
+                <div
+                  class="position-absolute end-0 bottom-0 opacity-10"
+                  style="transform: translate(15%, 15%) scale(1.5)"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 100px"
+                    >calendar_month</span
+                  >
+                </div>
+                <div class="position-relative z-1">
+                  <span
+                    class="text-uppercase tracking-wider small opacity-75 font-jakarta fw-bold"
+                    style="font-size: 9px"
+                    >Tuesday</span
+                  >
+                  <h3 class="font-playfair-display text-white fw-bold mb-2">
+                    September 10
+                  </h3>
+                  <div
+                    class="d-flex align-items-center gap-2 mt-3 text-white text-opacity-90"
+                  >
+                    <span class="material-symbols-outlined fs-6"
+                      >event_available</span
+                    >
+                    <span class="small font-jakarta fw-bold"
+                      >3 SESSIONS BOOKED</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Agenda items list -->
+              <div class="card-luxury p-4 flex-grow-1 bg-white">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <h5 class="font-playfair-display text-dark fw-bold mb-0">
+                    Daily Agenda
+                  </h5>
+                  <button class="btn btn-sm btn-link text-muted p-0">
+                    <span class="material-symbols-outlined fs-5"
+                      >more_vert</span
+                    >
+                  </button>
+                </div>
+
+                <div class="d-flex flex-column gap-4">
+                  <!-- Item 1 -->
+                  <div class="agenda-item">
+                    <div class="agenda-line"></div>
+                    <div class="agenda-node"></div>
+                    <span
+                      class="small font-jakarta fw-bold text-primary"
+                      style="font-size: 10px"
+                      >09:00 AM - 10:30 AM</span
+                    >
+                    <h6 class="fw-bold text-dark mt-1 mb-1">
+                      Final Site Inspection
+                    </h6>
+                    <p class="text-muted small mb-2">
+                      Oceanview Manor - Review floorplan for Sterling Wedding.
+                    </p>
+                    <div
+                      class="p-2 bg-light rounded-3 d-flex align-items-center gap-2"
+                      style="width: fit-content"
+                    >
+                      <img
+                        class="rounded-circle"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3pd7e87VRK_SVppir9zwfzdthK4QZhNoIR9SaHkkZxouOtBaHlW239MOd7nSSKjBuMIoROpH0_zHY5v8-BWsAq49fHdOERsWaMeBlwwYp27ju0p1A-8OM6YqJvzLQttMyb853uSB2mgf5HJQdPXg9pDKSyuxM0DFwfL0HeAGI6aIRYf23EpXMKK8Z1Vz_Qhfg4L_tpISQhEl1N2zoWo9zB0auGd3oRLSqFfQyNSufTdcjd--CcMom_a56KhDDrVIRAXEq6aUJ_sE"
+                        alt="Planner"
+                        style="width: 24px; height: 24px; object-fit: cover"
+                      />
+                      <span class="text-muted small" style="font-size: 10px"
+                        >With Clara (Planner)</span
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Item 2 -->
+                  <div class="agenda-item">
+                    <div class="agenda-line"></div>
+                    <div class="agenda-node gold"></div>
+                    <span
+                      class="small font-jakarta fw-bold text-gold"
+                      style="
+                        font-size: 10px;
+                        color: var(--color-muted-gold) !important;
+                      "
+                      >01:00 PM - 02:30 PM</span
+                    >
+                    <h6 class="fw-bold text-dark mt-1 mb-1">
+                      Menu Tasting & Mockup
+                    </h6>
+                    <p class="text-muted small mb-2">
+                      L'Auberge Restaurant - Thompson & Wright Couple.
+                    </p>
+                    <div class="d-flex align-items-center gap-1">
+                      <img
+                        class="rounded-circle border border-white"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcKMjDImEvRm1tgYB6DXs51lQMfDOVtTFkSsWHiwHgydlBZIkqmz2_IIxBT5OwrIA3KJvhY3joUddBK969DkVkRwMZ1FO2QnBVdHDqGrJhlpWNdxWI1esAeo0QPmUU9SOGC3RW09XvnWxnG_-24w3-6LumhE8bHTJFYiMlB9HYn7EUgGGfdCjztG1512LD4dealiTdIvBdk8exhICoZ0eM8po4Wk0THiRGk4p-GFUH0y4Hra2l70gbVgnZm9Sx9Mi0FT686FS1h70"
+                        alt="Sarah"
+                        style="width: 24px; height: 24px; object-fit: cover"
+                      />
+                      <img
+                        class="rounded-circle border border-white"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA52ENA6e_bWKVMMtuzhDYbMEjyFnO1n7WHRcBSqjCo-oGjpDlKRmXs1e2vdQp4dD03TF6omzfdOOm5GkdSEsDrIN8b-jzV9sZ3ZdDiaIJNjtsBnjMJoO_vk1staNABL6JX2I9gnXaUJDTukWifYAG5nMxMixnHEZobB-TMWckOhNMVbEd9L-WekDYo66GUzqyX7d9m8b-SkuY440JTx-UuXAo-S-fXdg_ntNLUzMbi9hPzyZf4WYzXRcHykpIhMHf71BJLR6q_VSU"
+                        alt="David"
+                        style="
+                          width: 24px;
+                          height: 24px;
+                          object-fit: cover;
+                          margin-left: -8px;
+                        "
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Item 3 -->
+                  <div class="agenda-item">
+                    <div class="agenda-line"></div>
+                    <div class="agenda-node secondary-color"></div>
+                    <span
+                      class="small font-jakarta fw-bold text-secondary"
+                      style="font-size: 10px; color: #674bb5 !important"
+                      >04:00 PM - 05:00 PM</span
+                    >
+                    <h6 class="fw-bold text-dark mt-1 mb-1">
+                      Vendor Briefing Call
+                    </h6>
+                    <p class="text-muted small mb-2">
+                      Discuss lighting cues with AV team for Gala Event.
+                    </p>
+                    <span
+                      class="badge badge-lavender rounded-pill px-3 py-1 font-jakarta fw-bold text-secondary"
+                      style="font-size: 9px; color: #674bb5 !important"
+                      >Zoom Meeting</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Quick Task button -->
+                <button
+                  class="btn btn-outline-gold rounded-pill w-100 py-2.5 mt-5 small fw-bold"
+                >
+                  Quick Task
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- New Event Modal -->
+    <div
+      class="modal fade"
+      id="newEventModal"
+      tabindex="-1"
+      aria-labelledby="newEventModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div
+          class="modal-content border-0 shadow"
+          style="border-radius: 1.5rem"
+        >
+          <div
+            class="modal-header border-bottom border-outline-variant px-4 py-3"
+          >
+            <h5
+              class="modal-title font-playfair-display text-primary fw-bold"
+              id="newEventModalLabel"
+            >
+              Add Calendar Event
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form id="newEventForm">
+            <div class="modal-body p-4">
+              <div class="mb-3">
+                <label
+                  class="form-label small text-primary uppercase fw-bold"
+                  style="font-size: 10px"
+                  >Event Title</label
+                >
+                <input
+                  type="text"
+                  class="form-control rounded-3"
+                  placeholder="e.g. Florist Briefing"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label
+                  class="form-label small text-primary uppercase fw-bold"
+                  style="font-size: 10px"
+                  >Date & Time</label
+                >
+                <input
+                  type="datetime-local"
+                  class="form-control rounded-3"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label
+                  class="form-label small text-primary uppercase fw-bold"
+                  style="font-size: 10px"
+                  >Event Type</label
+                >
+                <select class="form-select rounded-3">
+                  <option value="wedding">Wedding Ceremony</option>
+                  <option value="tasting">Tasting Session</option>
+                  <option value="meeting">Consultation Call</option>
+                </select>
+              </div>
+            </div>
+            <div
+              class="modal-footer border-top border-outline-variant px-4 py-3"
+            >
+              <button
+                type="button"
+                class="btn btn-sm btn-light border rounded-pill px-3"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                class="btn btn-sm btn-primary rounded-pill px-4"
+              >
+                Save Event
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Layout JS -->
+    <script src="../../../assets/js/dashboard-layout.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Cell click active highlight
+        const cells = document.querySelectorAll(".calendar-cell");
+        cells.forEach((cell) => {
+          if (!cell.classList.contains("opacity-50")) {
+            cell.addEventListener("click", () => {
+              cells.forEach((c) => c.classList.remove("active-cell"));
+              cell.classList.add("active-cell");
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

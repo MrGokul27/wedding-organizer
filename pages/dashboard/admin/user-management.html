@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management | Stackly Weddings Admin</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Dashboard CSS -->
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="bg-surface">
+    <div id="dashboard-wrapper">
+      <main class="dashboard-content">
+        <!-- Metrics Bento Grid -->
+        <section class="row g-4 mb-4">
+          <!-- Total Users -->
+          <div class="col-md-4">
+            <div class="card-luxury p-4 h-100">
+              <p class="text-muted small text-uppercase tracking-wider mb-1">
+                Total Users
+              </p>
+              <h3 class="font-playfair-display fw-bold text-primary mb-2">
+                12,842
+              </h3>
+              <p
+                class="text-success small fw-bold mb-0 d-flex align-items-center gap-1"
+              >
+                <span class="material-symbols-outlined fs-6">trending_up</span>
+                +12.5% vs last month
+              </p>
+            </div>
+          </div>
+
+          <!-- Active This Month -->
+          <div class="col-md-4">
+            <div class="card-luxury p-4 h-100">
+              <p class="text-muted small text-uppercase tracking-wider mb-1">
+                Monthly Active
+              </p>
+              <h3
+                class="font-playfair-display fw-bold text-primary mb-2"
+                style="color: #674bb5 !important"
+              >
+                8,290
+              </h3>
+              <p
+                class="text-primary small fw-bold mb-0 d-flex align-items-center gap-1"
+              >
+                <span class="material-symbols-outlined fs-6">history_edu</span>
+                64% retention rate
+              </p>
+            </div>
+          </div>
+
+          <!-- New Signups -->
+          <div class="col-md-4">
+            <div class="card-luxury p-4 h-100">
+              <p class="text-muted small text-uppercase tracking-wider mb-1">
+                New Signups
+              </p>
+              <h3
+                class="font-playfair-display fw-bold text-primary mb-2"
+                style="color: var(--color-muted-gold) !important"
+              >
+                432
+              </h3>
+              <p class="text-muted small mb-0 d-flex align-items-center gap-1">
+                <span class="material-symbols-outlined fs-6"
+                  >calendar_today</span
+                >
+                Joined this week
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Table Section -->
+        <section class="card-luxury overflow-hidden">
+          <!-- Filters Bar -->
+          <div
+            class="p-4 border-bottom border-outline-variant d-flex flex-wrap gap-3 align-items-center justify-content-between"
+          >
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-primary rounded-pill px-3">
+                All Users
+              </button>
+              <button class="btn btn-sm btn-light border rounded-pill px-3">
+                Couples
+              </button>
+              <button class="btn btn-sm btn-light border rounded-pill px-3">
+                Vendors
+              </button>
+              <button class="btn btn-sm btn-light border rounded-pill px-3">
+                Planners
+              </button>
+            </div>
+            <div class="d-flex gap-2">
+              <button
+                class="btn btn-sm btn-light border d-flex align-items-center gap-2 px-3 py-2 rounded-3"
+              >
+                <span class="material-symbols-outlined fs-6">filter_list</span>
+                Filter
+              </button>
+              <button
+                class="btn btn-sm btn-light border d-flex align-items-center gap-2 px-3 py-2 rounded-3"
+              >
+                <span class="material-symbols-outlined fs-6"
+                  >file_download</span
+                >
+                Export
+              </button>
+            </div>
+          </div>
+
+          <!-- User Table -->
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0" id="userTable">
+              <thead class="table-light">
+                <tr>
+                  <th
+                    class="ps-4 py-3 text-muted small text-uppercase tracking-wider"
+                  >
+                    Name
+                  </th>
+                  <th
+                    class="py-3 text-muted small text-uppercase tracking-wider"
+                  >
+                    Role
+                  </th>
+                  <th
+                    class="py-3 text-muted small text-uppercase tracking-wider"
+                  >
+                    Join Date
+                  </th>
+                  <th
+                    class="py-3 text-muted small text-uppercase tracking-wider"
+                  >
+                    Status
+                  </th>
+                  <th
+                    class="pe-4 py-3 text-muted small text-uppercase tracking-wider text-end"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- User Row 1 -->
+                <tr>
+                  <td class="ps-4">
+                    <div class="d-flex align-items-center gap-3">
+                      <img
+                        class="rounded-circle border border-primary-light"
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
+                        alt="Isabella"
+                        style="width: 40px; height: 40px; object-fit: cover"
+                      />
+                      <div>
+                        <p class="mb-0 fw-bold text-primary">Isabella Thorne</p>
+                        <p class="mb-0 text-muted small">
+                          isabella.t@gmail.com
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span
+                      class="badge badge-lavender rounded-pill px-3 py-1.5 uppercase font-jakarta"
+                      style="font-size: 10px"
+                      >Couple</span
+                    >
+                  </td>
+                  <td class="text-muted small">Oct 12, 2023</td>
+                  <td>
+                    <div class="d-flex align-items-center gap-1.5">
+                      <span
+                        class="bg-success rounded-circle"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      <span class="small fw-semibold">Active</span>
+                    </div>
+                  </td>
+                  <td class="pe-4 text-end">
+                    <button class="btn btn-sm btn-link text-muted p-1">
+                      <span class="material-symbols-outlined">more_horiz</span>
+                    </button>
+                  </td>
+                </tr>
+                <!-- User Row 2 -->
+                <tr>
+                  <td class="ps-4">
+                    <div class="d-flex align-items-center gap-3">
+                      <img
+                        class="rounded-circle border border-primary-light"
+                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150"
+                        alt="Julian"
+                        style="width: 40px; height: 40px; object-fit: cover"
+                      />
+                      <div>
+                        <p class="mb-0 fw-bold text-primary">Julian Vane</p>
+                        <p class="mb-0 text-muted small">
+                          contact@vanephotography.com
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span
+                      class="badge badge-gold rounded-pill px-3 py-1.5 uppercase font-jakarta"
+                      style="font-size: 10px"
+                      >Vendor</span
+                    >
+                  </td>
+                  <td class="text-muted small">Sep 28, 2023</td>
+                  <td>
+                    <div class="d-flex align-items-center gap-1.5">
+                      <span
+                        class="bg-success rounded-circle"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      <span class="small fw-semibold">Active</span>
+                    </div>
+                  </td>
+                  <td class="pe-4 text-end">
+                    <button class="btn btn-sm btn-link text-muted p-1">
+                      <span class="material-symbols-outlined">more_horiz</span>
+                    </button>
+                  </td>
+                </tr>
+                <!-- User Row 3 -->
+                <tr>
+                  <td class="ps-4">
+                    <div class="d-flex align-items-center gap-3">
+                      <img
+                        class="rounded-circle border border-primary-light"
+                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
+                        alt="Sienna"
+                        style="width: 40px; height: 40px; object-fit: cover"
+                      />
+                      <div>
+                        <p class="mb-0 fw-bold text-primary">Sienna Mercer</p>
+                        <p class="mb-0 text-muted small">
+                          hello@mercerevents.co
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span
+                      class="badge badge-soft-rose rounded-pill px-3 py-1.5 uppercase font-jakarta"
+                      style="font-size: 10px"
+                      >Planner</span
+                    >
+                  </td>
+                  <td class="text-muted small">Nov 04, 2023</td>
+                  <td>
+                    <div
+                      class="d-flex align-items-center gap-1.5 text-muted opacity-50"
+                    >
+                      <span
+                        class="bg-secondary rounded-circle"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      <span class="small">Inactive</span>
+                    </div>
+                  </td>
+                  <td class="pe-4 text-end">
+                    <button class="btn btn-sm btn-link text-muted p-1">
+                      <span class="material-symbols-outlined">more_horiz</span>
+                    </button>
+                  </td>
+                </tr>
+                <!-- User Row 4 -->
+                <tr>
+                  <td class="ps-4">
+                    <div class="d-flex align-items-center gap-3">
+                      <img
+                        class="rounded-circle border border-primary-light"
+                        src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=150"
+                        alt="Marcus"
+                        style="width: 40px; height: 40px; object-fit: cover"
+                      />
+                      <div>
+                        <p class="mb-0 fw-bold text-primary">Marcus Reed</p>
+                        <p class="mb-0 text-muted small">m.reed@outlook.com</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span
+                      class="badge badge-lavender rounded-pill px-3 py-1.5 uppercase font-jakarta"
+                      style="font-size: 10px"
+                      >Couple</span
+                    >
+                  </td>
+                  <td class="text-muted small">Oct 15, 2023</td>
+                  <td>
+                    <div class="d-flex align-items-center gap-1.5">
+                      <span
+                        class="bg-success rounded-circle"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      <span class="small fw-semibold">Active</span>
+                    </div>
+                  </td>
+                  <td class="pe-4 text-end">
+                    <button class="btn btn-sm btn-link text-muted p-1">
+                      <span class="material-symbols-outlined">more_horiz</span>
+                    </button>
+                  </td>
+                </tr>
+                <!-- User Row 5 -->
+                <tr>
+                  <td class="ps-4">
+                    <div class="d-flex align-items-center gap-3">
+                      <img
+                        class="rounded-circle border border-primary-light"
+                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150"
+                        alt="Eleanor"
+                        style="width: 40px; height: 40px; object-fit: cover"
+                      />
+                      <div>
+                        <p class="mb-0 fw-bold text-primary">Eleanor Vance</p>
+                        <p class="mb-0 text-muted small">
+                          e.vance_family@me.com
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span
+                      class="badge bg-light text-dark border rounded-pill px-3 py-1.5 uppercase font-jakarta"
+                      style="font-size: 10px"
+                      >Guest</span
+                    >
+                  </td>
+                  <td class="text-muted small">Nov 10, 2023</td>
+                  <td>
+                    <div class="d-flex align-items-center gap-1.5">
+                      <span
+                        class="bg-success rounded-circle"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      <span class="small fw-semibold">Active</span>
+                    </div>
+                  </td>
+                  <td class="pe-4 text-end">
+                    <button class="btn btn-sm btn-link text-muted p-1">
+                      <span class="material-symbols-outlined">more_horiz</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination -->
+          <div
+            class="p-4 border-top border-outline-variant d-flex align-items-center justify-content-between flex-wrap gap-3"
+          >
+            <p class="text-muted small mb-0">Showing 1 to 5 of 12,842 users</p>
+            <nav aria-label="Page navigation">
+              <ul class="pagination pagination-sm mb-0">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span class="material-symbols-outlined fs-6 align-middle"
+                      >chevron_left</span
+                    >
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item disabled">
+                  <span class="page-link">...</span>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2,568</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span class="material-symbols-outlined fs-6 align-middle"
+                      >chevron_right</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Layout JS -->
+    <script src="../../../assets/js/dashboard-layout.js"></script>
+
+    <!-- Table search logic -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Find search input (in header dynamically generated, we hook keyup event to it)
+        // Since it's dynamically generated, we use delegation
+        document.body.addEventListener("keyup", (e) => {
+          if (e.target.placeholder === "Search...") {
+            const query = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll("tbody tr");
+
+            rows.forEach((row) => {
+              const name = row
+                .querySelector(".fw-bold.text-primary")
+                .textContent.toLowerCase();
+              const email = row
+                .querySelector(".text-muted.small")
+                .textContent.toLowerCase();
+
+              if (name.includes(query) || email.includes(query)) {
+                row.style.display = "";
+              } else {
+                row.style.display = "none";
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

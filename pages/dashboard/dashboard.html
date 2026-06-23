@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Stackly Weddings</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Dashboard CSS -->
+    <link href="../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="bg-surface">
+    <div id="dashboard-wrapper">
+      <main class="dashboard-content">
+        <!-- ==============================================
+           1. ADMIN OVERVIEW
+      =============================================== -->
+        <div id="admin-overview" class="d-none">
+          <div class="row g-4 mb-4 align-items-end">
+            <div class="col-md-7">
+              <h2
+                class="text-primary font-playfair-display mb-1 fw-bold"
+                id="admin-welcome-title"
+              >
+                Welcome back, Alexandra
+              </h2>
+              <p class="text-muted mb-0">
+                Logged in as
+                <strong id="admin-email">admin@stackly.com</strong>. Here's
+                what's blooming today.
+              </p>
+            </div>
+            <div class="col-md-5 d-flex gap-2 justify-content-md-end">
+              <button class="btn btn-outline-gold rounded-pill px-4">
+                Generate Report
+              </button>
+              <button class="btn btn-primary rounded-pill px-4">
+                Platform Status
+              </button>
+            </div>
+          </div>
+
+          <!-- KPI Grid -->
+          <div class="row g-4 mb-5">
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div class="p-2 badge-soft-rose rounded-3">
+                    <span class="material-symbols-outlined">groups</span>
+                  </div>
+                  <span
+                    class="text-success fw-bold small d-flex align-items-center"
+                  >
+                    <span class="material-symbols-outlined fs-6 me-1"
+                      >trending_up</span
+                    >
+                    +12%
+                  </span>
+                </div>
+                <div>
+                  <p
+                    class="text-muted small text-uppercase tracking-wider mb-1"
+                  >
+                    Total Couples
+                  </p>
+                  <h3 class="font-playfair-display fw-bold text-primary mb-0">
+                    24,802
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div class="p-2 badge-lavender rounded-3">
+                    <span class="material-symbols-outlined">favorite</span>
+                  </div>
+                  <span class="text-muted small">Ongoing</span>
+                </div>
+                <div>
+                  <p
+                    class="text-muted small text-uppercase tracking-wider mb-1"
+                  >
+                    Live Weddings
+                  </p>
+                  <h3
+                    class="font-playfair-display fw-bold text-primary mb-0"
+                    style="color: #674bb5 !important"
+                  >
+                    1,429
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div class="p-2 badge-gold rounded-3">
+                    <span class="material-symbols-outlined">payments</span>
+                  </div>
+                  <span
+                    class="text-success fw-bold small d-flex align-items-center"
+                  >
+                    <span class="material-symbols-outlined fs-6 me-1"
+                      >arrow_upward</span
+                    >
+                    $12k
+                  </span>
+                </div>
+                <div>
+                  <p
+                    class="text-muted small text-uppercase tracking-wider mb-1"
+                  >
+                    Monthly Revenue
+                  </p>
+                  <h3
+                    class="font-playfair-display fw-bold text-primary mb-0"
+                    style="color: #735c00 !important"
+                  >
+                    $84,200
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 bg-primary text-white d-flex flex-column justify-content-between h-100 relative overflow-hidden"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div class="p-2 bg-white bg-opacity-25 rounded-3">
+                    <span class="material-symbols-outlined">bolt</span>
+                  </div>
+                  <div
+                    class="d-flex align-items-center gap-1 px-2 py-0.5 bg-success bg-opacity-25 rounded-pill border border-success border-opacity-20"
+                  >
+                    <div
+                      class="bg-success rounded-circle pulse-dot"
+                      style="width: 6px; height: 6px"
+                    ></div>
+                    <span
+                      class="small uppercase text-success fw-bold"
+                      style="font-size: 8px"
+                      >Healthy</span
+                    >
+                  </div>
+                </div>
+                <div>
+                  <p
+                    class="text-white text-opacity-75 small text-uppercase tracking-wider mb-1"
+                  >
+                    System Health
+                  </p>
+                  <h3 class="font-playfair-display fw-bold mb-0">99.9%</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Moderation Queue -->
+            <div class="col-lg-7">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h4 class="font-playfair-display text-primary mb-0 fw-bold">
+                  Moderation Queue
+                </h4>
+                <a
+                  href="#"
+                  class="text-primary text-decoration-none small fw-bold d-flex align-items-center gap-1 hover-link"
+                >
+                  View All Queue
+                  <span class="material-symbols-outlined fs-6"
+                    >arrow_forward</span
+                  >
+                </a>
+              </div>
+
+              <div class="d-flex flex-column gap-3">
+                <!-- Item 1 -->
+                <div class="glass-card p-3 d-flex align-items-center gap-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=150"
+                    class="rounded-3"
+                    alt="Enchanted Garden"
+                    style="width: 70px; height: 90px; object-fit: cover"
+                  />
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                      <span
+                        class="badge badge-lavender rounded-pill uppercase font-jakarta"
+                        style="font-size: 8px"
+                        >Gallery Post</span
+                      >
+                      <span class="text-muted small">• 12 mins ago</span>
+                    </div>
+                    <h6 class="font-playfair-display text-dark fw-bold mb-1">
+                      Enchanted Garden Reception
+                    </h6>
+                    <p
+                      class="text-muted mb-2 small text-truncate"
+                      style="max-width: 320px"
+                    >
+                      Submitted by user @TheVowLovers. High-resolution imagery
+                      of outdoor seating...
+                    </p>
+                    <div class="d-flex gap-2">
+                      <button
+                        class="btn btn-sm btn-primary rounded-pill px-3 py-1"
+                      >
+                        Approve
+                      </button>
+                      <button
+                        class="btn btn-sm btn-light border rounded-pill px-3 py-1"
+                      >
+                        Reject
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="glass-card p-3 d-flex align-items-center gap-3">
+                  <div
+                    class="badge-soft-rose rounded-3 d-flex align-items-center justify-content-center"
+                    style="width: 70px; height: 90px"
+                  >
+                    <span class="material-symbols-outlined text-primary fs-2"
+                      >article</span
+                    >
+                  </div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                      <span
+                        class="badge badge-soft-rose rounded-pill uppercase font-jakarta"
+                        style="font-size: 8px"
+                        >Blog Article</span
+                      >
+                      <span class="text-muted small">• 45 mins ago</span>
+                    </div>
+                    <h6 class="font-playfair-display text-dark fw-bold mb-1">
+                      10 Trends for Summer 2024
+                    </h6>
+                    <p
+                      class="text-muted mb-2 small text-truncate"
+                      style="max-width: 320px"
+                    >
+                      Long-form editorial piece discussing floral arrangements
+                      and palette choices...
+                    </p>
+                    <div class="d-flex gap-2">
+                      <button
+                        class="btn btn-sm btn-primary rounded-pill px-3 py-1"
+                      >
+                        Approve
+                      </button>
+                      <button
+                        class="btn btn-sm btn-light border rounded-pill px-3 py-1"
+                      >
+                        Reject
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pulse Chart & Alerts -->
+            <div class="col-lg-5">
+              <!-- Pulse Card -->
+              <div class="card-luxury p-4 mb-4">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <div>
+                    <h5 class="font-playfair-display text-primary fw-bold mb-0">
+                      System Pulse
+                    </h5>
+                    <span
+                      class="text-muted small text-uppercase font-jakarta"
+                      style="font-size: 10px"
+                      >API Response Time (ms)</span
+                    >
+                  </div>
+                  <span class="font-playfair-display text-primary fs-3 fw-bold"
+                    >24ms</span
+                  >
+                </div>
+                <!-- Mock Graph -->
+                <div
+                  class="d-flex align-items-end justify-content-between px-2"
+                  style="height: 100px"
+                >
+                  <div
+                    class="bg-primary bg-opacity-25 rounded-top"
+                    style="width: 8%; height: 40%"
+                  ></div>
+                  <div
+                    class="bg-primary bg-opacity-50 rounded-top"
+                    style="width: 8%; height: 60%"
+                  ></div>
+                  <div
+                    class="bg-primary bg-opacity-25 rounded-top"
+                    style="width: 8%; height: 45%"
+                  ></div>
+                  <div
+                    class="bg-primary bg-opacity-50 rounded-top"
+                    style="width: 8%; height: 75%"
+                  ></div>
+                  <div
+                    class="bg-primary rounded-top"
+                    style="width: 8%; height: 90%"
+                  ></div>
+                  <div
+                    class="bg-primary bg-opacity-75 rounded-top"
+                    style="width: 8%; height: 65%"
+                  ></div>
+                  <div
+                    class="bg-primary bg-opacity-50 rounded-top"
+                    style="width: 8%; height: 40%"
+                  ></div>
+                  <div
+                    class="bg-primary bg-opacity-25 rounded-top"
+                    style="width: 8%; height: 30%"
+                  ></div>
+                </div>
+                <div
+                  class="d-flex justify-content-between mt-2 text-muted small"
+                  style="font-size: 10px"
+                >
+                  <span>16:00</span>
+                  <span>17:00</span>
+                  <span>18:00</span>
+                </div>
+              </div>
+
+              <!-- Alerts Panel -->
+              <div class="card-luxury p-4">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <h5 class="font-playfair-display text-dark fw-bold mb-0">
+                    Recent Alerts
+                  </h5>
+                  <span class="material-symbols-outlined text-primary"
+                    >history</span
+                  >
+                </div>
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex gap-3">
+                    <div
+                      class="bg-danger rounded-circle mt-1"
+                      style="width: 8px; height: 8px; flex-shrink: 0"
+                    ></div>
+                    <div>
+                      <h6 class="mb-0 small fw-bold text-dark">
+                        Database spike detected
+                      </h6>
+                      <p class="text-muted small mb-0">
+                        Cluster A-12 reached 85% capacity for 10 minutes.
+                      </p>
+                      <span
+                        class="text-primary small fw-bold"
+                        style="font-size: 10px"
+                        >2 hours ago</span
+                      >
+                    </div>
+                  </div>
+                  <div class="d-flex gap-3">
+                    <div
+                      class="bg-success rounded-circle mt-1"
+                      style="width: 8px; height: 8px; flex-shrink: 0"
+                    ></div>
+                    <div>
+                      <h6 class="mb-0 small fw-bold text-dark">
+                        Backup successful
+                      </h6>
+                      <p class="text-muted small mb-0">
+                        Weekly redundant backup archived to AWS S3 Glacier.
+                      </p>
+                      <span
+                        class="text-primary small fw-bold"
+                        style="font-size: 10px"
+                        >5 hours ago</span
+                      >
+                    </div>
+                  </div>
+                  <div class="d-flex gap-3">
+                    <div
+                      class="bg-warning rounded-circle mt-1"
+                      style="width: 8px; height: 8px; flex-shrink: 0"
+                    ></div>
+                    <div>
+                      <h6 class="mb-0 small fw-bold text-dark">
+                        New Admin Role Created
+                      </h6>
+                      <p class="text-muted small mb-0">
+                        User "Elena M" promoted to Content Moderator.
+                      </p>
+                      <span
+                        class="text-primary small fw-bold"
+                        style="font-size: 10px"
+                        >Yesterday</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-sm btn-light w-100 mt-3 py-2 border rounded-3 fw-bold small text-muted text-uppercase tracking-wider"
+                >
+                  Clear All Notifications
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decorative Floral Section -->
+          <div
+            class="card-luxury p-5 mt-5 bg-primary text-white text-center position-relative overflow-hidden"
+            style="border-radius: 2rem"
+          >
+            <div class="position-relative z-3">
+              <span class="material-symbols-outlined fs-1 mb-2"
+                >auto_awesome</span
+              >
+              <h3 class="font-playfair-display mb-2 fw-bold">
+                Automated Optimization
+              </h3>
+              <p class="mb-0 text-white text-opacity-90 max-w-xl mx-auto">
+                Sukun Elegance AI is currently optimizing media delivery for 428
+                active gallery sessions across Europe.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================
+           2. COUPLE OVERVIEW
+      =============================================== -->
+        <div id="couple-overview" class="d-none">
+          <div class="row g-4 mb-4 align-items-end">
+            <div class="col-md-7">
+              <h2
+                class="text-primary font-playfair-display mb-1 fw-bold"
+                id="couple-welcome-title"
+              >
+                Hello, Jane & David
+              </h2>
+              <p class="text-muted mb-0">
+                Logged in as
+                <strong id="couple-email">couple@stackly.com</strong>. Let's
+                continue designing your dream story.
+              </p>
+            </div>
+            <div class="col-md-5 d-flex gap-2 justify-content-md-end">
+              <a href="#" class="btn btn-outline-gold rounded-pill px-4"
+                >Manage Budget</a
+              >
+              <a href="#" class="btn btn-primary rounded-pill px-4"
+                >Guest List</a
+              >
+            </div>
+          </div>
+
+          <!-- KPI Grid -->
+          <div class="row g-4 mb-5">
+            <!-- Countdown -->
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100 text-center"
+              >
+                <span
+                  class="text-muted small text-uppercase tracking-wider mb-2"
+                  >Days to Wedding</span
+                >
+                <div class="my-2">
+                  <h1
+                    class="font-playfair-display fw-bold text-primary mb-0 display-4"
+                    id="countdown-days"
+                  >
+                    142
+                  </h1>
+                </div>
+                <span class="text-muted small">December 12, 2026</span>
+              </div>
+            </div>
+
+            <!-- RSVP progress -->
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <span class="text-muted small text-uppercase tracking-wider"
+                    >RSVPs Received</span
+                  >
+                  <span class="badge badge-soft-rose rounded-pill"
+                    >Jane & David</span
+                  >
+                </div>
+                <div class="my-2">
+                  <h3 class="font-playfair-display fw-bold text-primary mb-0">
+                    124 <span class="fs-6 text-muted">/ 156 Invited</span>
+                  </h3>
+                  <div class="progress mt-2" style="height: 6px">
+                    <div
+                      class="progress-bar bg-primary"
+                      role="progressbar"
+                      style="width: 79%"
+                      aria-valuenow="79"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <span class="text-muted small">12 Declined • 20 Pending</span>
+              </div>
+            </div>
+
+            <!-- Budget overview -->
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <span class="text-muted small text-uppercase tracking-wider"
+                    >Budget Spent</span
+                  >
+                  <span class="text-success fw-bold small">On track</span>
+                </div>
+                <div class="my-2">
+                  <h3 class="font-playfair-display fw-bold text-primary mb-0">
+                    $32,450 <span class="fs-6 text-muted">/ $55,000</span>
+                  </h3>
+                  <div class="progress mt-2" style="height: 6px">
+                    <div
+                      class="progress-bar bg-primary"
+                      role="progressbar"
+                      style="width: 59%"
+                      aria-valuenow="59"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <span class="text-muted small">$22,550 Remaining budget</span>
+              </div>
+            </div>
+
+            <!-- Booked Vendors -->
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <span class="text-muted small text-uppercase tracking-wider"
+                    >Vendors Hired</span
+                  >
+                  <span
+                    class="badge bg-success bg-opacity-10 text-success rounded-pill"
+                    >Progress</span
+                  >
+                </div>
+                <div class="my-2">
+                  <h3 class="font-playfair-display fw-bold text-primary mb-0">
+                    8 hired <span class="fs-6 text-muted">/ 10 categories</span>
+                  </h3>
+                  <div class="progress mt-2" style="height: 6px">
+                    <div
+                      class="progress-bar bg-success"
+                      role="progressbar"
+                      style="width: 80%"
+                      aria-valuenow="80"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <span class="text-muted small">Caterer & DJ pending hire</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Upcoming Checklist -->
+            <div class="col-lg-8">
+              <div class="card-luxury p-4">
+                <h5 class="font-playfair-display text-primary fw-bold mb-3">
+                  Your Next Wedding Milestones
+                </h5>
+                <div class="list-group list-group-flush">
+                  <div
+                    class="list-group-item px-0 py-3 d-flex align-items-center justify-content-between border-bottom"
+                  >
+                    <div class="d-flex align-items-center gap-3">
+                      <input
+                        class="form-check-input mt-0"
+                        type="checkbox"
+                        checked
+                        disabled
+                      />
+                      <div>
+                        <h6
+                          class="mb-0 fw-bold text-dark text-decoration-line-through"
+                        >
+                          Finalize florist arrangements
+                        </h6>
+                        <p class="text-muted small mb-0">
+                          Decided on pastel roses and baby's breath
+                        </p>
+                      </div>
+                    </div>
+                    <span class="badge bg-light text-muted rounded"
+                      >Completed</span
+                    >
+                  </div>
+                  <div
+                    class="list-group-item px-0 py-3 d-flex align-items-center justify-content-between border-bottom"
+                  >
+                    <div class="d-flex align-items-center gap-3">
+                      <input
+                        class="form-check-input mt-0"
+                        type="checkbox"
+                        id="task1"
+                      />
+                      <div>
+                        <h6 class="mb-0 fw-bold text-dark">
+                          Schedule catering tastings
+                        </h6>
+                        <p class="text-muted small mb-0">
+                          Coordinate with Gourmet Catering Corp
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="badge bg-danger bg-opacity-10 text-danger rounded"
+                      >Due In 3 Days</span
+                    >
+                  </div>
+                  <div
+                    class="list-group-item px-0 py-3 d-flex align-items-center justify-content-between border-bottom"
+                  >
+                    <div class="d-flex align-items-center gap-3">
+                      <input
+                        class="form-check-input mt-0"
+                        type="checkbox"
+                        id="task2"
+                      />
+                      <div>
+                        <h6 class="mb-0 fw-bold text-dark">
+                          Approve final invitation drafts
+                        </h6>
+                        <p class="text-muted small mb-0">
+                          Select paper weight and metallic accents
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="badge bg-warning bg-opacity-10 text-warning rounded"
+                      >Due In 1 Week</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vendor highlights -->
+            <div class="col-lg-4">
+              <div class="card-luxury p-4">
+                <h5 class="font-playfair-display text-primary fw-bold mb-3">
+                  Active Vendors
+                </h5>
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex align-items-center gap-3">
+                    <div
+                      class="badge-soft-rose rounded-circle d-flex align-items-center justify-content-center"
+                      style="width: 45px; height: 45px; flex-shrink: 0"
+                    >
+                      <span class="material-symbols-outlined text-primary"
+                        >domino_mask</span
+                      >
+                    </div>
+                    <div>
+                      <h6 class="mb-0 fw-bold text-dark">Royal Florals</h6>
+                      <p class="text-muted small mb-0">Paid: $2,400 / $4,000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-3">
+                    <div
+                      class="badge-lavender rounded-circle d-flex align-items-center justify-content-center"
+                      style="width: 45px; height: 45px; flex-shrink: 0"
+                    >
+                      <span
+                        class="material-symbols-outlined text-primary"
+                        style="color: #674bb5 !important"
+                        >villa</span
+                      >
+                    </div>
+                    <div>
+                      <h6 class="mb-0 fw-bold text-dark">
+                        The Grand Arch Venue
+                      </h6>
+                      <p class="text-muted small mb-0">
+                        Paid: $15,000 / $25,000
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-sm btn-light w-100 mt-4 py-2 border rounded-3 fw-bold small text-muted"
+                  >View Vendor Team</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================
+           3. PLANNER OVERVIEW
+      =============================================== -->
+        <div id="planner-overview" class="d-none">
+          <div class="row g-4 mb-4 align-items-end">
+            <div class="col-md-7">
+              <h2
+                class="text-primary font-playfair-display mb-1 fw-bold"
+                id="planner-welcome-title"
+              >
+                Planner Dashboard
+              </h2>
+              <p class="text-muted mb-0">
+                Logged in as
+                <strong id="planner-email">planner@stackly.com</strong>.
+                Managing active accounts.
+              </p>
+            </div>
+            <div class="col-md-5 d-flex gap-2 justify-content-md-end">
+              <a href="#" class="btn btn-outline-gold rounded-pill px-4"
+                >Leads Funnel</a
+              >
+              <a href="#" class="btn btn-primary rounded-pill px-4"
+                >Add Client</a
+              >
+            </div>
+          </div>
+
+          <!-- KPI Grid -->
+          <div class="row g-4 mb-5">
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <span
+                  class="text-muted small text-uppercase tracking-wider mb-2"
+                  >Active Couples</span
+                >
+                <h3 class="font-playfair-display fw-bold text-primary mb-0">
+                  12 Clients
+                </h3>
+                <span
+                  class="text-success small fw-bold mt-2 d-flex align-items-center"
+                >
+                  <span class="material-symbols-outlined fs-6 me-1"
+                    >trending_up</span
+                  >
+                  +2 this month
+                </span>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <span
+                  class="text-muted small text-uppercase tracking-wider mb-2"
+                  >Leads Pipeline</span
+                >
+                <h3 class="font-playfair-display fw-bold text-primary mb-0">
+                  48 Pending
+                </h3>
+                <span class="text-muted small mt-2"
+                  >Valued at approx. $150k</span
+                >
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <span
+                  class="text-muted small text-uppercase tracking-wider mb-2"
+                  >Master Tasks</span
+                >
+                <h3 class="font-playfair-display fw-bold text-primary mb-0">
+                  82% Completed
+                </h3>
+                <div class="progress mt-2" style="height: 6px">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    style="width: 82%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-xl-3">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <span
+                  class="text-muted small text-uppercase tracking-wider mb-2"
+                  >Annual Revenue</span
+                >
+                <h3
+                  class="font-playfair-display fw-bold text-primary mb-0"
+                  style="color: #735c00 !important"
+                >
+                  $112,400
+                </h3>
+                <span class="text-success small fw-bold mt-2"
+                  >108% of target met</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Upcoming Client Consultations -->
+            <div class="col-lg-7">
+              <div class="card-luxury p-4">
+                <h5 class="font-playfair-display text-primary fw-bold mb-3">
+                  Client Meetings & Tastings
+                </h5>
+                <div class="d-flex flex-column gap-3">
+                  <div
+                    class="d-flex align-items-center justify-content-between p-3 bg-light rounded-3"
+                  >
+                    <div class="d-flex align-items-center gap-3">
+                      <div
+                        class="badge-soft-rose rounded p-2 text-center"
+                        style="width: 50px"
+                      >
+                        <h6 class="mb-0 fw-bold">24</h6>
+                        <span
+                          class="small text-uppercase"
+                          style="font-size: 9px"
+                          >Jun</span
+                        >
+                      </div>
+                      <div>
+                        <h6 class="mb-0 fw-bold text-dark">
+                          Emily & Joseph (Venue Selection)
+                        </h6>
+                        <p class="text-muted small mb-0">
+                          14:00 - Palace Hotel Ballroom
+                        </p>
+                      </div>
+                    </div>
+                    <span class="badge bg-primary rounded-pill"
+                      >Consultation</span
+                    >
+                  </div>
+
+                  <div
+                    class="d-flex align-items-center justify-content-between p-3 bg-light rounded-3"
+                  >
+                    <div class="d-flex align-items-center gap-3">
+                      <div
+                        class="badge-lavender rounded p-2 text-center"
+                        style="width: 50px"
+                      >
+                        <h6 class="mb-0 fw-bold" style="color: #674bb5">28</h6>
+                        <span
+                          class="small text-uppercase text-muted"
+                          style="font-size: 9px"
+                          >Jun</span
+                        >
+                      </div>
+                      <div>
+                        <h6 class="mb-0 fw-bold text-dark">
+                          Sophia & Robert (Cake Tasting)
+                        </h6>
+                        <p class="text-muted small mb-0">
+                          11:00 - Sweet Treats Bakery
+                        </p>
+                      </div>
+                    </div>
+                    <span class="badge bg-secondary rounded-pill">Tasting</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Financial overview -->
+            <div class="col-lg-5">
+              <div class="card-luxury p-4">
+                <h5 class="font-playfair-display text-primary fw-bold mb-3">
+                  Quick Accounting Overview
+                </h5>
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <span class="text-muted small">Invoiced:</span>
+                  <span class="fw-bold text-dark">$45,000</span>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <span class="text-muted small">Payments Received:</span>
+                  <span class="fw-bold text-success">$32,000</span>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3"
+                >
+                  <span class="text-muted small">Pending Invoices:</span>
+                  <span class="fw-bold text-warning">$13,000</span>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-sm btn-light w-100 py-2 border rounded-3 fw-bold small text-muted"
+                  >View Invoices</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================
+           4. GUEST OVERVIEW
+      =============================================== -->
+        <div id="guest-overview" class="d-none">
+          <div class="row g-4 mb-4 align-items-end">
+            <div class="col-md-7">
+              <h2
+                class="text-primary font-playfair-display mb-1 fw-bold"
+                id="guest-welcome-title"
+              >
+                Welcome, David Miller
+              </h2>
+              <p class="text-muted mb-0">
+                Logged in as
+                <strong id="guest-email">guest@stackly.com</strong>. You are
+                invited to share in the wedding celebration of Jane & David!
+              </p>
+            </div>
+            <div class="col-md-5 d-flex gap-2 justify-content-md-end">
+              <a href="#" class="btn btn-primary rounded-pill px-4"
+                >Submit RSVP</a
+              >
+              <a href="#" class="btn btn-outline-gold rounded-pill px-4"
+                >View Invitation</a
+              >
+            </div>
+          </div>
+
+          <!-- Details Grid -->
+          <div class="row g-4 mb-5">
+            <!-- Countdown -->
+            <div class="col-sm-6 col-xl-4">
+              <div
+                class="card-luxury p-4 text-center d-flex flex-column justify-content-between h-100"
+              >
+                <span
+                  class="text-muted small text-uppercase tracking-wider mb-2"
+                  >Days to Celebrate</span
+                >
+                <div class="my-2">
+                  <h1
+                    class="font-playfair-display fw-bold text-primary mb-0 display-4"
+                    id="guest-countdown-days"
+                  >
+                    142
+                  </h1>
+                </div>
+                <span class="text-muted small">December 12, 2026</span>
+              </div>
+            </div>
+
+            <!-- RSVP Status -->
+            <div class="col-sm-6 col-xl-4">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <span class="text-muted small text-uppercase tracking-wider"
+                    >Your RSVP Response</span
+                  >
+                  <span class="material-symbols-outlined text-warning"
+                    >event_note</span
+                  >
+                </div>
+                <div class="my-2">
+                  <h3 class="font-playfair-display fw-bold text-warning mb-0">
+                    Pending
+                  </h3>
+                  <p class="text-muted small mb-0 mt-2">
+                    Please respond by November 1, 2026
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="text-primary text-decoration-none fw-bold small"
+                  >Respond Now &rarr;</a
+                >
+              </div>
+            </div>
+
+            <!-- Travel details -->
+            <div class="col-sm-12 col-xl-4">
+              <div
+                class="card-luxury p-4 d-flex flex-column justify-content-between h-100"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <span class="text-muted small text-uppercase tracking-wider"
+                    >Accommodation</span
+                  >
+                  <span class="material-symbols-outlined text-primary"
+                    >hotel</span
+                  >
+                </div>
+                <div class="my-2">
+                  <h6 class="mb-0 fw-bold text-dark">
+                    Palace Hotel Ballroom & Villas
+                  </h6>
+                  <p class="text-muted small mb-0">
+                    Rooms available under group rate: "JaneDavidWedding"
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="text-primary text-decoration-none fw-bold small"
+                  >View Travel Info &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Weekend Schedule Outline -->
+            <div class="col-md-7">
+              <div class="card-luxury p-4">
+                <h5 class="font-playfair-display text-primary fw-bold mb-3">
+                  Wedding Weekend Schedule
+                </h5>
+                <div class="d-flex flex-column gap-3">
+                  <div
+                    class="d-flex align-items-start gap-3 pb-3 border-bottom"
+                  >
+                    <div
+                      class="badge-soft-rose rounded p-2 text-center"
+                      style="width: 70px; flex-shrink: 0"
+                    >
+                      <h6 class="mb-0 fw-bold">15:00</h6>
+                      <span class="small" style="font-size: 9px"
+                        >Fri Dec 11</span
+                      >
+                    </div>
+                    <div>
+                      <h6 class="mb-0 fw-bold text-dark">
+                        Welcome Drinks Reception
+                      </h6>
+                      <p class="text-muted small mb-0">
+                        Meet and greet on the Hotel Terrace. Smart casual
+                        attire.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="d-flex align-items-start gap-3 pb-3 border-bottom"
+                  >
+                    <div
+                      class="badge-lavender rounded p-2 text-center"
+                      style="width: 70px; flex-shrink: 0"
+                    >
+                      <h6 class="mb-0 fw-bold" style="color: #674bb5">16:00</h6>
+                      <span class="small text-muted" style="font-size: 9px"
+                        >Sat Dec 12</span
+                      >
+                    </div>
+                    <div>
+                      <h6 class="mb-0 fw-bold text-dark">Wedding Ceremony</h6>
+                      <p class="text-muted small mb-0">
+                        Exchange of vows at the Palace Gazebo, followed by
+                        Cocktail Hour and Dinner Reception.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-sm btn-light w-100 mt-3 py-2 border rounded-3 fw-bold small text-muted"
+                  >View Complete Schedule</a
+                >
+              </div>
+            </div>
+
+            <!-- Registry Preview -->
+            <div class="col-md-5">
+              <div class="card-luxury p-4">
+                <h5 class="font-playfair-display text-primary fw-bold mb-3">
+                  Gift Registry Highlights
+                </h5>
+                <p class="text-muted small">
+                  Should you wish to honor the couple with a gift, a selection
+                  is registered online.
+                </p>
+                <div
+                  class="d-flex align-items-center gap-3 mb-3 p-2 bg-light rounded-3"
+                >
+                  <span class="material-symbols-outlined text-primary fs-3"
+                    >kitchen</span
+                  >
+                  <div>
+                    <h6 class="mb-0 small fw-bold text-dark">
+                      Premium Stand Mixer
+                    </h6>
+                    <p class="text-muted small mb-0">
+                      Target: $450 • Unpurchased
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-sm btn-primary w-100 py-2 rounded-3 fw-bold small text-uppercase"
+                  >Browse Registry</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Layout JS -->
+    <script src="../../assets/js/dashboard-layout.js"></script>
+
+    <!-- Dynamic dashboard controller -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const role = localStorage.getItem("userRole") || "couple";
+
+        // Show correct overview
+        const activeOverview = document.getElementById(`${role}-overview`);
+        if (activeOverview) {
+          activeOverview.classList.remove("d-none");
+        }
+
+        // Dynamic Name and Email display
+        const userName = localStorage.getItem("userName") || "User";
+        const userEmail =
+          localStorage.getItem("userEmail") || "user@example.com";
+
+        const adminNameEl = document.getElementById("admin-welcome-title");
+        if (adminNameEl) adminNameEl.textContent = `Welcome back, ${userName}`;
+
+        const coupleNameEl = document.getElementById("couple-welcome-title");
+        if (coupleNameEl) coupleNameEl.textContent = `Hello, ${userName}`;
+
+        const plannerNameEl = document.getElementById("planner-welcome-title");
+        if (plannerNameEl)
+          plannerNameEl.textContent = `${userName}'s Planner Dashboard`;
+
+        const guestNameEl = document.getElementById("guest-welcome-title");
+        if (guestNameEl) guestNameEl.textContent = `Welcome, ${userName}`;
+
+        const adminEmailEl = document.getElementById("admin-email");
+        if (adminEmailEl) adminEmailEl.textContent = userEmail;
+
+        const coupleEmailEl = document.getElementById("couple-email");
+        if (coupleEmailEl) coupleEmailEl.textContent = userEmail;
+
+        const plannerEmailEl = document.getElementById("planner-email");
+        if (plannerEmailEl) plannerEmailEl.textContent = userEmail;
+
+        const guestEmailEl = document.getElementById("guest-email");
+        if (guestEmailEl) guestEmailEl.textContent = userEmail;
+
+        // Micro-interactions for KPI cards
+        document.querySelectorAll(".card-luxury").forEach((card) => {
+          card.addEventListener("mouseenter", () => {
+            card.classList.add("shadow");
+          });
+          card.addEventListener("mouseleave", () => {
+            card.classList.remove("shadow");
+          });
+        });
+
+        // Simple Countdown calculator
+        const weddingDate = new Date("2026-12-12T16:00:00");
+        const calculateDays = () => {
+          const now = new Date();
+          const diff = weddingDate - now;
+          if (diff <= 0) return 0;
+          return Math.floor(diff / (1000 * 60 * 60 * 24));
+        };
+
+        const days = calculateDays();
+
+        const coupleDaysEl = document.getElementById("countdown-days");
+        if (coupleDaysEl) coupleDaysEl.textContent = days;
+
+        const guestDaysEl = document.getElementById("guest-countdown-days");
+        if (guestDaysEl) guestDaysEl.textContent = days;
+      });
+    </script>
+  </body>
+</html>

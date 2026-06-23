@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>System Health | Stackly Weddings Admin</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Dashboard CSS -->
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="bg-surface">
+    <div id="dashboard-wrapper">
+      <main class="dashboard-content">
+        <!-- Global Status Banner -->
+        <section class="mb-4">
+          <div
+            class="bg-primary bg-opacity-10 rounded-4 p-4 border border-primary border-opacity-10 d-flex flex-column flex-md-row justify-content-between align-items-md-center position-relative overflow-hidden"
+          >
+            <div class="position-relative z-1 mb-3 mb-md-0">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span
+                  class="bg-success rounded-circle pulse-dot"
+                  style="width: 10px; height: 10px"
+                ></span>
+                <h4 class="text-primary font-playfair-display mb-0 fw-bold">
+                  All Systems Operational
+                </h4>
+              </div>
+              <p class="text-muted small mb-0">
+                The Stackly Weddings infrastructure is performing optimally.
+                Next scheduled maintenance in 14 days.
+              </p>
+            </div>
+            <div class="position-relative z-1 text-md-end">
+              <span
+                class="text-muted small text-uppercase tracking-wider fw-bold block mb-1"
+                >Uptime (30d)</span
+              >
+              <h4 class="font-playfair-display mb-0 fw-bold">99.98%</h4>
+            </div>
+          </div>
+        </section>
+
+        <!-- Metrics Bento Grid -->
+        <section class="row g-4 mb-4">
+          <!-- Server Load -->
+          <div class="col-lg-4">
+            <div class="card-luxury p-4 h-100">
+              <div
+                class="d-flex justify-content-between align-items-start mb-4"
+              >
+                <div>
+                  <p
+                    class="text-muted small text-uppercase tracking-wider mb-1"
+                  >
+                    Server Load
+                  </p>
+                  <h3
+                    class="font-playfair-display fw-bold text-dark mb-0"
+                    id="serverLoadText"
+                  >
+                    42%
+                  </h3>
+                </div>
+                <span
+                  class="material-symbols-outlined text-primary p-3 badge-soft-rose rounded-circle"
+                  >dns</span
+                >
+              </div>
+              <div
+                class="d-flex align-items-end gap-1 px-1"
+                style="height: 100px"
+              >
+                <div
+                  class="bg-primary bg-opacity-25 rounded-top w-100"
+                  style="height: 45%"
+                ></div>
+                <div
+                  class="bg-primary bg-opacity-25 rounded-top w-100"
+                  style="height: 38%"
+                ></div>
+                <div
+                  class="bg-primary bg-opacity-25 rounded-top w-100"
+                  style="height: 52%"
+                ></div>
+                <div
+                  class="bg-primary bg-opacity-50 rounded-top w-100"
+                  style="height: 61%"
+                ></div>
+                <div
+                  class="bg-primary bg-opacity-25 rounded-top w-100"
+                  style="height: 42%"
+                ></div>
+                <div
+                  class="bg-primary bg-opacity-25 rounded-top w-100"
+                  style="height: 35%"
+                ></div>
+                <div
+                  class="bg-primary bg-opacity-25 rounded-top w-100"
+                  style="height: 48%"
+                ></div>
+                <div
+                  class="bg-primary rounded-top w-100"
+                  style="height: 42%"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- API Latency -->
+          <div class="col-lg-4">
+            <div class="card-luxury p-4 h-100">
+              <div
+                class="d-flex justify-content-between align-items-start mb-4"
+              >
+                <div>
+                  <p
+                    class="text-muted small text-uppercase tracking-wider mb-1"
+                  >
+                    API Latency
+                  </p>
+                  <h3 class="font-playfair-display fw-bold text-dark mb-0">
+                    124ms
+                  </h3>
+                </div>
+                <span
+                  class="material-symbols-outlined text-secondary p-3 badge-lavender rounded-circle"
+                  >bolt</span
+                >
+              </div>
+              <div
+                class="d-flex align-items-end gap-1 px-1"
+                style="height: 100px"
+              >
+                <div
+                  class="bg-secondary bg-opacity-25 rounded-top w-100"
+                  style="height: 30%"
+                ></div>
+                <div
+                  class="bg-secondary bg-opacity-25 rounded-top w-100"
+                  style="height: 25%"
+                ></div>
+                <div
+                  class="bg-secondary bg-opacity-25 rounded-top w-100"
+                  style="height: 35%"
+                ></div>
+                <div
+                  class="bg-secondary bg-opacity-50 rounded-top w-100"
+                  style="height: 70%"
+                ></div>
+                <div
+                  class="bg-secondary bg-opacity-25 rounded-top w-100"
+                  style="height: 40%"
+                ></div>
+                <div
+                  class="bg-secondary bg-opacity-25 rounded-top w-100"
+                  style="height: 28%"
+                ></div>
+                <div
+                  class="bg-secondary bg-opacity-25 rounded-top w-100"
+                  style="height: 32%"
+                ></div>
+                <div
+                  class="bg-secondary rounded-top w-100"
+                  style="height: 25%"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DB Capacity -->
+          <div class="col-lg-4">
+            <div
+              class="card-luxury p-4 h-100 d-flex flex-column justify-content-between"
+            >
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <p
+                    class="text-muted small text-uppercase tracking-wider mb-1"
+                  >
+                    Database Capacity
+                  </p>
+                  <h3 class="font-playfair-display fw-bold text-dark mb-0">
+                    1.2 / 5 TB
+                  </h3>
+                </div>
+                <span
+                  class="material-symbols-outlined text-warning p-3 badge-gold rounded-circle"
+                  >database</span
+                >
+              </div>
+              <div class="mt-4">
+                <div class="progress mb-2" style="height: 10px">
+                  <div
+                    class="progress-bar bg-warning"
+                    role="progressbar"
+                    style="width: 24%"
+                    aria-valuenow="24"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <div class="d-flex justify-content-between small text-muted">
+                  <span>24% Used</span>
+                  <span>3.8 TB Available</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Logs and backups -->
+        <section class="row g-4">
+          <!-- System Alerts -->
+          <div class="col-xl-6">
+            <div
+              class="card-luxury p-4 d-flex flex-column"
+              style="height: 460px"
+            >
+              <div
+                class="d-flex justify-content-between align-items-center mb-4"
+              >
+                <h5 class="font-playfair-display text-primary fw-bold mb-0">
+                  System Alerts
+                </h5>
+                <button
+                  class="btn btn-sm btn-link text-primary text-decoration-none fw-bold p-0"
+                >
+                  View All Logs
+                </button>
+              </div>
+              <div class="flex-grow-1 overflow-y-auto pr-1">
+                <div class="d-flex flex-column gap-3">
+                  <div
+                    class="p-3 bg-danger bg-opacity-10 border border-danger border-opacity-10 rounded-3 d-flex gap-3"
+                  >
+                    <span class="material-symbols-outlined text-danger"
+                      >warning</span
+                    >
+                    <div>
+                      <h6 class="mb-0 fw-bold text-dark small">
+                        Failed Login Attempts (High)
+                      </h6>
+                      <p class="text-muted small mb-1" style="font-size: 10px">
+                        Security Engine • 2 mins ago
+                      </p>
+                      <p class="text-muted small mb-0">
+                        Unusual volume of failed login attempts detected from IP
+                        192.168.1.45. Firewall auto-blocked for 60 minutes.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="p-3 bg-light border rounded-3 d-flex gap-3">
+                    <span class="material-symbols-outlined text-warning"
+                      >info</span
+                    >
+                    <div>
+                      <h6 class="mb-0 fw-bold text-dark small">
+                        SSL Certificate Renewal
+                      </h6>
+                      <p class="text-muted small mb-1" style="font-size: 10px">
+                        Cloudflare Edge • 4 hours ago
+                      </p>
+                      <p class="text-muted small mb-0">
+                        Primary domain certificate successfully renewed. Next
+                        expiration: Oct 2025.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="p-3 bg-light border rounded-3 d-flex gap-3">
+                    <span class="material-symbols-outlined text-success"
+                      >update</span
+                    >
+                    <div>
+                      <h6 class="mb-0 fw-bold text-dark small">
+                        Deployment Successful
+                      </h6>
+                      <p class="text-muted small mb-1" style="font-size: 10px">
+                        Vercel Integration • 6 hours ago
+                      </p>
+                      <p class="text-muted small mb-0">
+                        Production build v4.2.1-stable deployed successfully to
+                        12 edge nodes.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="p-3 bg-light border rounded-3 d-flex gap-3 opacity-70"
+                  >
+                    <span class="material-symbols-outlined text-muted"
+                      >history</span
+                    >
+                    <div>
+                      <h6 class="mb-0 fw-bold text-dark small">
+                        API Rate Limiting
+                      </h6>
+                      <p class="text-muted small mb-1" style="font-size: 10px">
+                        Gateway • 12 hours ago
+                      </p>
+                      <p class="text-muted small mb-0">
+                        Vendor API endpoint reached 85% of threshold.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backups -->
+          <div class="col-xl-6">
+            <div class="d-flex flex-column gap-4">
+              <div
+                class="card-luxury p-4 bg-primary bg-opacity-10 border border-primary border-opacity-10"
+              >
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <span class="material-symbols-outlined text-primary"
+                    >cloud_done</span
+                  >
+                  <h5 class="font-playfair-display text-primary fw-bold mb-0">
+                    Automated Backups
+                  </h5>
+                </div>
+                <div class="d-flex flex-column gap-3">
+                  <div
+                    class="d-flex justify-content-between align-items-center p-3 bg-white bg-opacity-75 rounded-3 border"
+                  >
+                    <div>
+                      <h6 class="mb-0 fw-bold text-dark small">
+                        Database Snapshot
+                      </h6>
+                      <span class="text-muted small" style="font-size: 10px"
+                        >Daily Incremental</span
+                      >
+                    </div>
+                    <div class="text-end">
+                      <span
+                        class="badge bg-success bg-opacity-10 text-success rounded"
+                        >Healthy</span
+                      >
+                      <p
+                        class="mb-0 text-muted small mt-1"
+                        style="font-size: 10px"
+                      >
+                        2h ago
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="d-flex justify-content-between align-items-center p-3 bg-white bg-opacity-75 rounded-3 border"
+                  >
+                    <div>
+                      <h6 class="mb-0 fw-bold text-dark small">Media Assets</h6>
+                      <span class="text-muted small" style="font-size: 10px"
+                        >AWS S3 Glacier Sync</span
+                      >
+                    </div>
+                    <div class="text-end">
+                      <span
+                        class="badge bg-success bg-opacity-10 text-success rounded"
+                        >Healthy</span
+                      >
+                      <p
+                        class="mb-0 text-muted small mt-1"
+                        style="font-size: 10px"
+                      >
+                        1d ago
+                      </p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="d-flex justify-content-between align-items-center p-3 bg-white bg-opacity-75 rounded-3 border"
+                  >
+                    <div>
+                      <h6 class="mb-0 fw-bold text-dark small">User Configs</h6>
+                      <span class="text-muted small" style="font-size: 10px"
+                        >Cross-Region Mirror</span
+                      >
+                    </div>
+                    <div class="text-end">
+                      <span
+                        class="badge bg-success bg-opacity-10 text-success rounded"
+                        >Healthy</span
+                      >
+                      <p
+                        class="mb-0 text-muted small mt-1"
+                        style="font-size: 10px"
+                      >
+                        Just now
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-outline-primary w-100 mt-4 py-2 rounded-pill fw-bold"
+                >
+                  Force Manual Backup
+                </button>
+              </div>
+
+              <!-- Regional Node Badge grid -->
+              <div
+                class="card-luxury p-4 bg-dark text-white overflow-hidden relative"
+              >
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <h5
+                      class="font-playfair-display text-primary-light fw-bold mb-2"
+                    >
+                      Global Infrastructure
+                    </h5>
+                    <p class="text-white text-opacity-75 small mb-0">
+                      Edge nodes active across 12 regions with sub-50ms
+                      handover.
+                    </p>
+                  </div>
+                  <div class="d-flex gap-1">
+                    <div
+                      class="rounded-circle bg-primary bg-opacity-25 border border-primary border-opacity-50 d-flex align-items-center justify-content-center fw-bold"
+                      style="width: 40px; height: 40px; font-size: 11px"
+                    >
+                      US
+                    </div>
+                    <div
+                      class="rounded-circle bg-secondary bg-opacity-25 border border-secondary border-opacity-50 d-flex align-items-center justify-content-center fw-bold"
+                      style="width: 40px; height: 40px; font-size: 11px"
+                    >
+                      EU
+                    </div>
+                    <div
+                      class="rounded-circle bg-warning bg-opacity-25 border border-warning border-opacity-50 d-flex align-items-center justify-content-center fw-bold text-warning"
+                      style="width: 40px; height: 40px; font-size: 11px"
+                    >
+                      +9
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Layout JS -->
+    <script src="../../../assets/js/dashboard-layout.js"></script>
+
+    <!-- Live chart simulation -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Simulate real-time server load fluctuations
+        setInterval(() => {
+          const text = document.getElementById("serverLoadText");
+          if (text) {
+            const current = parseInt(text.innerText);
+            const variance = Math.floor(Math.random() * 5) - 2;
+            const next = Math.max(10, Math.min(95, current + variance));
+            text.innerText = next + "%";
+          }
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>

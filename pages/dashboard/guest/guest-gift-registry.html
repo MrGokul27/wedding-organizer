@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registry | Stackly Weddings</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Dashboard CSS -->
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+
+    <style>
+      .arched-image-wrapper {
+        border-radius: 120px 120px 16px 16px;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+        position: relative;
+      }
+      .arched-image-wrapper img {
+        transition: transform 0.7s ease;
+      }
+      .arched-image-wrapper:hover img {
+        transform: scale(1.08);
+      }
+      .purchase-overlay {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        width: 80%;
+        opacity: 0;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+      }
+      .arched-image-wrapper:hover .purchase-overlay {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-surface">
+    <div id="dashboard-wrapper">
+      <main class="dashboard-content">
+        <!-- Hero Header -->
+        <section class="text-center mb-5">
+          <span
+            class="text-uppercase tracking-wider fw-bold text-primary small block mb-2 font-jakarta"
+            >Our Curated Wishlist</span
+          >
+          <h2 class="font-playfair-display text-primary fw-bold mb-3">
+            Gifts & Experiences
+          </h2>
+          <p class="text-muted max-w-xl mx-auto small">
+            Your presence is the greatest gift of all, but if you'd like to
+            honor us with a gift, we've curated a selection of items and
+            experiences that will help us build our life together.
+          </p>
+        </section>
+
+        <!-- Experience Funds Section -->
+        <section class="mb-5 py-3">
+          <div class="d-flex align-items-center justify-content-between mb-4">
+            <h4 class="font-playfair-display text-primary fw-bold mb-0">
+              Experience Funds
+            </h4>
+            <div
+              class="flex-grow-1 bg-outline-variant mx-4 d-none d-sm-block"
+              style="height: 1px; opacity: 0.3"
+            ></div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Fund 1 -->
+            <div class="col-md-4">
+              <div
+                class="card-luxury p-4 h-100 position-relative overflow-hidden"
+              >
+                <div
+                  class="position-absolute"
+                  style="
+                    top: -24px;
+                    right: -24px;
+                    width: 90px;
+                    height: 90px;
+                    background-color: var(--soft-rose);
+                    opacity: 0.2;
+                    border-radius: 50%;
+                    filter: blur(20px);
+                  "
+                ></div>
+                <div class="d-flex flex-column h-100 position-relative z-1">
+                  <div
+                    class="w-12 h-12 rounded-circle badge-lavender d-flex align-items-center justify-content-center mb-4"
+                    style="width: 48px; height: 48px"
+                  >
+                    <span class="material-symbols-outlined"
+                      >flight_takeoff</span
+                    >
+                  </div>
+                  <h5 class="font-playfair-display text-dark fw-bold mb-2">
+                    Honeymoon Adventure
+                  </h5>
+                  <p class="text-muted small mb-4">
+                    Help us create memories on our dream trip to the Amalfi
+                    Coast.
+                  </p>
+                  <div class="mt-auto pt-2">
+                    <div
+                      class="d-flex justify-content-between align-items-end mb-2"
+                    >
+                      <span
+                        class="text-muted small text-uppercase tracking-wider"
+                        >Raised</span
+                      >
+                      <span
+                        class="text-primary font-playfair-display fw-bold h4 mb-0"
+                        >$4,250</span
+                      >
+                    </div>
+                    <div class="progress mb-3" style="height: 6px">
+                      <div
+                        class="progress-bar bg-primary"
+                        role="progressbar"
+                        style="width: 65%"
+                      ></div>
+                    </div>
+                    <button
+                      class="btn btn-primary rounded-pill w-100 py-2.5 small fw-bold action-btn"
+                    >
+                      Contribute Any Amount
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fund 2 -->
+            <div class="col-md-4">
+              <div
+                class="card-luxury p-4 h-100 position-relative overflow-hidden"
+              >
+                <div
+                  class="position-absolute"
+                  style="
+                    top: -24px;
+                    right: -24px;
+                    width: 90px;
+                    height: 90px;
+                    background-color: var(--color-primary-light);
+                    opacity: 0.2;
+                    border-radius: 50%;
+                    filter: blur(20px);
+                  "
+                ></div>
+                <div class="d-flex flex-column h-100 position-relative z-1">
+                  <div
+                    class="w-12 h-12 rounded-circle badge-soft-rose d-flex align-items-center justify-content-center mb-4"
+                    style="width: 48px; height: 48px"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >restaurant</span
+                    >
+                  </div>
+                  <h5 class="font-playfair-display text-dark fw-bold mb-2">
+                    Romantic Dinners
+                  </h5>
+                  <p class="text-muted small mb-4">
+                    A collection of candlelit evenings and culinary discoveries
+                    during our first year.
+                  </p>
+                  <div class="mt-auto pt-2">
+                    <div
+                      class="d-flex justify-content-between align-items-end mb-2"
+                    >
+                      <span
+                        class="text-muted small text-uppercase tracking-wider"
+                        >Raised</span
+                      >
+                      <span
+                        class="text-primary font-playfair-display fw-bold h4 mb-0"
+                        >$850</span
+                      >
+                    </div>
+                    <div class="progress mb-3" style="height: 6px">
+                      <div
+                        class="progress-bar bg-primary"
+                        role="progressbar"
+                        style="width: 42%"
+                      ></div>
+                    </div>
+                    <button
+                      class="btn btn-primary rounded-pill w-100 py-2.5 small fw-bold action-btn"
+                    >
+                      Contribute Any Amount
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fund 3 -->
+            <div class="col-md-4">
+              <div
+                class="card-luxury p-4 h-100 position-relative overflow-hidden"
+              >
+                <div
+                  class="position-absolute"
+                  style="
+                    top: -24px;
+                    right: -24px;
+                    width: 90px;
+                    height: 90px;
+                    background-color: var(--lavender-mist);
+                    opacity: 0.2;
+                    border-radius: 50%;
+                    filter: blur(20px);
+                  "
+                ></div>
+                <div class="d-flex flex-column h-100 position-relative z-1">
+                  <div
+                    class="w-12 h-12 rounded-circle bg-light border d-flex align-items-center justify-content-center mb-4"
+                    style="
+                      width: 48px;
+                      height: 48px;
+                      color: var(--color-on-surface);
+                    "
+                  >
+                    <span class="material-symbols-outlined">home</span>
+                  </div>
+                  <h5 class="font-playfair-display text-dark fw-bold mb-2">
+                    Home Sanctuary
+                  </h5>
+                  <p class="text-muted small mb-4">
+                    Contributions toward interior design and landscape for our
+                    new family home.
+                  </p>
+                  <div class="mt-auto pt-2">
+                    <div
+                      class="d-flex justify-content-between align-items-end mb-2"
+                    >
+                      <span
+                        class="text-muted small text-uppercase tracking-wider"
+                        >Raised</span
+                      >
+                      <span
+                        class="text-primary font-playfair-display fw-bold h4 mb-0"
+                        >$12,400</span
+                      >
+                    </div>
+                    <div class="progress mb-3" style="height: 6px">
+                      <div
+                        class="progress-bar bg-primary"
+                        role="progressbar"
+                        style="width: 82%"
+                      ></div>
+                    </div>
+                    <button
+                      class="btn btn-primary rounded-pill w-100 py-2.5 small fw-bold action-btn"
+                    >
+                      Contribute Any Amount
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Product Registry Section -->
+        <section class="py-3">
+          <div class="d-flex align-items-center justify-content-between mb-4">
+            <h4 class="font-playfair-display text-primary fw-bold mb-0">
+              Curated Gift Selection
+            </h4>
+            <div class="d-flex gap-2">
+              <button
+                class="btn btn-sm btn-light border rounded-pill px-3 py-1.5 small"
+              >
+                Filter
+              </button>
+              <button
+                class="btn btn-sm btn-light border rounded-pill px-3 py-1.5 small"
+              >
+                Sort
+              </button>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Product Item 1 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card-luxury p-3 h-100 d-flex flex-column">
+                <div class="arched-image-wrapper mb-3">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSvJ7SfD13G2DMowuufTS31jYO7K9X7HWLbCkHZKyK8fgobbfZwp_gJUCQu9Fqi1Y3XHmeB3EwK_BKqLvz2MRVX58fd2229wZC1_qWAvc_kjTe-T9rqiQ434NtqT_ewHe25M7OV5J_JIwEcB7v6bTrU9aD3vM0amK7CUD-g9IMIb_kCg5HbK4MgbV7nb9mK5Pwp835B685whKmhz-kJY9eEasBmPhyRxG-eAfAsVGBopvBZRh8O14sl9vY4IsS7mvLIA9PvbEgOxU"
+                    class="w-100 h-100 object-cover"
+                    alt="Artisan Dinnerware Set"
+                  />
+                  <div class="purchase-overlay">
+                    <button
+                      class="btn btn-light bg-white bg-opacity-95 w-100 rounded-pill py-2 shadow-sm text-primary small fw-bold action-btn"
+                    >
+                      Purchase Gift
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-start mt-auto px-1"
+                >
+                  <div>
+                    <h6 class="font-playfair-display text-dark fw-bold mb-0">
+                      Artisan Dinnerware Set
+                    </h6>
+                    <span
+                      class="text-uppercase tracking-wider small font-jakarta fw-semibold"
+                      style="font-size: 9px; color: var(--color-muted-gold)"
+                      >SET OF 12 • HANDCRAFTED</span
+                    >
+                  </div>
+                  <span class="text-primary fw-bold font-jakarta">$450</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Item 2 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card-luxury p-3 h-100 d-flex flex-column">
+                <div class="arched-image-wrapper mb-3">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBEWaoDFAeY4mCAfZnSj8rVKKoMnROowi-U2xklPj-OnKHdb8YhZrNHWG9kn_CyUp53xW0ivk4QAELiH9VEQgMMMtnj5CYfWJWOdJVCKwHDTxld9YYzPf91DZojnFWz-6cV11vzQI4PLP1WMle8n6L5lqQtzccJij9O9C-s2uPpZHtlrtvdw9LFaEiEgffqGV33I0r8Ss5-Ow2TyTQ6Lw0Do5nwuH0aWWB1tUUho8bTrgT7_U3qnALMPQ597q380g9_U7xiuhQDL4"
+                    class="w-100 h-100 object-cover"
+                    alt="Heirloom Crystal Flutes"
+                  />
+                  <div class="purchase-overlay">
+                    <button
+                      class="btn btn-light bg-white bg-opacity-95 w-100 rounded-pill py-2 shadow-sm text-primary small fw-bold action-btn"
+                    >
+                      Purchase Gift
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-start mt-auto px-1"
+                >
+                  <div>
+                    <h6 class="font-playfair-display text-dark fw-bold mb-0">
+                      Heirloom Crystal Flutes
+                    </h6>
+                    <span
+                      class="text-uppercase tracking-wider small font-jakarta fw-semibold"
+                      style="font-size: 9px; color: var(--color-muted-gold)"
+                      >CZECH CRYSTAL • PAIR</span
+                    >
+                  </div>
+                  <span class="text-primary fw-bold font-jakarta">$220</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Item 3 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card-luxury p-3 h-100 d-flex flex-column">
+                <div class="arched-image-wrapper mb-3">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPT3QzYaTZB3cDUbn14OYLANFbjaLGc-PM1Wd82aNcxQJl-jMuWdC64wpqkOOCDNWfZZzeksePU0uc2o512G6z255_1SPyT3yXwfbhX-4bhoh1hrG3p6RC89n98Usg-JbePgx1_AhBIwLaMFpZPhh_4-kWrQZGB9kdbq-yrpcl6F9Xi4UOAZvRinSRoNwGnZuvCKVhpQe0LNBDGw99gWUD-79KTRkgijr11vs9B00pJZuAXN-iC7403iazQBkbZbwMOyZDXG3Q82g"
+                    class="w-100 h-100 object-cover"
+                    alt="Matte Cream Espresso Machine"
+                  />
+                  <div class="purchase-overlay">
+                    <button
+                      class="btn btn-light bg-white bg-opacity-95 w-100 rounded-pill py-2 shadow-sm text-primary small fw-bold action-btn"
+                    >
+                      Purchase Gift
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-start mt-auto px-1"
+                >
+                  <div>
+                    <h6 class="font-playfair-display text-dark fw-bold mb-0">
+                      Matte Cream Espresso Machine
+                    </h6>
+                    <span
+                      class="text-uppercase tracking-wider small font-jakarta fw-semibold"
+                      style="font-size: 9px; color: var(--color-muted-gold)"
+                      >LIMITED EDITION • PREMIUM</span
+                    >
+                  </div>
+                  <span class="text-primary fw-bold font-jakarta">$890</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Item 4 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card-luxury p-3 h-100 d-flex flex-column">
+                <div class="arched-image-wrapper mb-3">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoag95xEy1Oel_ENFgPpkJNsnF1wfdxaRChdXHC-wDa36G9dsz2bDLJJgSBz7sXZtG4VWCnZkchOZws5pPxzpZcZyzwyVy8kJBoFIRMMF3U02cFHbhpZgpSlUNNneIHMb5uEdewBgz7LcWPJEusO5GVsLaDcJHrrHSgvFpsYxqb6g97uaQTd2kE31rPUeDZTeDsjVq_E4-8OA1S-qax8D4zi03aVXeJSUmkN6WH_FOmCbj9eM1HEk00vLNk78wQHvOkzpDuwQ7wSc"
+                    class="w-100 h-100 object-cover"
+                    alt="Cloud-Soft Linen Suite"
+                  />
+                  <div class="purchase-overlay">
+                    <button
+                      class="btn btn-light bg-white bg-opacity-95 w-100 rounded-pill py-2 shadow-sm text-primary small fw-bold action-btn"
+                    >
+                      Purchase Gift
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-start mt-auto px-1"
+                >
+                  <div>
+                    <h6 class="font-playfair-display text-dark fw-bold mb-0">
+                      Cloud-Soft Linen Suite
+                    </h6>
+                    <span
+                      class="text-uppercase tracking-wider small font-jakarta fw-semibold"
+                      style="font-size: 9px; color: var(--color-muted-gold)"
+                      >KING SIZE • 1000 TC</span
+                    >
+                  </div>
+                  <span class="text-primary fw-bold font-jakarta">$540</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Item 5 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card-luxury p-3 h-100 d-flex flex-column">
+                <div class="arched-image-wrapper mb-3">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrG4Bm5BsVZk0P9utRGeVMSR4VaT0xrrrVV2eardyedUS-3tqxDwz8CaUZZtFRHwCT7K0z7P-4wIvZSUJcWlzCVn3w_C6tBhyIZGRjcqHqoL4r93IorpbHYA3QP9lqa3p7v9jXgIk6G-1k5pJ6EkjE_NHIf3Rp7S5aZBwbpnRUVXCpld-hoGLSqIn8M266RH5yXncSSfomvrgVai4GPG8dqQp4c8LVLBRwtWAy3u2Yx1EE3xlw8jxRJyJuGLy78iNhZ06tK2r_oF4"
+                    class="w-100 h-100 object-cover"
+                    alt="Heritage Copper Cookware"
+                  />
+                  <div class="purchase-overlay">
+                    <button
+                      class="btn btn-light bg-white bg-opacity-95 w-100 rounded-pill py-2 shadow-sm text-primary small fw-bold action-btn"
+                    >
+                      Purchase Gift
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-start mt-auto px-1"
+                >
+                  <div>
+                    <h6 class="font-playfair-display text-dark fw-bold mb-0">
+                      Heritage Copper Cookware
+                    </h6>
+                    <span
+                      class="text-uppercase tracking-wider small font-jakarta fw-semibold"
+                      style="font-size: 9px; color: var(--color-muted-gold)"
+                      >7-PIECE SET • HAND-POLISHED</span
+                    >
+                  </div>
+                  <span class="text-primary fw-bold font-jakarta">$1,200</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Item 6 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card-luxury p-3 h-100 d-flex flex-column">
+                <div class="arched-image-wrapper mb-3">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFyh4lFZKWc1V9zaTzlsnEpMpkgDdhzuMULoSnnMW-nHabFnfN3dncrppJanJy6opBZZUgrI1wIKhlDPXyqzgnaBYXoUEIzVlrTYSV2-JD9czh7xq8IhLyiV_MkMr5zmUlN4iSZ8c-ZJLVLEZtg46jl8-N1LU3kF8IrApYXr31Lefq1Rz5V2oCYC7pwi4C34Y-ywmjct4l1hd_4k9e5DEIca0c8JncUGh2qVjD9jJuUeAIqVQrNPvSZbfQ6TylpKQ_Xs8jkfAhLJ0"
+                    class="w-100 h-100 object-cover"
+                    alt="Curated Art Book Collection"
+                  />
+                  <div class="purchase-overlay">
+                    <button
+                      class="btn btn-light bg-white bg-opacity-95 w-100 rounded-pill py-2 shadow-sm text-primary small fw-bold action-btn"
+                    >
+                      Purchase Gift
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-start mt-auto px-1"
+                >
+                  <div>
+                    <h6 class="font-playfair-display text-dark fw-bold mb-0">
+                      Curated Art Book Collection
+                    </h6>
+                    <span
+                      class="text-uppercase tracking-wider small font-jakarta fw-semibold"
+                      style="font-size: 9px; color: var(--color-muted-gold)"
+                      >SET OF 3 • COLLECTOR'S ED.</span
+                    >
+                  </div>
+                  <span class="text-primary fw-bold font-jakarta">$180</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Layout JS -->
+    <script src="../../../assets/js/dashboard-layout.js"></script>
+
+    <script>
+      // Micro-interaction for Purchase/Contribute Buttons
+      document.querySelectorAll(".action-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          if (
+            this.textContent.includes("Purchase") ||
+            this.textContent.includes("Contribute")
+          ) {
+            const originalText = this.textContent;
+            this.textContent = "Processing...";
+            this.classList.add("opacity-80");
+
+            setTimeout(() => {
+              this.textContent = "Added to Cart";
+              this.classList.remove("btn-primary", "btn-light");
+              this.classList.add("btn-success");
+              this.style.color = "#fff";
+
+              setTimeout(() => {
+                this.textContent = originalText;
+                this.classList.remove("btn-success");
+                if (originalText.includes("Purchase")) {
+                  this.classList.add("btn-light");
+                  this.style.color = "";
+                } else {
+                  this.classList.add("btn-primary");
+                }
+                this.classList.remove("opacity-80");
+              }, 2000);
+            }, 800);
+          }
+        });
+      });
+
+      // Floating petals effect
+      function createPetal() {
+        const petal = document.createElement("div");
+        petal.innerHTML = "🌸";
+        petal.className =
+          "fixed pointer-events-none opacity-25 transition-all ease-linear";
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.top = "-20px";
+        petal.style.fontSize = Math.random() * 10 + 10 + "px";
+        petal.style.zIndex = "9999";
+        petal.style.transitionDuration = Math.random() * 3000 + 4000 + "ms";
+        document.body.appendChild(petal);
+
+        setTimeout(() => {
+          petal.style.transform = `translate(${Math.random() * 100 - 50}px, 110vh) rotate(${Math.random() * 360}deg)`;
+        }, 10);
+
+        setTimeout(() => {
+          petal.remove();
+        }, 7000);
+      }
+
+      setInterval(createPetal, 1800);
+    </script>
+  </body>
+</html>

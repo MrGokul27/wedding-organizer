@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Moderation | Stackly Weddings Admin</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Dashboard CSS -->
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="bg-surface">
+    <div id="dashboard-wrapper">
+      <main class="dashboard-content">
+        <!-- Metrics Bento Grid -->
+        <section class="row g-4 mb-5">
+          <div class="col-md-4">
+            <div class="card-luxury p-4 h-100">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <span
+                  class="material-symbols-outlined p-3 badge-soft-rose rounded-circle text-primary"
+                  >pending_actions</span
+                >
+                <span class="text-primary small fw-bold">+12 today</span>
+              </div>
+              <h5 class="text-muted small text-uppercase tracking-wider mb-1">
+                Pending Reviews
+              </h5>
+              <h3 class="font-playfair-display fw-bold text-dark mb-0">42</h3>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card-luxury p-4 h-100">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <span
+                  class="material-symbols-outlined p-3 bg-danger bg-opacity-10 rounded-circle text-danger"
+                  >flag</span
+                >
+                <span class="text-danger small fw-bold">High Priority</span>
+              </div>
+              <h5 class="text-muted small text-uppercase tracking-wider mb-1">
+                Flagged Items
+              </h5>
+              <h3 class="font-playfair-display fw-bold text-dark mb-0">08</h3>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card-luxury p-4 h-100">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <span
+                  class="material-symbols-outlined p-3 badge-lavender rounded-circle text-secondary"
+                  >timer</span
+                >
+                <span class="text-muted small fw-bold">System Avg</span>
+              </div>
+              <h5 class="text-muted small text-uppercase tracking-wider mb-1">
+                Avg. Review Time
+              </h5>
+              <h3 class="font-playfair-display fw-bold text-dark mb-0">
+                4.2<span class="fs-6">m</span>
+              </h3>
+            </div>
+          </div>
+        </section>
+
+        <!-- Filters & Controls -->
+        <section
+          class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4 pb-3 border-bottom border-outline-variant"
+        >
+          <div class="d-flex flex-wrap gap-2" id="filterContainer">
+            <button
+              class="btn btn-sm btn-primary rounded-pill px-3 filter-btn active"
+            >
+              All Content
+            </button>
+            <button
+              class="btn btn-sm btn-light border rounded-pill px-3 filter-btn"
+            >
+              Gallery
+            </button>
+            <button
+              class="btn btn-sm btn-light border rounded-pill px-3 filter-btn"
+            >
+              Articles
+            </button>
+            <button
+              class="btn btn-sm btn-light border rounded-pill px-3 filter-btn"
+            >
+              Comments
+            </button>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="small text-muted">Sort by:</span>
+            <select
+              class="form-select form-select-sm border-0 bg-transparent text-primary fw-bold p-0 pe-4"
+              style="width: auto; cursor: pointer"
+            >
+              <option>Urgency (High to Low)</option>
+              <option>Newest First</option>
+              <option>Oldest First</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Queue Grid -->
+        <section class="row g-4 mb-5">
+          <!-- Card 1: Gallery Post -->
+          <div class="col-lg-4 col-md-6">
+            <div
+              class="card-luxury p-4 h-100 d-flex flex-column justify-content-between"
+            >
+              <div>
+                <div
+                  class="position-relative overflow-hidden rounded-3 mb-3"
+                  style="aspect-ratio: 4/5"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=300"
+                    class="w-full h-full object-cover"
+                    alt="Enchanted Garden"
+                  />
+                  <span
+                    class="position-absolute badge badge-lavender rounded-pill text-uppercase"
+                    style="
+                      top: 12px;
+                      left: 12px;
+                      font-size: 8px;
+                      tracking-wider: 0.1em;
+                    "
+                    >Gallery Post</span
+                  >
+                  <span
+                    class="position-absolute badge bg-danger rounded-circle p-2 d-flex align-items-center justify-content-center"
+                    style="top: 12px; right: 12px; width: 30px; height: 30px"
+                  >
+                    <span class="material-symbols-outlined fs-6 text-white"
+                      >priority_high</span
+                    >
+                  </span>
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <div
+                    class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center"
+                    style="width: 32px; height: 32px"
+                  >
+                    <span class="material-symbols-outlined text-primary small"
+                      >person</span
+                    >
+                  </div>
+                  <div>
+                    <h6 class="mb-0 fw-bold text-dark small">Elena & Marcus</h6>
+                    <p class="mb-0 text-muted small" style="font-size: 10px">
+                      Posted 12 mins ago
+                    </p>
+                  </div>
+                </div>
+                <p class="text-muted small italic mb-4">
+                  "Finally getting around to sharing our magical reception shots
+                  from Villa d'Este. #StacklyWeddings #LakesideDream"
+                </p>
+              </div>
+              <div class="d-flex gap-2">
+                <button
+                  class="btn btn-sm btn-primary flex-grow-1 py-2 rounded-3 d-flex align-items-center justify-content-center gap-1"
+                >
+                  <span class="material-symbols-outlined fs-6"
+                    >check_circle</span
+                  >
+                  Approve
+                </button>
+                <button
+                  class="btn btn-sm btn-light border flex-grow-1 py-2 rounded-3 d-flex align-items-center justify-content-center gap-1 hover-danger-btn"
+                >
+                  <span class="material-symbols-outlined fs-6">block</span>
+                  Reject
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Article -->
+          <div class="col-lg-4 col-md-6">
+            <div
+              class="card-luxury p-4 h-100 d-flex flex-column justify-content-between"
+            >
+              <div>
+                <div
+                  class="position-relative overflow-hidden rounded-3 mb-3 bg-light d-flex align-items-center justify-content-center border"
+                  style="aspect-ratio: 4/5"
+                >
+                  <div class="text-center p-4">
+                    <span
+                      class="material-symbols-outlined text-primary fs-1 mb-2"
+                      >article</span
+                    >
+                    <h6 class="fw-bold text-dark font-playfair-display">
+                      Top 10 Destination Venues in Amalfi
+                    </h6>
+                    <p class="text-muted small mb-0 mt-1">
+                      Drafted by Julian V.
+                    </p>
+                  </div>
+                  <span
+                    class="position-absolute badge badge-soft-rose rounded-pill text-uppercase"
+                    style="
+                      top: 12px;
+                      left: 12px;
+                      font-size: 8px;
+                      tracking-wider: 0.1em;
+                    "
+                    >Article</span
+                  >
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150"
+                    class="rounded-circle"
+                    alt="Julian"
+                    style="width: 32px; height: 32px; object-fit: cover"
+                  />
+                  <div>
+                    <h6 class="mb-0 fw-bold text-dark small">Julian Vance</h6>
+                    <p class="mb-0 text-muted small" style="font-size: 10px">
+                      Submitted 2 hours ago
+                    </p>
+                  </div>
+                </div>
+                <p class="text-muted small mb-4">
+                  Reviewing the editorial tone and external links provided in
+                  the 'Amalfi Coast' guide. Ensure all vendor credits are
+                  properly tagged according to Stackly's brand standards.
+                </p>
+              </div>
+              <div class="d-flex gap-2">
+                <button
+                  class="btn btn-sm btn-primary flex-grow-1 py-2 rounded-3 d-flex align-items-center justify-content-center gap-1"
+                >
+                  <span class="material-symbols-outlined fs-6"
+                    >check_circle</span
+                  >
+                  Approve
+                </button>
+                <button
+                  class="btn btn-sm btn-light border flex-grow-1 py-2 rounded-3 d-flex align-items-center justify-content-center gap-1 hover-danger-btn"
+                >
+                  <span class="material-symbols-outlined fs-6">block</span>
+                  Reject
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Comment -->
+          <div class="col-lg-4 col-md-6">
+            <div
+              class="card-luxury p-4 h-100 d-flex flex-column justify-content-between"
+            >
+              <div>
+                <div
+                  class="position-relative overflow-hidden rounded-3 mb-3 badge-lavender bg-opacity-25 d-flex align-items-center justify-content-center"
+                  style="aspect-ratio: 4/5"
+                >
+                  <div class="p-4 w-100">
+                    <div class="bg-white p-3 rounded shadow-sm relative">
+                      <p class="text-muted small italic mb-0">
+                        "Is there a way to contact the floral designer for this
+                        specific arch? It looks like the work of Petal & Stem
+                        but I'm not sure if they travel to Tuscany?"
+                      </p>
+                    </div>
+                  </div>
+                  <span
+                    class="position-absolute badge bg-secondary rounded-pill text-uppercase text-white"
+                    style="
+                      top: 12px;
+                      left: 12px;
+                      font-size: 8px;
+                      tracking-wider: 0.1em;
+                    "
+                    >Comment</span
+                  >
+                </div>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <div
+                    class="badge-soft-rose rounded-circle d-flex align-items-center justify-content-center text-primary font-bold text-xs"
+                    style="width: 32px; height: 32px"
+                  >
+                    SC
+                  </div>
+                  <div>
+                    <h6 class="mb-0 fw-bold text-dark small">Sarah Chen</h6>
+                    <p class="mb-0 text-muted small" style="font-size: 10px">
+                      Flagged: External Link
+                    </p>
+                  </div>
+                </div>
+                <p class="text-muted small mb-4 fw-semibold">
+                  Automatic Filter Trigger: Contains potential vendor contact
+                  request. Review for compliance with community guidelines.
+                </p>
+              </div>
+              <div class="d-flex gap-2">
+                <button
+                  class="btn btn-sm btn-primary flex-grow-1 py-2 rounded-3 d-flex align-items-center justify-content-center gap-1"
+                >
+                  <span class="material-symbols-outlined fs-6"
+                    >check_circle</span
+                  >
+                  Approve
+                </button>
+                <button
+                  class="btn btn-sm btn-light border flex-grow-1 py-2 rounded-3 d-flex align-items-center justify-content-center gap-1 hover-danger-btn"
+                >
+                  <span class="material-symbols-outlined fs-6">block</span>
+                  Reject
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Load More -->
+        <div class="d-flex justify-content-center mt-5 mb-3">
+          <button
+            class="btn btn-link text-decoration-none text-muted d-flex flex-column align-items-center gap-1 hover-primary-text"
+          >
+            <span class="small text-uppercase tracking-wider fw-bold"
+              >Load More Items</span
+            >
+            <span class="material-symbols-outlined text-primary animate-bounce"
+              >expand_more</span
+            >
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Layout JS -->
+    <script src="../../../assets/js/dashboard-layout.js"></script>
+
+    <!-- Filter functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            filterBtns.forEach((b) => {
+              b.classList.remove("btn-primary");
+              b.classList.add("btn-light", "border");
+            });
+            btn.classList.add("btn-primary");
+            btn.classList.remove("btn-light", "border");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

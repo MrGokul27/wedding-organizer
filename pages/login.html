@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Login | Aura Weddings</title>
+    <title>Login | Stackly Weddings</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,7 +39,7 @@
               <div class="visual-panel-inner">
                 <div class="arch-frame">
                   <span class="material-symbols-outlined">favorite</span>
-                  <h2>Aura Weddings</h2>
+                  <h2>Stackly Weddings</h2>
                   <p>Where forever begins with elegance.</p>
                 </div>
               </div>
@@ -176,7 +176,7 @@
                 <!-- Submit -->
                 <div class="mt-4">
                   <button type="submit" class="btn-aura">
-                    Sign In to Aura
+                    Sign In to Stackly
                   </button>
                 </div>
               </form>
@@ -357,7 +357,54 @@
 
           /* Success */
           if (valid) {
-            window.location.href = "../index.html";
+            localStorage.setItem("userRole", role.value);
+            localStorage.setItem("userEmail", email.value.trim());
+
+            const emailVal = email.value.trim();
+            const emailLower = emailVal.toLowerCase();
+            const emailPrefix = emailVal.split("@")[0];
+            let formattedName = emailPrefix
+              .split(/[._\-]/)
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" ");
+
+            if (
+              emailLower === "admin@stackly.com" ||
+              emailLower === "admin@gmail.com"
+            ) {
+              localStorage.setItem("userName", "Elena Thorne");
+              localStorage.setItem("userTitle", "Lead Admin");
+            } else if (
+              emailLower === "couple@stackly.com" ||
+              emailLower === "couple@gmail.com"
+            ) {
+              localStorage.setItem("userName", "Jane & David");
+              localStorage.setItem("userTitle", "Couple");
+            } else if (
+              emailLower === "planner@stackly.com" ||
+              emailLower === "planner@gmail.com"
+            ) {
+              localStorage.setItem("userName", "Sarah Jenkins");
+              localStorage.setItem("userTitle", "Lead Planner");
+            } else if (
+              emailLower === "guest@stackly.com" ||
+              emailLower === "guest@gmail.com"
+            ) {
+              localStorage.setItem("userName", "David Miller");
+              localStorage.setItem("userTitle", "Wedding Guest");
+            } else {
+              localStorage.setItem("userName", formattedName);
+              if (role.value === "admin") {
+                localStorage.setItem("userTitle", "Platform Admin");
+              } else if (role.value === "couple") {
+                localStorage.setItem("userTitle", "Couple");
+              } else if (role.value === "planner") {
+                localStorage.setItem("userTitle", "Event Planner");
+              } else if (role.value === "guest") {
+                localStorage.setItem("userTitle", "Wedding Guest");
+              }
+            }
+            window.location.href = "dashboard/dashboard.html";
           }
         });
     </script>

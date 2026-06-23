@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker | Stackly Weddings</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Dashboard CSS -->
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="bg-surface">
+    <div id="dashboard-wrapper">
+      <main class="dashboard-content">
+        <!-- Top header bar controls -->
+        <div class="row g-4 mb-4 align-items-center">
+          <div class="col-md-7">
+            <h2 class="font-playfair-display text-primary fw-bold mb-1">
+              Financial Planning
+            </h2>
+            <p class="text-muted small mb-0">
+              Track your investment categories and balance schedules.
+            </p>
+          </div>
+          <div class="col-md-5 d-flex gap-2 justify-content-md-end">
+            <button class="btn btn-outline-gold rounded-pill px-4">
+              Export PDF
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Breakdown Grid -->
+        <div class="row g-4">
+          <!-- Budget breakdown (left column) -->
+          <div class="col-lg-8 d-flex flex-column gap-4">
+            <!-- Summary Cards -->
+            <div class="card-luxury p-4">
+              <div class="row align-items-center g-4">
+                <div class="col-md-7 text-center text-md-start">
+                  <span class="text-muted small text-uppercase tracking-wider"
+                    >Total Investment</span
+                  >
+                  <h2
+                    class="text-primary font-playfair-display fw-bold mb-3 mt-1"
+                  >
+                    $55,000.00
+                  </h2>
+
+                  <div
+                    class="row g-2 justify-content-center justify-content-md-start"
+                  >
+                    <div class="col-6">
+                      <p class="text-muted small mb-0">Spent to Date</p>
+                      <h5 class="text-dark fw-bold">$32,450</h5>
+                    </div>
+                    <div class="col-6">
+                      <p class="text-muted small mb-0">Remaining</p>
+                      <h5
+                        class="text-primary fw-bold"
+                        style="color: var(--color-muted-gold) !important"
+                      >
+                        $22,550
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Circular Progress -->
+                <div class="col-md-5 d-flex justify-content-center">
+                  <div
+                    class="position-relative"
+                    style="width: 130px; height: 130px"
+                  >
+                    <svg class="w-100 h-100 transform -rotate-90">
+                      <circle
+                        class="text-light"
+                        cx="65"
+                        cy="65"
+                        fill="transparent"
+                        r="55"
+                        stroke="currentColor"
+                        stroke-width="8"
+                      ></circle>
+                      <circle
+                        class="text-primary"
+                        cx="65"
+                        cy="65"
+                        fill="transparent"
+                        r="55"
+                        stroke="currentColor"
+                        stroke-dasharray="345"
+                        stroke-dashoffset="141"
+                        stroke-width="8"
+                      ></circle>
+                    </svg>
+                    <div
+                      class="position-absolute top-50 start-50 translate-middle text-center"
+                    >
+                      <h4 class="text-primary fw-bold mb-0">59%</h4>
+                      <span
+                        class="text-muted text-uppercase"
+                        style="font-size: 8px"
+                        >Planned</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Smart Savings Tip -->
+            <div
+              class="card-luxury p-4 bg-primary text-white position-relative overflow-hidden"
+            >
+              <div
+                class="position-absolute bottom-0 end-0 opacity-10"
+                style="transform: translate(15%, 15%) scale(1.5)"
+              >
+                <span class="material-symbols-outlined" style="font-size: 100px"
+                  >savings</span
+                >
+              </div>
+              <div class="position-relative z-1">
+                <h5 class="font-playfair-display fw-bold mb-2">
+                  Smart Savings
+                </h5>
+                <p
+                  class="small text-white text-opacity-90 mb-3"
+                  style="max-width: 480px"
+                >
+                  You're currently $1,200 under budget on floral arrangements.
+                  Consider allocating this to your honeymoon fund!
+                </p>
+                <button class="btn btn-sm btn-light rounded-pill px-4 fw-bold">
+                  View Budget Tips
+                </button>
+              </div>
+            </div>
+
+            <!-- Expenses by Category -->
+            <div class="card-luxury p-4">
+              <h5 class="font-playfair-display text-primary fw-bold mb-4">
+                Spending Breakdown
+              </h5>
+
+              <div class="d-flex flex-column gap-4">
+                <!-- Category 1 -->
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-end mb-2"
+                  >
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="p-2 badge-soft-rose rounded-3">
+                        <span class="material-symbols-outlined text-primary"
+                          >location_on</span
+                        >
+                      </div>
+                      <div>
+                        <h6 class="mb-0 fw-bold text-dark small">
+                          Venue & Rentals
+                        </h6>
+                        <span class="text-muted small" style="font-size: 11px"
+                          >$20,000 Budgeted</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-end">
+                      <p class="mb-0 fw-bold text-dark">$18,500.00</p>
+                      <span
+                        class="text-primary small fw-bold"
+                        style="font-size: 10px"
+                        >92% Utilized</span
+                      >
+                    </div>
+                  </div>
+                  <div class="progress" style="height: 6px">
+                    <div
+                      class="progress-bar bg-primary"
+                      role="progressbar"
+                      style="width: 92%"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-end mb-2"
+                  >
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="p-2 badge-lavender rounded-3">
+                        <span
+                          class="material-symbols-outlined"
+                          style="color: #674bb5"
+                          >restaurant</span
+                        >
+                      </div>
+                      <div>
+                        <h6 class="mb-0 fw-bold text-dark small">
+                          Catering & Bar
+                        </h6>
+                        <span class="text-muted small" style="font-size: 11px"
+                          >$15,000 Budgeted</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-end">
+                      <p class="mb-0 fw-bold text-dark">$4,200.00</p>
+                      <span
+                        class="text-secondary small fw-bold"
+                        style="font-size: 10px; color: #674bb5 !important"
+                        >28% Utilized</span
+                      >
+                    </div>
+                  </div>
+                  <div class="progress" style="height: 6px">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 28%; background-color: #674bb5"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-end mb-2"
+                  >
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="p-2 badge-gold rounded-3">
+                        <span class="material-symbols-outlined text-warning"
+                          >apparel</span
+                        >
+                      </div>
+                      <div>
+                        <h6 class="mb-0 fw-bold text-dark small">
+                          Attire & Beauty
+                        </h6>
+                        <span class="text-muted small" style="font-size: 11px"
+                          >$6,500 Budgeted</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-end">
+                      <p class="mb-0 fw-bold text-dark">$7,200.00</p>
+                      <span
+                        class="text-danger small fw-bold"
+                        style="font-size: 10px"
+                        >110% Over</span
+                      >
+                    </div>
+                  </div>
+                  <div class="progress" style="height: 6px">
+                    <div
+                      class="progress-bar bg-danger"
+                      role="progressbar"
+                      style="width: 100%"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-end mb-2"
+                  >
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="p-2 badge-soft-rose rounded-3">
+                        <span class="material-symbols-outlined text-primary"
+                          >photo_camera</span
+                        >
+                      </div>
+                      <div>
+                        <h6 class="mb-0 fw-bold text-dark small">
+                          Photography & Film
+                        </h6>
+                        <span class="text-muted small" style="font-size: 11px"
+                          >$8,000 Budgeted</span
+                        >
+                      </div>
+                    </div>
+                    <div class="text-end">
+                      <p class="mb-0 fw-bold text-dark">$2,550.00</p>
+                      <span
+                        class="text-primary small fw-bold"
+                        style="font-size: 10px"
+                        >32% Utilized</span
+                      >
+                    </div>
+                  </div>
+                  <div class="progress" style="height: 6px">
+                    <div
+                      class="progress-bar bg-primary"
+                      role="progressbar"
+                      style="width: 32%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="btn btn-outline-primary border-dashed w-100 py-3 rounded-3 mt-4 fw-bold small d-flex align-items-center justify-content-center gap-2"
+                style="
+                  border: 2px dashed var(--color-primary) !important;
+                  background: transparent;
+                "
+              >
+                <span class="material-symbols-outlined fs-5">add</span> Add New
+                Category
+              </button>
+            </div>
+
+            <!-- Recent payments history -->
+            <div class="row g-4">
+              <div class="col-md-7">
+                <div class="card-luxury p-4 h-100">
+                  <h5 class="font-playfair-display text-dark fw-bold mb-3">
+                    Recent Payments
+                  </h5>
+                  <div class="d-flex flex-column gap-2">
+                    <div
+                      class="d-flex justify-content-between align-items-center p-2 rounded border"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-success fs-5"
+                          >check_circle</span
+                        >
+                        <div>
+                          <h6 class="mb-0 small fw-bold text-dark">
+                            Venue Deposit
+                          </h6>
+                          <span class="text-muted small" style="font-size: 10px"
+                            >Oct 12, 2023</span
+                          >
+                        </div>
+                      </div>
+                      <span class="fw-bold text-dark">-$5,000</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center p-2 rounded border"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <span
+                          class="material-symbols-outlined text-success fs-5"
+                          >check_circle</span
+                        >
+                        <div>
+                          <h6 class="mb-0 small fw-bold text-dark">
+                            Photography Retainer
+                          </h6>
+                          <span class="text-muted small" style="font-size: 10px"
+                            >Nov 04, 2023</span
+                          >
+                        </div>
+                      </div>
+                      <span class="fw-bold text-dark">-$2,550</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div
+                  class="card-luxury p-4 bg-light border h-100 d-flex flex-column justify-content-between"
+                >
+                  <div>
+                    <div
+                      class="d-flex align-items-center gap-2 text-warning mb-3"
+                    >
+                      <span
+                        class="material-symbols-outlined fs-5"
+                        style="color: var(--color-muted-gold)"
+                        >account_balance</span
+                      >
+                      <h6 class="mb-0 fw-bold font-playfair-display text-dark">
+                        Projected Spend
+                      </h6>
+                    </div>
+                    <p class="text-muted small mb-0">
+                      Based on your current vendor selections, you are projected
+                      to be
+                      <span class="fw-bold text-primary">$2,450 under</span>
+                      your total budget.
+                    </p>
+                  </div>
+                  <div class="progress mt-3" style="height: 5px">
+                    <div
+                      class="progress-bar bg-warning"
+                      role="progressbar"
+                      style="width: 50%"
+                    ></div>
+                    <div
+                      class="progress-bar bg-secondary"
+                      role="progressbar"
+                      style="width: 50%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar layout (right column) -->
+          <div class="col-lg-4 d-flex flex-column gap-4">
+            <!-- Upcoming Expenses -->
+            <div class="card-luxury p-4 bg-light border">
+              <div
+                class="d-flex align-items-center justify-content-between mb-4"
+              >
+                <h5 class="font-playfair-display text-dark fw-bold mb-0">
+                  Upcoming
+                </h5>
+                <span
+                  class="badge bg-danger bg-opacity-10 text-danger rounded-pill px-2 py-1 uppercase"
+                  style="font-size: 9px"
+                  >Next 30 Days</span
+                >
+              </div>
+
+              <div class="d-flex flex-column gap-3">
+                <!-- Item 1 -->
+                <div class="bg-white p-3 rounded border shadow-sm">
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <span
+                      class="text-danger small fw-bold d-flex align-items-center gap-0.5"
+                      style="font-size: 9px"
+                    >
+                      <span class="material-symbols-outlined text-sm"
+                        >priority_high</span
+                      >
+                      DUE IN 3 DAYS
+                    </span>
+                    <span class="fw-bold text-dark">$3,200</span>
+                  </div>
+                  <h6 class="fw-bold text-dark mb-1">
+                    Catering 2nd Installment
+                  </h6>
+                  <p class="text-muted small mb-3" style="font-size: 10px">
+                    Vendor: Fine Dine Artistry
+                  </p>
+                  <div class="d-flex gap-2">
+                    <button
+                      class="btn btn-sm btn-primary flex-grow-1 rounded py-1.5 fw-bold"
+                    >
+                      Pay Now
+                    </button>
+                    <button
+                      class="btn btn-sm btn-light border p-1 px-2 rounded"
+                    >
+                      <span class="material-symbols-outlined text-muted fs-5"
+                        >calendar_add_on</span
+                      >
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-white p-3 rounded border shadow-sm">
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <span
+                      class="text-muted small fw-bold"
+                      style="font-size: 9px"
+                      >DUE IN 18 DAYS</span
+                    >
+                    <span class="fw-bold text-dark">$1,450</span>
+                  </div>
+                  <h6 class="fw-bold text-dark mb-1">
+                    Floral Final Design Fee
+                  </h6>
+                  <p class="text-muted small mb-0" style="font-size: 10px">
+                    Vendor: Petal & Bloom
+                  </p>
+                </div>
+              </div>
+
+              <button
+                class="btn btn-sm btn-link text-primary fw-bold text-decoration-none w-100 text-center mt-3 d-flex align-items-center justify-content-center gap-1"
+              >
+                See All Deadlines
+                <span class="material-symbols-outlined fs-6"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+
+            <!-- Payment Schedule -->
+            <div class="card-luxury p-4">
+              <h5 class="font-playfair-display text-primary fw-bold mb-4">
+                Payment Schedule
+              </h5>
+              <div
+                class="position-relative ps-4 border-start border-warning border-opacity-50"
+              >
+                <div class="mb-4 relative">
+                  <div
+                    class="bg-warning rounded-circle position-absolute"
+                    style="
+                      width: 10px;
+                      height: 10px;
+                      left: -25px;
+                      top: 5px;
+                      border: 2px solid #fff;
+                    "
+                  ></div>
+                  <span
+                    class="text-warning text-uppercase small fw-bold d-block"
+                    style="font-size: 9px"
+                    >January 2024</span
+                  >
+                  <h6 class="mb-1 text-dark small fw-bold">
+                    Initial Deposits Complete
+                  </h6>
+                  <span class="text-muted small" style="font-size: 10px"
+                    >Total $12,500 locked in.</span
+                  >
+                </div>
+
+                <div class="mb-4 relative">
+                  <div
+                    class="bg-primary rounded-circle position-absolute pulse-dot"
+                    style="
+                      width: 10px;
+                      height: 10px;
+                      left: -25px;
+                      top: 5px;
+                      border: 2px solid #fff;
+                    "
+                  ></div>
+                  <span
+                    class="text-primary text-uppercase small fw-bold d-block"
+                    style="font-size: 9px"
+                    >March 2024 (Now)</span
+                  >
+                  <h6 class="mb-1 text-dark small fw-bold">
+                    Mid-term Installments
+                  </h6>
+                  <span class="text-muted small" style="font-size: 10px"
+                    >4 payments pending this month.</span
+                  >
+                </div>
+
+                <div class="relative">
+                  <div
+                    class="bg-secondary rounded-circle position-absolute"
+                    style="
+                      width: 10px;
+                      height: 10px;
+                      left: -25px;
+                      top: 5px;
+                      border: 2px solid #fff;
+                    "
+                  ></div>
+                  <span
+                    class="text-muted text-uppercase small fw-bold d-block"
+                    style="font-size: 9px"
+                    >May 2024</span
+                  >
+                  <h6 class="mb-1 text-dark small fw-bold">Final Balances</h6>
+                  <span class="text-muted small" style="font-size: 10px"
+                    >Settle all remaining balances.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Report download card -->
+            <div
+              class="card-luxury p-4 bg-dark text-white d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <h6 class="fw-bold mb-1">Budget Report</h6>
+                <span
+                  class="text-white text-opacity-70 small"
+                  style="font-size: 10px"
+                  >Ready for download (PDF/CSV)</span
+                >
+              </div>
+              <button
+                class="btn btn-sm btn-light rounded-circle p-2 d-flex align-items-center justify-content-center"
+                style="width: 38px; height: 38px"
+              >
+                <span class="material-symbols-outlined text-dark fs-5"
+                  >download</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Layout JS -->
+    <script src="../../../assets/js/dashboard-layout.js"></script>
+  </body>
+</html>

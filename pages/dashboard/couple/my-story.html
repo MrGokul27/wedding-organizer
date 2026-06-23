@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Story | Stackly Weddings</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Dashboard CSS -->
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+
+    <style>
+      .timeline-line {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--color-muted-gold),
+          transparent
+        );
+        width: 2px;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+
+      .timeline-node {
+        z-index: 2;
+        width: 48px;
+        height: 48px;
+        background-color: var(--color-surface);
+        border: 4px solid var(--color-muted-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-muted-gold);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+
+      .timeline-row:hover .timeline-node {
+        transform: scale(1.1);
+      }
+
+      .arch-mask-img {
+        border-top-left-radius: 120px;
+        border-top-right-radius: 120px;
+        overflow: hidden;
+        aspect-ratio: 4/5;
+        box-shadow: 0 15px 30px rgba(122, 83, 101, 0.1);
+        transition: transform 0.5s ease;
+      }
+
+      .timeline-row:hover .arch-mask-img {
+        transform: rotate(0deg) !important;
+      }
+
+      /* =========================
+   LOVE STORY TIMELINE
+========================= */
+
+      .timeline-section {
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .timeline-line {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        transform: translateX(-50%);
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--color-muted-gold),
+          transparent
+        );
+        z-index: 1;
+      }
+
+      .timeline-row {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 4rem;
+      }
+
+      .timeline-content {
+        background: var(--color-surface);
+        border-radius: 20px;
+        padding: 1.5rem;
+        box-shadow: 0 12px 35px rgba(122, 83, 101, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+      }
+
+      .timeline-node {
+        width: 60px;
+        height: 60px;
+        background: var(--color-surface);
+        border: 4px solid var(--color-muted-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-muted-gold);
+        box-shadow: 0 8px 25px rgba(122, 83, 101, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      .timeline-row:hover .timeline-node {
+        transform: scale(1.15);
+      }
+
+      .arch-mask-img {
+        max-width: 320px;
+        height: 400px;
+        overflow: hidden;
+        border-top-left-radius: 160px;
+        border-top-right-radius: 160px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        box-shadow: 0 20px 40px rgba(122, 83, 101, 0.12);
+        transition: all 0.5s ease;
+      }
+
+      .arch-mask-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .timeline-row:hover .arch-mask-img {
+        transform: rotate(0deg) scale(1.03) !important;
+      }
+
+      .story-header {
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .story-header p {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      /* =========================
+   EDITOR SECTION
+========================= */
+
+      .story-editor {
+        background: var(--color-surface);
+        border-radius: 28px;
+        box-shadow: 0 20px 50px rgba(122, 83, 101, 0.08);
+        border: 1px solid rgba(122, 83, 101, 0.08);
+      }
+
+      .story-editor .form-control {
+        border-radius: 14px;
+        min-height: 52px;
+      }
+
+      .story-editor textarea.form-control {
+        min-height: 140px;
+      }
+
+      .upload-box {
+        border: 2px dashed rgba(122, 83, 101, 0.25);
+        border-radius: 18px;
+        padding: 2.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .upload-box:hover {
+        background: rgba(122, 83, 101, 0.04);
+        border-color: var(--color-primary);
+      }
+
+      .upload-box .material-symbols-outlined {
+        font-size: 48px;
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 767px) {
+        .timeline-line {
+          left: 30px;
+        }
+
+        .timeline-node {
+          width: 50px;
+          height: 50px;
+        }
+
+        .arch-mask-img {
+          max-width: 260px;
+          height: 320px;
+        }
+
+        .timeline-content {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-surface">
+    <div id="dashboard-wrapper">
+      <main class="dashboard-content">
+        <!-- Hero Header -->
+        <section class="story-header text-center mb-5">
+          <span
+            class="text-uppercase fw-bold text-primary small d-block mb-3"
+            style="letter-spacing: 3px"
+          >
+            Every Love Has A Beginning
+          </span>
+
+          <h1 class="font-playfair-display text-primary fw-bold mb-3">
+            Our Love Story
+          </h1>
+
+          <p class="text-muted">
+            A collection of beautiful moments, unforgettable memories, and the
+            journey that brought us together. Every chapter tells a story, and
+            every story leads us closer to forever.
+          </p>
+        </section>
+
+        <!-- Relationship Timeline Section -->
+        <section class="position-relative mb-5 py-4">
+          <!-- Vertical Central line for desktop -->
+          <div class="timeline-line d-none d-md-block"></div>
+
+          <div class="d-flex flex-column gap-5">
+            <!-- Milestone 1: We Met -->
+            <div class="row align-items-center g-4 timeline-row">
+              <div class="col-md-5 text-md-end order-1">
+                <div class="timeline-content">
+                  <span
+                    class="badge badge-soft-rose rounded-pill px-3 py-1.5 uppercase font-jakarta mb-3"
+                    style="font-size: 10px"
+                    >September 14, 2021</span
+                  >
+                  <h4 class="font-playfair-display text-primary fw-bold mb-2">
+                    When Sparks Flew
+                  </h4>
+                  <p class="text-muted small mb-0">
+                    It wasn't anything fancy. Just a rainy Tuesday at the local
+                    coffee shop. You asked if the seat across from me was taken,
+                    and I haven't wanted to sit across from anyone else since.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="col-md-2 d-flex justify-content-center order-3 order-md-2"
+              >
+                <div class="timeline-node">
+                  <span class="material-symbols-outlined fs-5">local_cafe</span>
+                </div>
+              </div>
+              <div class="col-md-5 order-2 order-md-3">
+                <div
+                  class="arch-mask-img mx-auto"
+                  style="max-width: 250px; transform: rotate(3deg)"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=250"
+                    class="w-full h-full object-cover"
+                    alt="Cafe date"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 2: First Date -->
+            <div class="row align-items-center g-4 timeline-row">
+              <div class="col-md-5 text-md-end order-1">
+                <div
+                  class="arch-mask-img mx-auto"
+                  style="max-width: 250px; transform: rotate(-3deg)"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=250"
+                    class="w-full h-full object-cover"
+                    alt="First Date"
+                  />
+                </div>
+              </div>
+              <div
+                class="col-md-2 d-flex justify-content-center order-3 order-md-2"
+              >
+                <div class="timeline-node">
+                  <span class="material-symbols-outlined fs-5">park</span>
+                </div>
+              </div>
+              <div class="col-md-5 order-2 order-md-3">
+                <span
+                  class="badge badge-lavender rounded-pill px-3 py-1.5 uppercase font-jakarta mb-3"
+                  style="font-size: 10px"
+                  >October 02, 2021</span
+                >
+                <h4 class="font-playfair-display text-primary fw-bold mb-2">
+                  The First Real Date
+                </h4>
+                <p class="text-muted small mb-0">
+                  We walked through the botanical gardens until the sun went
+                  down. Neither of us wanted the evening to end. That's when I
+                  knew this was different.
+                </p>
+              </div>
+            </div>
+
+            <!-- Milestone 3: Proposal -->
+            <div class="row align-items-center g-4 timeline-row">
+              <div class="col-md-5 text-md-end order-1">
+                <div class="timeline-content">
+                  <span
+                    class="badge badge-soft-rose rounded-pill px-3 py-1.5 uppercase font-jakarta mb-3"
+                    style="font-size: 10px"
+                    >December 24, 2023</span
+                  >
+                  <h4 class="font-playfair-display text-primary fw-bold mb-2">
+                    The Big Question
+                  </h4>
+                  <p class="text-muted small mb-0">
+                    Under the city lights, with the snow falling lightly, you
+                    got down on one knee. It was the easiest 'Yes' I've ever
+                    said.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="col-md-2 d-flex justify-content-center order-3 order-md-2"
+              >
+                <div class="timeline-node">
+                  <span class="material-symbols-outlined fs-5">diamond</span>
+                </div>
+              </div>
+              <div class="col-md-5 order-2 order-md-3">
+                <div
+                  class="arch-mask-img mx-auto"
+                  style="max-width: 250px; transform: rotate(3deg)"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=250"
+                    class="w-full h-full object-cover"
+                    alt="Proposal"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Editor Section -->
+        <section class="card-luxury p-4 p-md-5 relative overflow-hidden mt-5">
+          <div class="position-relative z-1">
+            <h3
+              class="font-playfair-display text-primary fw-bold text-center mb-1"
+            >
+              Add Your Next Chapter
+            </h3>
+            <p class="text-muted text-center small mb-4">
+              Share another memory, upload a photo, and let your story grow.
+            </p>
+
+            <form id="storyForm" class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label small text-primary uppercase fw-bold"
+                  >Milestone Name</label
+                >
+                <input
+                  class="form-control"
+                  placeholder="e.g. Our First Home"
+                  type="text"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small text-primary uppercase fw-bold"
+                  >Date</label
+                >
+                <input class="form-control" type="date" required />
+              </div>
+              <div class="col-12">
+                <label class="form-label small text-primary uppercase fw-bold"
+                  >The Narrative</label
+                >
+                <textarea
+                  class="form-control"
+                  placeholder="Tell us what happened in this beautiful moment..."
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label small text-primary uppercase fw-bold">
+                  Upload Imagery
+                </label>
+
+                <label for="memoryImage" class="upload-box d-block">
+                  <input
+                    type="file"
+                    id="memoryImage"
+                    name="memoryImage"
+                    accept=".jpg,.jpeg,.png"
+                    class="d-none"
+                    required
+                  />
+
+                  <span class="material-symbols-outlined text-primary mb-3">
+                    add_photo_alternate
+                  </span>
+
+                  <h6 class="fw-bold mb-2">Upload Your Memory</h6>
+
+                  <p class="text-muted small mb-0">
+                    Click to upload or drag and drop your image here
+                  </p>
+
+                  <p class="text-muted small mt-2 mb-0">
+                    JPG, PNG • Maximum 10MB
+                  </p>
+
+                  <small
+                    id="fileName"
+                    class="d-block mt-3 fw-semibold text-primary"
+                  ></small>
+                </label>
+              </div>
+              <div class="col-12 text-center pt-3">
+                <button
+                  type="submit"
+                  class="btn btn-primary rounded-pill px-5 py-2 fw-bold d-inline-flex align-items-center gap-2 shadow-sm"
+                >
+                  <span class="material-symbols-outlined fs-6">save</span> Save
+                  Milestone
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Layout JS -->
+    <script src="../../../assets/js/dashboard-layout.js"></script>
+
+    <script>
+      const form = document.getElementById("storyForm");
+      const fileInput = document.getElementById("memoryImage");
+      const fileName = document.getElementById("fileName");
+
+      fileInput.addEventListener("change", function () {
+        fileName.textContent = this.files.length ? this.files[0].name : "";
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        window.location.href = "../../../pages/common/404.html";
+      });
+    </script>
+  </body>
+</html>
