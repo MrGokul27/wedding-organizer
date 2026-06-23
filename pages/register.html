@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Create Account | Aura Weddings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/register.css" />
+  </head>
+  <body>
+    <!-- Floating petal accents -->
+    <span class="material-symbols-outlined floral-accent floral-tl"
+      >local_florist</span
+    >
+    <span class="material-symbols-outlined floral-accent floral-br"
+      >local_florist</span
+    >
+    <span class="material-symbols-outlined floral-accent floral-tr">spa</span>
+    <span class="material-symbols-outlined floral-accent floral-bl">spa</span>
+
+    <!-- Animated floating petals -->
+    <span
+      class="bg-petal material-symbols-outlined"
+      style="
+        left: 8%;
+        font-size: 28px;
+        animation-duration: 18s;
+        animation-delay: 0s;
+      "
+      >local_florist</span
+    >
+    <span
+      class="bg-petal material-symbols-outlined"
+      style="
+        left: 22%;
+        font-size: 18px;
+        animation-duration: 22s;
+        animation-delay: 4s;
+      "
+      >spa</span
+    >
+    <span
+      class="bg-petal material-symbols-outlined"
+      style="
+        left: 55%;
+        font-size: 24px;
+        animation-duration: 16s;
+        animation-delay: 8s;
+      "
+      >local_florist</span
+    >
+    <span
+      class="bg-petal material-symbols-outlined"
+      style="
+        left: 75%;
+        font-size: 20px;
+        animation-duration: 25s;
+        animation-delay: 2s;
+      "
+      >spa</span
+    >
+    <span
+      class="bg-petal material-symbols-outlined"
+      style="
+        left: 90%;
+        font-size: 16px;
+        animation-duration: 19s;
+        animation-delay: 11s;
+      "
+      >local_florist</span
+    >
+
+    <main
+      class="d-flex align-items-center justify-content-center min-vh-100 px-3 py-4 py-sm-5"
+    >
+      <div class="register-card w-100" style="max-width: 1000px">
+        <div class="row g-0 h-100">
+          <!-- ── Visual panel (desktop) ── -->
+          <div class="col-md-5 col-lg-5 d-none d-md-flex flex-column">
+            <div class="visual-panel flex-grow-1">
+              <div class="visual-overlay"></div>
+              <div class="visual-inner">
+                <div class="arch-ornament">
+                  <span class="material-symbols-outlined heart-icon"
+                    >favorite</span
+                  >
+                  <h2>Aura Weddings</h2>
+                  <p>Where forever begins with elegance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Mobile top strip ── -->
+          <div class="d-md-none">
+            <div class="visual-mobile-strip">
+              <span class="material-symbols-outlined">favorite</span>
+              <div>
+                <h2>Aura Weddings</h2>
+                <p>Where forever begins with elegance.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Form panel ── -->
+          <div class="col-md-7 col-lg-7">
+            <div class="form-panel">
+              <!-- Header -->
+              <div class="mb-4 text-center text-md-start">
+                <span class="eyebrow">Begin Your Journey</span>
+                <h1 class="form-headline">Create Account</h1>
+                <p
+                  class="mb-0"
+                  style="color: var(--on-surface-variant); font-size: 0.87rem"
+                >
+                  Join Aura and start planning your perfect day
+                </p>
+              </div>
+
+              <!-- Progress indicator -->
+              <div class="step-pills mb-4">
+                <div class="step-pill active" id="pill1"></div>
+                <div class="step-pill" id="pill2"></div>
+                <div class="step-pill" id="pill3"></div>
+              </div>
+
+              <form id="registerForm" novalidate autocomplete="off">
+                <!-- Name fields -->
+                <div class="field-grid field-group">
+                  <!-- First name -->
+                  <div>
+                    <label class="field-label" for="firstName">
+                      First Name <span class="required-dot"></span>
+                    </label>
+                    <div class="input-wrap">
+                      <input
+                        class="aura-input"
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        placeholder="e.g. Ananya"
+                        autocomplete="given-name"
+                      />
+                      <span class="material-symbols-outlined input-icon"
+                        >person</span
+                      >
+                    </div>
+                    <div class="field-error" id="firstName-error">
+                      <span class="material-symbols-outlined">error</span>
+                      <span id="firstName-error-msg"
+                        >First name is required.</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Last name -->
+                  <div>
+                    <label class="field-label" for="lastName">
+                      Last Name <span class="required-dot"></span>
+                    </label>
+                    <div class="input-wrap">
+                      <input
+                        class="aura-input"
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        placeholder="e.g. Sharma"
+                        autocomplete="family-name"
+                      />
+                      <span class="material-symbols-outlined input-icon"
+                        >person</span
+                      >
+                    </div>
+                    <div class="field-error" id="lastName-error">
+                      <span class="material-symbols-outlined">error</span>
+                      <span id="lastName-error-msg"
+                        >Last name is required.</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Role -->
+                <div class="field-group">
+                  <label class="field-label">
+                    I am a… <span class="required-dot"></span>
+                  </label>
+                  <div class="role-grid">
+                    <div class="role-pill">
+                      <input
+                        type="radio"
+                        name="role"
+                        id="role-couple"
+                        value="couple"
+                      />
+                      <label for="role-couple">
+                        <span class="material-symbols-outlined">favorite</span>
+                        Couple
+                      </label>
+                    </div>
+                    <div class="role-pill">
+                      <input
+                        type="radio"
+                        name="role"
+                        id="role-planner"
+                        value="planner"
+                      />
+                      <label for="role-planner">
+                        <span class="material-symbols-outlined"
+                          >event_note</span
+                        >
+                        Planner
+                      </label>
+                    </div>
+                    <div class="role-pill">
+                      <input
+                        type="radio"
+                        name="role"
+                        id="role-guest"
+                        value="guest"
+                      />
+                      <label for="role-guest">
+                        <span class="material-symbols-outlined">groups</span>
+                        Guest
+                      </label>
+                    </div>
+                    <div class="role-pill">
+                      <input
+                        type="radio"
+                        name="role"
+                        id="role-admin"
+                        value="admin"
+                      />
+                      <label for="role-admin">
+                        <span class="material-symbols-outlined"
+                          >admin_panel_settings</span
+                        >
+                        Admin
+                      </label>
+                    </div>
+                  </div>
+                  <div class="role-error-msg" id="role-error">
+                    <span class="material-symbols-outlined">error</span>
+                    Please select your role.
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="field-group">
+                  <label class="field-label" for="email">
+                    Email Address <span class="required-dot"></span>
+                  </label>
+                  <div class="input-wrap">
+                    <input
+                      class="aura-input"
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="name@example.com"
+                      autocomplete="off"
+                    />
+                    <span class="material-symbols-outlined input-icon"
+                      >mail</span
+                    >
+                  </div>
+                  <div class="field-error" id="email-error">
+                    <span class="material-symbols-outlined">error</span>
+                    <span id="email-error-msg">Email address is required.</span>
+                  </div>
+                </div>
+
+                <!-- Password -->
+                <div class="field-group">
+                  <label class="field-label" for="password">
+                    Password <span class="required-dot"></span>
+                  </label>
+                  <div class="input-wrap">
+                    <input
+                      class="aura-input"
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="Min. 8 characters"
+                      autocomplete="new-password"
+                    />
+                    <button
+                      type="button"
+                      class="input-icon clickable"
+                      id="togglePass"
+                      aria-label="Toggle password visibility"
+                    >
+                      <span class="material-symbols-outlined">visibility</span>
+                    </button>
+                  </div>
+                  <!-- Strength bar -->
+                  <div class="strength-bar" id="strengthBar">
+                    <div class="strength-seg" id="seg1"></div>
+                    <div class="strength-seg" id="seg2"></div>
+                    <div class="strength-seg" id="seg3"></div>
+                    <div class="strength-seg" id="seg4"></div>
+                  </div>
+                  <div
+                    class="strength-label"
+                    id="strengthLabel"
+                    style="color: var(--outline-variant)"
+                  ></div>
+                  <div class="field-error" id="password-error">
+                    <span class="material-symbols-outlined">error</span>
+                    <span id="password-error-msg">Password is required.</span>
+                  </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="field-group">
+                  <label class="field-label" for="confirmPassword">
+                    Confirm Password <span class="required-dot"></span>
+                  </label>
+                  <div class="input-wrap">
+                    <input
+                      class="aura-input"
+                      type="password"
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      placeholder="Re-enter your password"
+                      autocomplete="new-password"
+                    />
+                    <button
+                      type="button"
+                      class="input-icon clickable"
+                      id="toggleConfirm"
+                      aria-label="Toggle confirm password visibility"
+                    >
+                      <span class="material-symbols-outlined">visibility</span>
+                    </button>
+                  </div>
+                  <div class="match-indicator" id="matchIndicator">
+                    <span class="material-symbols-outlined" id="matchIcon"
+                      >check_circle</span
+                    >
+                    <span id="matchText"></span>
+                  </div>
+                  <div class="field-error" id="confirmPassword-error">
+                    <span class="material-symbols-outlined">error</span>
+                    <span id="confirmPassword-error-msg"
+                      >Please confirm your password.</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Terms -->
+                <div class="field-group">
+                  <div class="terms-wrap">
+                    <input
+                      class="aura-check"
+                      type="checkbox"
+                      id="terms"
+                      name="terms"
+                    />
+                    <label class="terms-text" for="terms">
+                      I agree to Aura Weddings'
+                      <a href="#">Terms &amp; Conditions</a> and
+                      <a href="#">Privacy Policy</a>. I understand my data will
+                      be used to personalise my wedding planning experience.
+                    </label>
+                  </div>
+                  <div
+                    class="field-error"
+                    id="terms-error"
+                    style="margin-top: 0.5rem"
+                  >
+                    <span class="material-symbols-outlined">error</span>
+                    You must accept the terms to continue.
+                  </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="mt-3">
+                  <button type="submit" class="btn-aura">
+                    <span class="material-symbols-outlined">auto_awesome</span>
+                    Create My Account
+                  </button>
+                </div>
+              </form>
+
+              <!-- Login link -->
+              <div class="mt-4 text-center">
+                <p class="login-text mb-0">
+                  Already have an account?
+                  <a href="login.html" class="login-link">Sign In</a>
+                </p>
+              </div>
+
+              <!-- Footer icons -->
+              <div
+                class="d-flex align-items-center justify-content-center gap-4 mt-4"
+              >
+                <span class="material-symbols-outlined footer-icon"
+                  >auto_awesome</span
+                >
+                <span class="material-symbols-outlined footer-icon"
+                  >favorite</span
+                >
+                <span class="material-symbols-outlined footer-icon"
+                  >celebration</span
+                >
+                <span class="material-symbols-outlined footer-icon">spa</span>
+                <span class="material-symbols-outlined footer-icon"
+                  >bedtime</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- /form panel -->
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/register.js"></script>
+  </body>
+</html>

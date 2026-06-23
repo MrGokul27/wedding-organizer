@@ -1,0 +1,301 @@
+:root {
+  --primary: #7a5365;
+  --primary-container: #d4a5b9;
+  --on-primary: #ffffff;
+  --surface: #fbf9f5;
+  --surface-low: #f5f3ef;
+  --surface-lowest: #ffffff;
+  --on-surface: #1b1c1a;
+  --on-surface-variant: #4f4448;
+  --outline-variant: #d2c2c7;
+  --outline: #817478;
+  --muted-gold: #b59410;
+  --error: #ba1a1a;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--surface);
+  color: var(--on-surface);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+.floral-accent {
+  position: fixed;
+  opacity: 0.1;
+  pointer-events: none;
+  color: var(--primary);
+  font-size: 120px !important;
+}
+.floral-tl {
+  top: -40px;
+  left: -40px;
+}
+.floral-br {
+  bottom: -40px;
+  right: -40px;
+}
+.login-card {
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 20px 30px -10px rgba(122, 83, 101, 0.12);
+  background: var(--surface-lowest);
+}
+.visual-panel {
+  background-image: url("https://lh3.googleusercontent.com/aida/AP1WRLtLGldTOxin-PwYnhUaqFuSSCYW73lgLlMVJnk2VEpLr_M4_elI2KYfFjg0hOwzgEUgWawlquTOupEYbyoWeAsjp24BCan7rDVmqEdJN7rvB3jf8PXXXqC3bd2Qv07BSDyYUXep7G5kLGZNEKEAj1ErQxIqW6jjQXehvhSwpNx562MR_mkqXxj4ps56sYxl1Gg5i98hXp1hncLMSDQ1Rpjh1azYtyCknwlguSuvxyM9r3IrfR-Giqudbg");
+  background-size: cover;
+  background-position: center;
+  min-height: 560px;
+  position: relative;
+}
+.visual-panel-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(122, 83, 101, 0.22);
+  mix-blend-mode: multiply;
+}
+.visual-panel-inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+.arch-frame {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-top-left-radius: 1000px;
+  border-top-right-radius: 1000px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(2px);
+  padding: 2rem;
+}
+.arch-frame .material-symbols-outlined {
+  font-size: 40px !important;
+  margin-bottom: 1rem;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+.arch-frame h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.arch-frame p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+.form-panel {
+  padding: 3rem 2.5rem;
+}
+@media (min-width: 768px) {
+  .form-panel {
+    padding: 4rem 3.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .form-panel {
+    padding: 5rem 4.5rem;
+  }
+}
+.eyebrow {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-gold);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.form-headline {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 500;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.field-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.aura-input,
+.aura-select {
+  width: 100%;
+  background-color: var(--surface-low);
+  border: 1.5px solid transparent;
+  border-radius: 0.75rem;
+  padding: 1rem 3rem 1rem 1.25rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1rem;
+  color: var(--on-surface);
+  outline: none;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.aura-input::placeholder {
+  color: var(--outline-variant);
+}
+.aura-input:focus,
+.aura-select:focus {
+  box-shadow: 0 0 0 3px rgba(122, 83, 101, 0.18);
+  transform: scale(1.01);
+}
+.aura-input.is-invalid,
+.aura-select.is-invalid {
+  border-color: var(--error) !important;
+  background-color: #fff5f5;
+}
+.field-error {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--error);
+  margin-top: 0.35rem;
+  font-weight: 500;
+  align-items: center;
+  gap: 0.3rem;
+}
+.field-error.show {
+  display: flex;
+}
+.field-error .material-symbols-outlined {
+  font-size: 15px !important;
+  flex-shrink: 0;
+}
+.input-wrap {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--outline-variant);
+  pointer-events: none;
+  font-size: 20px !important;
+}
+.input-icon.clickable {
+  pointer-events: auto;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--outline-variant);
+  transition: color 0.2s;
+}
+.input-icon.clickable:hover {
+  color: var(--primary);
+}
+.forgot-link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted-gold);
+  text-decoration: none;
+}
+.forgot-link:hover {
+  text-decoration: underline;
+  color: var(--muted-gold);
+}
+.aura-check {
+  width: 1.15rem;
+  height: 1.15rem;
+  border-color: var(--outline-variant);
+  border-radius: 0.25rem;
+  accent-color: var(--primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.aura-check-label {
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  margin-left: 0.75rem;
+}
+.btn-aura {
+  width: 100%;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 1.1rem 2rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 20px -8px rgba(122, 83, 101, 0.35);
+  transition:
+    background-color 0.3s ease,
+    transform 0.15s ease;
+  cursor: pointer;
+}
+.btn-aura:hover {
+  background-color: #6b4759;
+}
+.btn-aura:active {
+  transform: scale(0.98);
+}
+.register-text {
+  font-size: 1rem;
+  color: var(--on-surface-variant);
+}
+.register-link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 0.25rem;
+}
+.register-link:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}
+.footer-icons {
+  opacity: 0.3;
+  filter: grayscale(1);
+  transition: all 0.5s ease;
+  font-size: 22px !important;
+}
+.footer-icons:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+.field-group {
+  margin-bottom: 1.5rem;
+}

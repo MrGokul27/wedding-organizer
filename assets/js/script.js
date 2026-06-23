@@ -415,7 +415,7 @@ document.querySelectorAll("a, button").forEach((el) => {
   setInterval(updateCountdown, 1000);
 })();
 
-/* ---- 14 REDIRECT EMPTY OR BROKEN LINKS ---- */
+/* ---- REDIRECT EMPTY OR BROKEN LINKS ---- */
 document.addEventListener("click", function (e) {
   const link = e.target.closest("a");
 
@@ -430,7 +430,12 @@ document.addEventListener("click", function (e) {
     href.startsWith("javascript:")
   ) {
     e.preventDefault();
-    window.location.href = "pages/common/404.html";
+
+    const isInsidePages = window.location.pathname.includes("/pages/");
+
+    window.location.href = isInsidePages
+      ? "common/404.html"
+      : "pages/common/404.html";
   }
 });
 

@@ -1,0 +1,726 @@
+:root {
+  --primary: #7a5365;
+  --primary-dark: #6b4759;
+  --primary-light: #9d7089;
+  --primary-container: #d4a5b9;
+  --primary-faint: #f7eef2;
+  --on-primary: #ffffff;
+  --surface: #fbf9f5;
+  --surface-low: #f5f3ef;
+  --surface-lowest: #ffffff;
+  --on-surface: #1b1c1a;
+  --on-surface-variant: #4f4448;
+  --outline-variant: #d2c2c7;
+  --outline: #817478;
+  --muted-gold: #b59410;
+  --muted-gold-light: #f7f0d6;
+  --error: #ba1a1a;
+  --success: #2d6a4f;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--surface);
+  color: var(--on-surface);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Animated background petals ── */
+.bg-petal {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  color: var(--primary);
+  animation: floatPetal linear infinite;
+}
+@keyframes floatPetal {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotate(0deg) scale(0.7);
+  }
+  10% {
+    opacity: 0.07;
+  }
+  90% {
+    opacity: 0.07;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) rotate(360deg) scale(1.1);
+  }
+}
+
+/* ── Floral corners ── */
+.floral-accent {
+  position: fixed;
+  opacity: 0.08;
+  pointer-events: none;
+  color: var(--primary);
+  font-size: 140px !important;
+  transition: opacity 0.5s;
+}
+.floral-tl {
+  top: -50px;
+  left: -50px;
+  transform: rotate(-15deg);
+}
+.floral-br {
+  bottom: -50px;
+  right: -50px;
+  transform: rotate(165deg);
+}
+.floral-tr {
+  top: -40px;
+  right: 40px;
+  font-size: 60px !important;
+  opacity: 0.05;
+}
+.floral-bl {
+  bottom: 20px;
+  left: 40px;
+  font-size: 50px !important;
+  opacity: 0.05;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* ── Main card ── */
+.register-card {
+  border-radius: 2.5rem;
+  overflow: hidden;
+  box-shadow:
+    0 4px 6px -1px rgba(122, 83, 101, 0.05),
+    0 30px 60px -15px rgba(122, 83, 101, 0.18),
+    0 0 0 1px rgba(122, 83, 101, 0.06);
+  background: var(--surface-lowest);
+}
+
+/* ── Visual panel ── */
+.visual-panel {
+  background-image: url("https://lh3.googleusercontent.com/aida/AP1WRLtLGldTOxin-PwYnhUaqFuSSCYW73lgLlMVJnk2VEpLr_M4_elI2KYfFjg0hOwzgEUgWawlquTOupEYbyoWeAsjp24BCan7rDVmqEdJN7rvB3jf8PXXXqC3bd2Qv07BSDyYUXep7G5kLGZNEKEAj1ErQxIqW6jjQXehvhSwpNx562MR_mkqXxj4ps56sYxl1Gg5i98hXp1hncLMSDQ1Rpjh1azYtyCknwlguSuvxyM9r3IrfR-Giqudbg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(122, 83, 101, 0.55) 0%,
+    rgba(74, 40, 58, 0.8) 100%
+  );
+}
+
+.visual-inner {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.arch-ornament {
+  width: 220px;
+  height: 280px;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem 1.5rem;
+}
+
+.arch-ornament .heart-icon {
+  font-size: 44px !important;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  margin-bottom: 1rem;
+  animation: heartPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+.arch-ornament h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+}
+
+.arch-ornament p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Decorative divider on visual panel */
+.visual-divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 0 auto 1.25rem;
+}
+
+.visual-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.visual-perks li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.visual-perks li .material-symbols-outlined {
+  font-size: 17px !important;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  color: var(--primary-container);
+  flex-shrink: 0;
+}
+
+/* ── Form panel ── */
+.form-panel {
+  padding: 2.5rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .form-panel {
+    padding: 3rem 2.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .form-panel {
+    padding: 3.5rem 3.5rem;
+  }
+}
+
+/* ── Eyebrow + headline ── */
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-gold);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.form-headline {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.7rem, 4vw, 2.2rem);
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 0.3rem;
+}
+
+/* ── Step pills ── */
+.step-pills {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1.75rem;
+}
+
+.step-pill {
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--outline-variant);
+  flex: 1;
+  transition: background 0.4s ease;
+}
+
+.step-pill.active {
+  background: var(--primary);
+}
+.step-pill.done {
+  background: var(--primary-container);
+}
+
+/* ── Two-column grid for name fields ── */
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Field group ── */
+.field-group {
+  margin-bottom: 1.25rem;
+}
+
+.field-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.field-label .required-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary-container);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ── Inputs ── */
+.aura-input,
+.aura-select {
+  width: 100%;
+  background-color: var(--surface-low);
+  border: 1.5px solid transparent;
+  border-radius: 0.875rem;
+  padding: 0.875rem 3rem 0.875rem 1.125rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.95rem;
+  color: var(--on-surface);
+  outline: none;
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.aura-input::placeholder {
+  color: var(--outline-variant);
+}
+
+.aura-input:focus,
+.aura-select:focus {
+  box-shadow: 0 0 0 3.5px rgba(122, 83, 101, 0.16);
+  border-color: var(--primary-container);
+  background: var(--surface-lowest);
+}
+
+.aura-input.is-valid {
+  border-color: #6abf87 !important;
+  background: #f3fbf7;
+}
+.aura-input.is-invalid,
+.aura-select.is-invalid {
+  border-color: var(--error) !important;
+  background: #fff5f5;
+}
+
+/* ── Input wrap + icons ── */
+.input-wrap {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--outline-variant);
+  pointer-events: none;
+  font-size: 19px !important;
+  transition: color 0.2s;
+}
+
+.input-wrap:focus-within .input-icon:not(.clickable) {
+  color: var(--primary);
+}
+
+.input-icon.clickable {
+  pointer-events: auto;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.input-icon.clickable:hover {
+  color: var(--primary);
+}
+
+/* ── Password strength ── */
+.strength-bar {
+  display: flex;
+  gap: 4px;
+  margin-top: 0.5rem;
+}
+
+.strength-seg {
+  flex: 1;
+  height: 3px;
+  border-radius: 9999px;
+  background: var(--outline-variant);
+  transition: background 0.35s ease;
+}
+
+.strength-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-top: 0.3rem;
+  min-height: 1rem;
+  transition: color 0.3s;
+}
+
+/* ── Password match indicator ── */
+.match-indicator {
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 1.1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.match-indicator.show {
+  opacity: 1;
+}
+.match-indicator.match {
+  color: var(--success);
+}
+.match-indicator.no-match {
+  color: var(--error);
+}
+
+.match-indicator .material-symbols-outlined {
+  font-size: 14px !important;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+/* ── Inline field errors ── */
+.field-error {
+  display: none;
+  font-size: 0.72rem;
+  color: var(--error);
+  margin-top: 0.35rem;
+  font-weight: 600;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.field-error.show {
+  display: flex;
+}
+
+.field-error .material-symbols-outlined {
+  font-size: 14px !important;
+  flex-shrink: 0;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+/* ── Role select custom ── */
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+
+@media (min-width: 576px) {
+  .role-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.role-pill input[type="radio"] {
+  display: none;
+}
+
+.role-pill label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.65rem 0.5rem;
+  background: var(--surface-low);
+  border: 1.5px solid transparent;
+  border-radius: 0.875rem;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  transition: all 0.2s ease;
+  text-align: center;
+  user-select: none;
+}
+
+.role-pill label .material-symbols-outlined {
+  font-size: 20px !important;
+  color: var(--outline-variant);
+  transition: color 0.2s;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 300,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+.role-pill input:checked + label {
+  background: var(--primary-faint);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.role-pill input:checked + label .material-symbols-outlined {
+  color: var(--primary);
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+.role-pill label:hover:not(.checked) {
+  border-color: var(--primary-container);
+  background: #fdf5f8;
+}
+
+.role-error-msg {
+  display: none;
+  font-size: 0.72rem;
+  color: var(--error);
+  margin-top: 0.4rem;
+  font-weight: 600;
+  align-items: center;
+  gap: 0.3rem;
+}
+.role-error-msg.show {
+  display: flex;
+}
+.role-error-msg .material-symbols-outlined {
+  font-size: 14px !important;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+/* ── Terms checkbox ── */
+.terms-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--muted-gold-light);
+  border: 1px solid rgba(181, 148, 16, 0.2);
+  border-radius: 0.875rem;
+  padding: 0.875rem 1rem;
+}
+
+.aura-check {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.1rem;
+  accent-color: var(--primary);
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 0.2rem;
+}
+
+.terms-text {
+  font-size: 0.82rem;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+.terms-text a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.terms-text a:hover {
+  text-decoration: underline;
+}
+
+/* ── Submit button ── */
+.btn-aura {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary) 0%, #9d5a7a 100%);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 1rem 2rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 24px -8px rgba(122, 83, 101, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-aura::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background 0.2s;
+}
+
+.btn-aura:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px -8px rgba(122, 83, 101, 0.45);
+}
+
+.btn-aura:hover::after {
+  background: rgba(255, 255, 255, 0.06);
+}
+.btn-aura:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-aura .material-symbols-outlined {
+  font-size: 18px !important;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 300,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+/* ── Login link ── */
+.login-text {
+  font-size: 0.9rem;
+  color: var(--on-surface-variant);
+}
+.login-link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 0.25rem;
+}
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Footer icons ── */
+.footer-icon {
+  opacity: 0.25;
+  color: var(--primary);
+  font-size: 20px !important;
+  transition: all 0.4s ease;
+  cursor: default;
+}
+.footer-icon:hover {
+  opacity: 0.9;
+  transform: scale(1.2);
+}
+
+/* ── Visual panel mobile top strip ── */
+.visual-mobile-strip {
+  background: linear-gradient(135deg, var(--primary) 0%, #9d5a7a 100%);
+  padding: 1.5rem 2rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+}
+
+.visual-mobile-strip .material-symbols-outlined {
+  font-size: 28px !important;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  animation: heartPulse 2.5s ease-in-out infinite;
+}
+
+.visual-mobile-strip h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.visual-mobile-strip p {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  margin: 0;
+  font-style: italic;
+}
