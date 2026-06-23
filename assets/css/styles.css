@@ -1825,7 +1825,8 @@ body.inner-page #mainNav {
 }
 
 .page-banner--contact .page-banner__bg {
-  background-image: url("../images/contact-banner-img.webp");
+  background-image: url("https://lh3.googleusercontent.com/aida/AP1WRLtvRenKLYnhFkemotLXFtjKxTowb6GDKgUYTIk1RecvBK6Bt5iVkVEeFNQ6ECOvL_N1tF5tzMAQ8eBltMvyJG72xI3UEDpNpchQjJ2n3nD45c6BLqmnf1ywp9vZms527vJcFkkj9m3iPT250hHqlfc10GTr2yrJVWyA2b5oDMKqnvdWNxbstr1nhkRZcW2o0rBoiJEcOAu6mVxAxelU_dDrEALipl6F67v8SQMX9h3KDV9UQYnfpHXVk2E");
+  background-size: contain;
 }
 
 /* ── Responsive ── */
