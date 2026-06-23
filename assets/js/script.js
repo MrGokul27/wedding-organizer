@@ -372,7 +372,7 @@ document.querySelectorAll("a, button").forEach((el) => {
 
 /* ---- 13 LIVE DATE & TIME ---- */
 (function initCountdown() {
-  const targetDate = new Date("2026-08-12T16:00:00");
+  const targetDate = new Date("2026-12-12T16:00:00");
 
   const daysEl = document.getElementById("cd-days");
   const hoursEl = document.getElementById("cd-hours");
