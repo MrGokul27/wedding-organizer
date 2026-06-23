@@ -1,425 +1,807 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Stackly Weddings</title>
 
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us | Aura Weddings</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary-fixed-dim": "#eab9ce",
-                        "tertiary-container": "#d3ae36",
-                        "primary-container": "#d4a5b9",
-                        "on-surface-variant": "#4f4448",
-                        "primary": "#7a5365",
-                        "surface-container-low": "#f5f3ef",
-                        "secondary-fixed-dim": "#cebdff",
-                        "primary-fixed": "#ffd8e7",
-                        "muted-gold": "#B59410",
-                        "surface-bright": "#fbf9f5",
-                        "surface": "#fbf9f5",
-                        "inverse-on-surface": "#f2f0ed",
-                        "inverse-primary": "#eab9ce",
-                        "soft-rose": "#FCE7F3",
-                        "lavender-mist": "#E9D5FF",
-                        "cream-bg": "#FDFBF7",
-                        "on-primary-fixed": "#2f1221",
-                        "secondary": "#674bb5",
-                        "tertiary-fixed": "#ffe088",
-                        "on-error-container": "#93000a",
-                        "on-tertiary-container": "#544200",
-                        "background": "#fbf9f5",
-                        "inverse-surface": "#30312e",
-                        "on-primary-container": "#5d3a4a",
-                        "on-secondary-fixed-variant": "#4f319c",
-                        "error-container": "#ffdad6",
-                        "on-primary": "#ffffff",
-                        "secondary-fixed": "#e8ddff",
-                        "surface-container-lowest": "#ffffff",
-                        "deep-navy": "#1E293B",
-                        "on-tertiary-fixed-variant": "#574500",
-                        "surface-container": "#efeeea",
-                        "surface-container-high": "#eae8e4",
-                        "on-primary-fixed-variant": "#603c4d",
-                        "surface-dim": "#dbdad6",
-                        "surface-container-highest": "#e4e2de",
-                        "surface-variant": "#e4e2de",
-                        "on-error": "#ffffff",
-                        "error": "#ba1a1a",
-                        "tertiary-fixed-dim": "#e9c349",
-                        "surface-tint": "#7a5365",
-                        "outline": "#817478",
-                        "on-secondary-container": "#3f1e8c",
-                        "secondary-container": "#ab8ffe",
-                        "on-surface": "#1b1c1a",
-                        "on-secondary": "#ffffff",
-                        "on-background": "#1b1c1a",
-                        "outline-variant": "#d2c2c7",
-                        "on-secondary-fixed": "#21005e",
-                        "tertiary": "#735c00",
-                        "on-tertiary-fixed": "#241a00",
-                        "on-tertiary": "#ffffff"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "gutter": "24px",
-                        "section-gap-mobile": "64px",
-                        "margin-mobile": "20px",
-                        "container-max-width": "1200px",
-                        "section-gap-desktop": "120px",
-                        "margin-desktop": "80px"
-                    },
-                    "fontFamily": {
-                        "body-md": ["Plus Jakarta Sans"],
-                        "headline-lg-mobile": ["Playfair Display"],
-                        "headline-lg": ["Playfair Display"],
-                        "display-lg": ["Playfair Display"],
-                        "kicker": ["Playfair Display"],
-                        "display-lg-mobile": ["Playfair Display"],
-                        "label-sm": ["Plus Jakarta Sans"],
-                        "headline-md": ["Playfair Display"],
-                        "body-lg": ["Plus Jakarta Sans"]
-                    },
-                    "fontSize": {
-                        "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
-                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
-                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "500"}],
-                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
-                        "kicker": ["20px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "display-lg-mobile": ["48px", {"lineHeight": "56px", "fontWeight": "400"}],
-                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
-                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
-                        "body-lg": ["18px", {"lineHeight": "30px", "fontWeight": "400"}]
-                    }
-                },
-            },
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <style>
+      /* ── About page specific ── */
+      .arch-wrap {
+        border-top-left-radius: 9999px;
+        border-top-right-radius: 9999px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px -10px rgba(122, 83, 101, 0.15);
+      }
+      .arch-wrap img {
+        width: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .arch-wrap:hover img {
+        transform: scale(1.04);
+      }
+
+      .stat-card {
+        background: var(--color-surface-low);
+        border-radius: 1.25rem;
+        padding: 2rem 1.5rem;
+        border: 1px solid rgba(210, 194, 199, 0.3);
+        text-align: center;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(122, 83, 101, 0.1);
+      }
+      .stat-number {
+        font-family: var(--font-display);
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: var(--color-primary);
+        line-height: 1;
+      }
+      .stat-label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-muted-text);
+        margin-top: 0.5rem;
+      }
+
+      .team-card {
+        background: var(--color-surface-low);
+        border-radius: 1.5rem;
+        overflow: hidden;
+        border: 1px solid rgba(210, 194, 199, 0.25);
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+      .team-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 50px rgba(122, 83, 101, 0.12);
+      }
+      .team-img-wrap {
+        overflow: hidden;
+        height: 340px;
+      }
+      .team-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        filter: grayscale(30%);
+        transition:
+          transform 0.5s ease,
+          filter 0.5s ease;
+      }
+      .team-card:hover .team-img-wrap img {
+        transform: scale(1.05);
+        filter: grayscale(0%);
+      }
+      .team-body {
+        padding: 1.75rem;
+      }
+      .team-role {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-muted-gold);
+        margin-bottom: 0.5rem;
+      }
+      .team-name {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--color-primary);
+        margin-bottom: 0.75rem;
+      }
+
+      .timeline-card {
+        background: #fff;
+        border-radius: 1.5rem;
+        padding: 2.5rem 2rem;
+        border: 1px solid rgba(210, 194, 199, 0.25);
+        box-shadow: 0 8px 30px rgba(122, 83, 101, 0.06);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      .timeline-card:hover {
+        transform: translateY(-4px);
+      }
+      .timeline-year {
+        font-family: var(--font-display);
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--color-primary-mid);
+        opacity: 0.5;
+        line-height: 1;
+        margin-bottom: 0.75rem;
+      }
+      .timeline-title {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        color: var(--color-primary);
+        margin-bottom: 0.75rem;
+      }
+
+      .value-card {
+        border-radius: 1.5rem;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        transition:
+          background 0.3s ease,
+          transform 0.3s ease;
+        cursor: default;
+      }
+      .value-card:hover {
+        transform: translateY(-4px);
+      }
+      .value-card:nth-child(1):hover {
+        background: rgba(252, 231, 243, 0.6);
+      }
+      .value-card:nth-child(2):hover {
+        background: rgba(233, 213, 255, 0.4);
+      }
+      .value-card:nth-child(3):hover {
+        background: rgba(252, 231, 243, 0.6);
+      }
+      .value-icon-wrap {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.25rem;
+        box-shadow: 0 8px 24px rgba(122, 83, 101, 0.1);
+        color: var(--color-primary);
+      }
+      .value-icon-wrap .material-symbols-outlined {
+        font-size: 2rem;
+      }
+
+      .testimonial-bg {
+        position: relative;
+        min-height: 480px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 2rem;
+      }
+      .testimonial-bg img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .testimonial-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(30, 20, 25, 0.55);
+        backdrop-filter: blur(3px);
+      }
+      .testimonial-content {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        max-width: 760px;
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+      .testimonial-quote {
+        font-family: var(--font-display);
+        font-size: clamp(1.2rem, 3vw, 1.75rem);
+        font-style: italic;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      .testimonial-cite {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #eab9ce;
+      }
+
+      .about-section-bg {
+        background: var(--color-surface-low);
+      }
+
+      .essence-img-col {
+        height: 300px;
+      }
+      @media (min-width: 768px) {
+        .essence-img-col {
+          height: 380px;
         }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .arch-container {
-            border-top-left-radius: 9999px;
-            border-top-right-radius: 9999px;
-            overflow: hidden;
-        }
-        .text-balance {
-            text-wrap: balance;
-        }
-        .ambient-shadow {
-            box-shadow: 0 20px 30px -10px rgba(122, 83, 101, 0.08);
-        }
-        .transition-soft {
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .scrolling-ticker {
-            animation: ticker 40s linear infinite;
-        }
-        @keyframes ticker {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+      }
     </style>
-</head>
-<body class="bg-surface font-body-md text-on-surface">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
-<div class="flex justify-between items-center max-w-[1200px] mx-auto px-margin-desktop py-4">
-<a class="font-display-lg text-headline-md text-primary tracking-tighter" href="#">Aura Weddings</a>
-<div class="hidden md:flex gap-8 items-center">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
-<a class="font-body-md text-body-md text-primary border-b-2 border-muted-gold pb-1" href="#">Story</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Gallery</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
-</button>
-<button class="md:hidden p-2">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
-</button>
-</div>
-</div>
-</nav>
-<main class="pt-24">
-<!-- Hero Section -->
-<section class="relative px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap-desktop overflow-hidden">
-<div class="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-gutter items-center">
-<div class="order-2 md:order-1 space-y-8" data-aos="fade-up">
-<span class="font-label-sm text-label-sm text-muted-gold uppercase tracking-widest">About Sukun Elegance</span>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-tight text-on-surface text-balance">
-                        The Artisans behind Timeless Love
-                    </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg italic">
-                        Creating serene celebrations that resonate with grace and quiet luxury. We believe in the power of tranquility and the beauty of perfectly curated details.
-                    </p>
-<div class="pt-4">
-<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-body-md hover:opacity-90 transition-soft active:scale-95 shadow-md">
-                            Our Method
-                        </button>
-</div>
-</div>
-<div class="order-1 md:order-2 flex justify-center md:justify-end">
-<div class="arch-container w-full max-w-[500px] h-[650px] ambient-shadow relative group">
-<img class="w-full h-full object-cover transition-soft group-hover:scale-105" data-alt="A sophisticated high-end wedding couple, the bride in a blush pink ruffled gown and the groom in a sharp navy suit, standing in a romantic embrace against a soft white background. The lighting is ethereal and high-key, emphasizing a luxury editorial aesthetic and minimal romantic elegance of the Aura Weddings brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwbU3ZYmkKMthLm5b57pp2qGuoC_0ErLOzxBMbbACPWARepxp_bc5uVjKEh2cGV0fap8zgaAPE0aD8Bn3l8DdfuA59FLJeZKj8DzF8ZQUQBNOrnQlzo3ftqm0Jj5Sf9zEHlPApapd-rWsAHREzkweiTw_BiOdSZA3vuGa2_tgML73UMLvKCITsGwwZUe26SYxFJkngOZTehO2ArMVqYJvHqV5PHxCnX6Khu6gRF_09xhQmtGvXMRQprKAmOVBq5f31-T5QoAqbTXo"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
-</div>
-</div>
-</div>
-</section>
-<!-- Our Philosophy (The Essence of Sukun) -->
-<section class="bg-surface-container-low py-section-gap-mobile md:py-section-gap-desktop">
-<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">The Essence of Sukun</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
-                        In Indonesian, 'Sukun' translates to a peaceful state. Our commitment is to infuse every wedding journey with peace, calm, and absolute tranquility.
-                    </p>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
-<div class="space-y-4">
-<div class="arch-container h-64 md:h-80">
-<img class="w-full h-full object-cover" data-alt="Close-up of delicate pink roses with soft petals, bathed in morning sunlight, creating a serene and luxurious atmosphere. The color palette features soft pinks and cream tones, reflecting the romantic and high-end aesthetic of Sukun wedding planning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCxI0gwjp6Dna4RzQBbrJFiLrg7Y23b7Y4nWECG7db1jJcmS75pvYUmW1QUIXJvR7cmG-C2Nu2QqewGjJeajhX6YyPM4FlgKtSxEkB9bguNNhOKJ1hYdt6-7pYdUxYBJBCR0ACV-7Xi8BZFuOTOnk9SMp4wWLafq23b5DoSP2CQwUrNTmpH2yxojVHBuPdGOoX0kag-lrvQ67GVurQ-j3i1lKlVp13GM_c74dxAZKu4VWLciKyIPnH3_H1rpOcJVs2e6-_MNsPgFM"/>
-</div>
-<h4 class="font-headline-md text-body-md text-center text-primary italic">Quiet Luxury</h4>
-</div>
-<div class="space-y-4 pt-8">
-<div class="arch-container h-64 md:h-80">
-<img class="w-full h-full object-cover" data-alt="An elegant wedding invitation suite laid out on a cream silk fabric, featuring gold foil lettering and minimalist typography. The aesthetic is sophisticated and airy, with soft shadows and a neutral, warm color palette that suggests exclusive celebration planning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq4K2XQORVeRxKU7jvpzfK_pr1oAMhkcLfJ6HZsiLWyGbIjmmY4KphKZATWG1OKhuP5K_jBE6y88m41gfcg6ZRIzxZ1KJ9H3NfklSoxf1hXF4Zw5VNAXoiUr5RR2Mn9HF8OSfcQnl_njWN5-DbgL0MUINP-fRAatfQobGyGtZ3-5dH4f_7QgFovr6CRRLidpKhaFEiix1K4sR1OCLG5rqSxXmFRqeFHald5TuXMY7vr6tyxAB6D6eSu09SFe8XK-ooGFhv8TYjMyM"/>
-</div>
-<h4 class="font-headline-md text-body-md text-center text-primary italic">Meticulous Detail</h4>
-</div>
-<div class="space-y-4">
-<div class="arch-container h-64 md:h-80">
-<img class="w-full h-full object-cover" data-alt="A tranquil outdoor wedding setting at twilight, with delicate fairy lights draped over arched floral structures. The scene is calm and celebratory, featuring blush pink flowers and muted gold accents under a soft lavender sky, conveying peaceful luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa64V5INIfF3uoTHAxTk874z04J0TeHFRBA5yn-O9MXQDtCKrQ6s-hrVy_5OS7frGyUEr4fwkIrgpjpnTFUm8-9Y_MQ2wTl1XTIwvh-WjWuQ5ExVcXCWEbKLEzEr3vZCYa4szoFKYZc9Egtx-YautCOVHbBkfWKocZhrBWVqHxSSUQLb2Vjn_iPbpOY0n-PTcZgqauXhgUkfXSkpGIDsmDqsWby5q1DzrB9bYhZ8IdHk8AxVFIINUeZF_fG42ccHgNaYv-DLwcGDg"/>
-</div>
-<h4 class="font-headline-md text-body-md text-center text-primary italic">Peaceful Flow</h4>
-</div>
-<div class="space-y-4 pt-8">
-<div class="arch-container h-64 md:h-80">
-<img class="w-full h-full object-cover" data-alt="Artistic capture of two glasses of champagne on a silver tray, with soft-focus floral background and elegant warm lighting. The mood is celebratory yet sophisticated, with a refined color palette of cream, gold, and soft pink tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCi23gGxDHLfH3VlytaRTAODmh7lpr0B7bGzc16FT_lDRQOSmF1xvmwsYeXb9Yt3acm0HlfVHuItdDVwj0BB7iUaoo3xw1xUQrr9XOztWF27jXDwZuq7qpE7N50wPMgrjwZSSDTC72W5ZdLg6GXYOHD6Z0nll_4_h1LPUguK0wPeKR3f9M2oLIzTaPr5lie5YwC4t6Ei04pJJhIjnNzvUQBNOrnQlzo3ftqm0Jj5Sf9zEHlPApapd-rWsAHREzkweiTw-_c60mpdw"/>
-</div>
-<h4 class="font-headline-md text-body-md text-center text-primary italic">Curation</h4>
-</div>
-</div>
-</div>
-</section>
-<!-- The Visionaries (Team) -->
-<section class="py-section-gap-mobile md:py-section-gap-desktop">
-<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-<div class="max-w-xl">
-<span class="font-label-sm text-label-sm text-muted-gold uppercase tracking-widest block mb-4">The Hearts Behind Aura</span>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">The Visionaries</h2>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-xs md:text-right">
-                        Combining creative intuition with operational precision to craft your perfect day.
-                    </p>
-</div>
-<div class="grid md:grid-cols-2 gap-16">
-<!-- Esabella Bell -->
-<div class="flex flex-col md:flex-row gap-8 items-center md:items-start group">
-<div class="w-full md:w-1/2 arch-container h-[450px] ambient-shadow">
-<img class="w-full h-full object-cover grayscale transition-soft group-hover:grayscale-0" data-alt="A professional portrait of Esabella Bell, a creative director with a warm and sophisticated expression. She has blonde wavy hair and wears a stylish blush-toned blouse. The background is a minimalist, high-end studio with soft floral elements, reflecting professional elegance and creative warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF5KZOFX7DJepporsLOh5t2HPziBQLIP7XValuq_M8RSEuVg3dZrnaDIBgzzI0KG3mpl5-PmGLPkOhsipiGzh0y5FJ2wMn4AdkhBzr8214KqBw-QzIDk6vwSG-rf7U1YWfeOdN9ss4DIgtdoG3HnHzajSCOAZ1R1DnEvqEA-Qu0iQoq11VMNGYKQ1g9GsO5eHgk6FXyjThwpEG8VG-mAs7N2X7cXl6ofSBWMcVwdjwtivoeM7JUrBds05xQXuADwwII6lxw3ETDAM"/>
-</div>
-<div class="w-full md:w-1/2 space-y-4">
-<h3 class="font-headline-md text-headline-md text-primary">Esabella Bell</h3>
-<p class="font-label-sm text-label-sm text-muted-gold uppercase">Creative Director</p>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                                With over a decade in editorial design, Esabella brings a curated aesthetic to every celebration. Her vision is rooted in emotional storytelling and timeless textures.
-                            </p>
-<div class="flex gap-4 pt-4">
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span></a>
-</div>
-</div>
-</div>
-<!-- William Max -->
-<div class="flex flex-col md:flex-row gap-8 items-center md:items-start group md:mt-24">
-<div class="w-full md:w-1/2 arch-container h-[450px] ambient-shadow">
-<img class="w-full h-full object-cover grayscale transition-soft group-hover:grayscale-0" data-alt="A professional portrait of William Max, operations lead, wearing a tailored navy suit and a white shirt. He has a calm, confident demeanor. The setting is a bright, modern architectural space with clean lines and soft lighting, conveying professional reliability and premium service standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW5xtOLFJvKKs7ImKFQxSdX-qneZ1GAh0crcEvJedxny4aFVGdR5sgNM_RO07cI9OoiRV5psuxIstY6bMt3CfxIexUtJmh3khyVA-ze5AVd83QDtrvaE1DTSYQCpAxaErmKTFHdXwBWfHOhBz-RhE8F6VLwpoKwsjUduKuPz8B-HoJzDl5dG7_b5_BAYb0KsrCOtjm3fQcskzApcQgn6sHCtdIYnemKV_arknRAl_COFzSim-A2GeeKAlCLxKakvHSx31SjCQFznI"/>
-</div>
-<div class="w-full md:w-1/2 space-y-4">
-<h3 class="font-headline-md text-headline-md text-primary">William Max</h3>
-<p class="font-label-sm text-label-sm text-muted-gold uppercase">Operations Lead</p>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                                Precision is William's signature. He ensures that every complex logistics plan unfolds with absolute ease, allowing our couples to remain in their peaceful bubble.
-                            </p>
-<div class="flex gap-4 pt-4">
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Our Journey -->
-<section class="bg-cream-bg py-section-gap-mobile md:py-section-gap-desktop overflow-hidden border-y border-outline-variant/30">
-<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
-<h2 class="font-headline-lg text-center mb-16 text-primary">Our Journey</h2>
-<div class="relative">
-<!-- Timeline Line -->
-<div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-muted-gold/30 -translate-y-1/2"></div>
-<div class="grid md:grid-cols-3 gap-gutter relative">
-<div class="bg-surface p-10 rounded-2xl ambient-shadow text-center space-y-4 md:translate-y-[-20px]">
-<span class="font-display-lg text-headline-lg text-muted-gold opacity-30">2014</span>
-<h5 class="font-headline-md text-body-lg text-primary">Where it Started</h5>
-<p class="font-body-md text-on-surface-variant">Aura Weddings began in a small boutique studio in Paris, founded on the dream of bringing editorial quality to private weddings.</p>
-</div>
-<div class="bg-surface p-10 rounded-2xl ambient-shadow text-center space-y-4 md:translate-y-[20px]">
-<span class="font-display-lg text-headline-lg text-muted-gold opacity-30">2019</span>
-<h5 class="font-headline-md text-body-lg text-primary">Growth</h5>
-<p class="font-body-md text-on-surface-variant">Expansion to international destinations, curating over 200 celebrations across three continents with our signature Sukun approach.</p>
-</div>
-<div class="bg-surface p-10 rounded-2xl ambient-shadow text-center space-y-4 md:translate-y-[-20px]">
-<span class="font-display-lg text-headline-lg text-muted-gold opacity-30">2024</span>
-<h5 class="font-headline-md text-body-lg text-primary">Our Vision</h5>
-<p class="font-body-md text-on-surface-variant">Leading the industry toward sustainable luxury and deeper emotional connection in every event we orchestrate.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- The Sukun Standard -->
-<section class="py-section-gap-mobile md:py-section-gap-desktop">
-<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop text-center">
-<span class="font-label-sm text-label-sm text-muted-gold uppercase tracking-widest block mb-4">Our Excellence</span>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-16">The Sukun Standard</h2>
-<div class="grid md:grid-cols-3 gap-gutter">
-<div class="p-8 rounded-3xl hover:bg-soft-rose transition-soft group">
-<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 ambient-shadow text-primary">
-<span class="material-symbols-outlined text-4xl" data-icon="auto_awesome">auto_awesome</span>
-</div>
-<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Bespoke Design</h4>
-<p class="font-body-md text-on-surface-variant">Every element is designed from scratch to reflect your unique heritage and personal story.</p>
-</div>
-<div class="p-8 rounded-3xl hover:bg-lavender-mist transition-soft group">
-<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 ambient-shadow text-primary">
-<span class="material-symbols-outlined text-4xl" data-icon="spa">spa</span>
-</div>
-<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Stress-Free Planning</h4>
-<p class="font-body-md text-on-surface-variant">Our signature Sukun methodology eliminates anxiety, keeping the focus on your joy.</p>
-</div>
-<div class="p-8 rounded-3xl hover:bg-soft-rose transition-soft group">
-<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 ambient-shadow text-primary">
-<span class="material-symbols-outlined text-4xl" data-icon="workspace_premium">workspace_premium</span>
-</div>
-<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Exceptional Curation</h4>
-<p class="font-body-md text-on-surface-variant">We partner only with the world's most refined vendors who meet our rigorous quality pillars.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- High-Impact Testimonial -->
-<section class="relative h-[600px] flex items-center justify-center overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover" data-alt="A wide cinematic shot of a beautifully decorated wedding reception under a canopy of draped blush fabric and hanging wisteria flowers. The lighting is warm and golden, creating a romantic atmosphere. The setting is luxurious and sophisticated, reflecting a masterfully planned event by Aura Weddings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnUoISIKAM_kP1sRTdUCZzBfuR--vBS2SRGoCUR0vk7zFEOGwnNAMz4rfB8tkkJfATFz17mTCY4RpuoEuR7D3f7ur4IuEniB_shThwMosDlU6-onnuNvrIs_9GfgyZsi2YYiNxB6g5IykwMI5-d5bubDYoNO3KK3I5HHGPzRHkh9glHxCsce3PlleIW3PVd0E3V0RhOXloEUQBNOrnQlzo3ftqm0Jj5Sf9zEHlPApapd-rWsAHREzkweiTw-tTJBQWSUjjix91arw"/>
-<div class="absolute inset-0 bg-deep-navy/40 backdrop-blur-[2px]"></div>
-</div>
-<div class="relative z-10 max-w-4xl mx-auto px-margin-mobile text-center text-white">
-<span class="material-symbols-outlined text-5xl mb-8 text-primary-fixed" data-icon="format_quote">format_quote</span>
-<blockquote class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8 italic">
-                    "Aura Weddings didn't just plan a ceremony; they curated an experience that felt like a quiet, beautiful dream. We were guests at our own wedding, completely at peace."
-                </blockquote>
-<cite class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-primary-fixed">— Sophia &amp; James, Lake Como</cite>
-</div>
-</section>
-<!-- Call to Action -->
-<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface text-center">
-<div class="max-w-[1200px] mx-auto px-margin-mobile">
-<div class="bg-surface-container-high rounded-[40px] p-12 md:p-24 relative overflow-hidden">
-<!-- Subtle background decoration -->
-<div class="absolute top-0 right-0 p-10 opacity-10">
-<span class="material-symbols-outlined text-[200px]" data-icon="favorite">favorite</span>
-</div>
-<div class="relative z-10 space-y-8">
-<h2 class="font-display-lg text-headline-lg text-primary">Begin Your Journey with Us</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">
-                            Let's sit down for a coffee and discuss how we can bring Sukun to your celebration.
-                        </p>
-<div class="pt-6">
-<a class="inline-block border-2 border-muted-gold text-muted-gold hover:bg-muted-gold hover:text-white px-12 py-4 rounded-full font-body-md transition-soft" href="#">
-                                Book a Consultation
-                            </a>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full mt-section-gap-desktop bg-surface-container-low">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-[1200px] mx-auto px-margin-desktop py-section-gap-desktop">
-<div class="md:col-span-1">
-<div class="font-display-lg text-headline-md text-primary mb-4">Aura Weddings</div>
-<p class="text-body-md text-on-surface-variant">Timeless celebrations crafted with peace and luxury in mind.</p>
-</div>
-<div>
-<h4 class="font-headline-md text-body-lg text-primary mb-6">Explore</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">About Us</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Journal</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Planning Tools</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-headline-md text-body-lg text-primary mb-6">Legal</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Privacy Policy</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Terms of Service</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-headline-md text-body-lg text-primary mb-6">Connect</h4>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-soft" href="#">
-<span class="material-symbols-outlined text-xl" data-icon="alternate_email">alternate_email</span>
-</a>
-<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-soft" href="#">
-<span class="material-symbols-outlined text-xl" data-icon="photo_camera">photo_camera</span>
-</a>
-</div>
-</div>
-</div>
-<div class="max-w-[1200px] mx-auto px-margin-desktop py-8 border-t border-outline-variant/30 text-center text-body-md text-on-surface-variant">
-            © 2024 Aura Weddings. Crafted with love for timeless celebrations.
+  </head>
+  <body class="inner-page">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <main style="padding-top: 5.5rem">
+      <!-- ── Hero ── -->
+      <section class="py-5 py-lg-0">
+        <div class="container py-5" style="max-width: 1200px">
+          <div class="row g-5 align-items-center">
+            <!-- Text -->
+            <div class="col-lg-6 order-2 order-lg-1">
+              <span class="page-kicker d-block mb-3">About Sukun Elegance</span>
+              <h1 class="page-title mb-4">
+                The Artisans Behind<br />Timeless Love
+              </h1>
+              <p
+                style="
+                  font-size: 1.1rem;
+                  line-height: 1.8;
+                  color: var(--color-muted-text);
+                  font-style: italic;
+                "
+                class="mb-5"
+              >
+                Creating serene celebrations that resonate with grace and quiet
+                luxury. We believe in the power of tranquility and the beauty of
+                perfectly curated details.
+              </p>
+              <a href="contact.html" class="btn-primary-c">Our Method</a>
+            </div>
+            <!-- Image -->
+            <div
+              class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center justify-content-lg-end"
+            >
+              <div
+                class="arch-wrap"
+                style="max-width: 480px; width: 100%; height: 580px"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwbU3ZYmkKMthLm5b57pp2qGuoC_0ErLOzxBMbbACPWARepxp_bc5uVjKEh2cGV0fap8zgaAPE0aD8Bn3l8DdfuA59FLJeZKj8DzF8ZQUQBNOrnQlzo3ftqm0Jj5Sf9zEHlPApapd-rWsAHREzkweiTw_BiOdSZA3vuGa2_tgML73UMLvKCITsGwwZUe26SYxFJkngOZTehO2ArMVqYJvHqV5PHxCnX6Khu6gRF_09xhQmtGvXMRQprKAmOVBq5f31-T5QoAqbTXo"
+                  alt="Bride and groom editorial portrait"
+                  style="height: 580px"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-</footer>
-<script>
-        // Simple intersection observer for reveal animations
-        const observerOptions = {
-            threshold: 0.1
-        };
+      </section>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
-                }
-            });
-        }, observerOptions);
+      <!-- ── Stats ── -->
+      <section class="py-5 about-section-bg">
+        <div class="container py-4" style="max-width: 1200px">
+          <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-3">
+              <div class="stat-card reveal">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Weddings Planned</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card reveal">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Years of Excellence</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card reveal">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Continents Served</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card reveal">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Client Satisfaction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        document.querySelectorAll('[data-aos="fade-up"]').forEach(el => {
-            el.classList.add('opacity-0', 'translate-y-10', 'transition-soft');
-            observer.observe(el);
-        });
-    </script>
-</body></html>
+      <!-- ── Essence / Philosophy ── -->
+      <section class="py-5">
+        <div class="container py-4" style="max-width: 1200px">
+          <div class="text-center mb-5">
+            <span class="page-kicker d-block mb-3">Our Philosophy</span>
+            <h2 class="section-title mb-3">The Essence of Sukun</h2>
+            <p
+              style="
+                max-width: 600px;
+                margin: 0 auto;
+                color: var(--color-muted-text);
+                font-size: 1rem;
+                line-height: 1.7;
+              "
+            >
+              In Indonesian, <em>Sukun</em> translates to a peaceful state. Our
+              commitment is to infuse every wedding journey with peace, calm,
+              and absolute tranquility.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-6 col-md-3">
+              <div class="arch-wrap essence-img-col reveal">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCxI0gwjp6Dna4RzQBbrJFiLrg7Y23b7Y4nWECG7db1jJcmS75pvYUmW1QUIXJvR7cmG-C2Nu2QqewGjJeajhX6YyPM4FlgKtSxEkB9bguNNhOKJ1hYdt6-7pYdUxYBJBCR0ACV-7Xi8BZFuOTOnk9SMp4wWLafq23b5DoSP2CQwUrNTmpH2yxojVHBuPdGOoX0kag-lrvQ67GVurQ-j3i1lKlVp13GM_c74dxAZKu4VWLciKyIPnH3_H1rpOcJVs2e6-_MNsPgFM"
+                  alt="Quiet luxury flowers"
+                  style="height: 100%"
+                />
+              </div>
+              <p
+                class="text-center mt-3"
+                style="
+                  font-family: var(--font-display);
+                  color: var(--color-primary);
+                  font-style: italic;
+                "
+              >
+                Quiet Luxury
+              </p>
+            </div>
+            <div class="col-6 col-md-3 pt-md-5">
+              <div class="arch-wrap essence-img-col reveal">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq4K2XQORVeRxKU7jvpzfK_pr1oAMhkcLfJ6HZsiLWyGbIjmmY4KphKZATWG1OKhuP5K_jBE6y88m41gfcg6ZRIzxZ1KJ9H3NfklSoxf1hXF4Zw5VNAXoiUr5RR2Mn9HF8OSfcQnl_njWN5-DbgL0MUINP-fRAatfQobGyGtZ3-5dH4f_7QgFovr6CRRLidpKhaFEiix1K4sR1OCLG5rqSxXmFRqeFHald5TuXMY7vr6tyxAB6D6eSu09SFe8XK-ooGFhv8TYjMyM"
+                  alt="Meticulous detail"
+                  style="height: 100%"
+                />
+              </div>
+              <p
+                class="text-center mt-3"
+                style="
+                  font-family: var(--font-display);
+                  color: var(--color-primary);
+                  font-style: italic;
+                "
+              >
+                Meticulous Detail
+              </p>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="arch-wrap essence-img-col reveal">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa64V5INIfF3uoTHAxTk874z04J0TeHFRBA5yn-O9MXQDtCKrQ6s-hrVy_5OS7frGyUEr4fwkIrgpjpnTFUm8-9Y_MQ2wTl1XTIwvh-WjWuQ5ExVcXCWEbKLEzEr3vZCYa4szoFKYZc9Egtx-YautCOVHbBkfWKocZhrBWVqHxSSUQLb2Vjn_iPbpOY0n-PTcZgqauXhgUkfXSkpGIDsmDqsWby5q1DzrB9bYhZ8IdHk8AxVFIINUeZF_fG42ccHgNaYv-DLwcGDg"
+                  alt="Peaceful flow"
+                  style="height: 100%"
+                />
+              </div>
+              <p
+                class="text-center mt-3"
+                style="
+                  font-family: var(--font-display);
+                  color: var(--color-primary);
+                  font-style: italic;
+                "
+              >
+                Peaceful Flow
+              </p>
+            </div>
+            <div class="col-6 col-md-3 pt-md-5">
+              <div class="arch-wrap essence-img-col reveal">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCi23gGxDHLfH3VlytaRTAODmh7lpr0B7bGzc16FT_lDRQOSmF1xvmwsYeXb9Yt3acm0HlfVHuItdDVwj0BB7iUaoo3xw1xUQrr9XOztWF27jXDwZuq7qpE7N50wPMgrjwZSSDTC72W5ZdLg6GXYOHD6Z0nll_4_h1LPUguK0wPeKR3f9M2oLIzTaPr5lie5YwC4t6Ei04pJJhIjnNzvUQBNOrnQlzo3ftqm0Jj5Sf9zEHlPApapd-rWsAHREzkweiTw-_c60mpdw"
+                  alt="Curation"
+                  style="height: 100%"
+                />
+              </div>
+              <p
+                class="text-center mt-3"
+                style="
+                  font-family: var(--font-display);
+                  color: var(--color-primary);
+                  font-style: italic;
+                "
+              >
+                Curation
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Team ── -->
+      <section class="py-5 about-section-bg">
+        <div class="container py-4" style="max-width: 1200px">
+          <div
+            class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3"
+          >
+            <div>
+              <span class="page-kicker d-block mb-2"
+                >The Hearts Behind Stackly</span
+              >
+              <h2 class="section-title mb-0">The Visionaries</h2>
+            </div>
+            <p
+              style="
+                max-width: 260px;
+                color: var(--color-muted-text);
+                font-size: 0.9rem;
+                line-height: 1.6;
+              "
+              class="mb-0 text-md-end"
+            >
+              Combining creative intuition with operational precision to craft
+              your perfect day.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 reveal">
+              <div class="team-card">
+                <div class="team-img-wrap">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF5KZOFX7DJepporsLOh5t2HPziBQLIP7XValuq_M8RSEuVg3dZrnaDIBgzzI0KG3mpl5-PmGLPkOhsipiGzh0y5FJ2wMn4AdkhBzr8214KqBw-QzIDk6vwSG-rf7U1YWfeOdN9ss4DIgtdoG3HnHzajSCOAZ1R1DnEvqEA-Qu0iQoq11VMNGYKQ1g9GsO5eHgk6FXyjThwpEG8VG-mAs7N2X7cXl6ofSBWMcVwdjwtivoeM7JUrBds05xQXuADwwII6lxw3ETDAM"
+                    alt="Esabella Bell"
+                  />
+                </div>
+                <div class="team-body">
+                  <p class="team-role">Creative Director</p>
+                  <h3 class="team-name">Esabella Bell</h3>
+                  <p
+                    style="
+                      color: var(--color-muted-text);
+                      font-size: 0.9rem;
+                      line-height: 1.7;
+                      margin-bottom: 1rem;
+                    "
+                  >
+                    With over a decade in editorial design, Esabella brings a
+                    curated aesthetic to every celebration. Her vision is rooted
+                    in emotional storytelling and timeless textures.
+                  </p>
+                  <div class="d-flex gap-3">
+                    <a
+                      href="#"
+                      style="color: var(--color-muted-text)"
+                      class="d-flex"
+                      ><span class="material-symbols-outlined">share</span></a
+                    >
+                    <a
+                      href="#"
+                      style="color: var(--color-muted-text)"
+                      class="d-flex"
+                      ><span class="material-symbols-outlined">mail</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 reveal" style="margin-top: 0">
+              <div class="team-card" style="margin-top: 0">
+                <div class="team-img-wrap">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW5xtOLFJvKKs7ImKFQxSdX-qneZ1GAh0crcEvJedxny4aFVGdR5sgNM_RO07cI9OoiRV5psuxIstY6bMt3CfxIexUtJmh3khyVA-ze5AVd83QDtrvaE1DTSYQCpAxaErmKTFHdXwBWfHOhBz-RhE8F6VLwpoKwsjUduKuPz8B-HoJzDl5dG7_b5_BAYb0KsrCOtjm3fQcskzApcQgn6sHCtdIYnemKV_arknRAl_COFzSim-A2GeeKAlCLxKakvHSx31SjCQFznI"
+                    alt="William Max"
+                  />
+                </div>
+                <div class="team-body">
+                  <p class="team-role">Operations Lead</p>
+                  <h3 class="team-name">William Max</h3>
+                  <p
+                    style="
+                      color: var(--color-muted-text);
+                      font-size: 0.9rem;
+                      line-height: 1.7;
+                      margin-bottom: 1rem;
+                    "
+                  >
+                    Precision is William's signature. He ensures that every
+                    complex logistics plan unfolds with absolute ease, allowing
+                    our couples to remain in their peaceful bubble.
+                  </p>
+                  <div class="d-flex gap-3">
+                    <a
+                      href="#"
+                      style="color: var(--color-muted-text)"
+                      class="d-flex"
+                      ><span class="material-symbols-outlined">share</span></a
+                    >
+                    <a
+                      href="#"
+                      style="color: var(--color-muted-text)"
+                      class="d-flex"
+                      ><span class="material-symbols-outlined">mail</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Timeline ── -->
+      <section class="py-5">
+        <div class="container py-4" style="max-width: 1200px">
+          <h2 class="section-title text-center mb-5">Our Journey</h2>
+          <div class="row g-4">
+            <div class="col-md-4 reveal">
+              <div class="timeline-card">
+                <div class="timeline-year">2014</div>
+                <h5 class="timeline-title">Where It Started</h5>
+                <p
+                  style="
+                    color: var(--color-muted-text);
+                    font-size: 0.9rem;
+                    line-height: 1.7;
+                    margin: 0;
+                  "
+                >
+                  Stackly Weddings began in a small boutique studio, founded on
+                  the dream of bringing editorial quality to private
+                  celebrations.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 reveal" style="padding-top: 1.5rem">
+              <div class="timeline-card">
+                <div class="timeline-year">2019</div>
+                <h5 class="timeline-title">Growth</h5>
+                <p
+                  style="
+                    color: var(--color-muted-text);
+                    font-size: 0.9rem;
+                    line-height: 1.7;
+                    margin: 0;
+                  "
+                >
+                  Expansion to international destinations, curating over 200
+                  celebrations across three continents with our signature Sukun
+                  approach.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 reveal">
+              <div class="timeline-card">
+                <div class="timeline-year">2024</div>
+                <h5 class="timeline-title">Our Vision</h5>
+                <p
+                  style="
+                    color: var(--color-muted-text);
+                    font-size: 0.9rem;
+                    line-height: 1.7;
+                    margin: 0;
+                  "
+                >
+                  Leading the industry toward sustainable luxury and deeper
+                  emotional connection in every event we orchestrate.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Values ── -->
+      <section class="py-5 about-section-bg">
+        <div class="container py-4 text-center" style="max-width: 1200px">
+          <span class="page-kicker d-block mb-3">Our Excellence</span>
+          <h2 class="section-title mb-5">The Sukun Standard</h2>
+          <div class="row g-4">
+            <div class="col-md-4 reveal">
+              <div class="value-card">
+                <div class="value-icon-wrap">
+                  <span class="material-symbols-outlined">auto_awesome</span>
+                </div>
+                <h4
+                  style="
+                    font-family: var(--font-display);
+                    font-size: 1.3rem;
+                    color: var(--color-on-surface);
+                    margin-bottom: 0.75rem;
+                  "
+                >
+                  Bespoke Design
+                </h4>
+                <p
+                  style="
+                    color: var(--color-muted-text);
+                    font-size: 0.9rem;
+                    line-height: 1.7;
+                    margin: 0;
+                  "
+                >
+                  Every element is designed from scratch to reflect your unique
+                  heritage and personal story.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 reveal">
+              <div class="value-card">
+                <div class="value-icon-wrap">
+                  <span class="material-symbols-outlined">spa</span>
+                </div>
+                <h4
+                  style="
+                    font-family: var(--font-display);
+                    font-size: 1.3rem;
+                    color: var(--color-on-surface);
+                    margin-bottom: 0.75rem;
+                  "
+                >
+                  Stress-Free Planning
+                </h4>
+                <p
+                  style="
+                    color: var(--color-muted-text);
+                    font-size: 0.9rem;
+                    line-height: 1.7;
+                    margin: 0;
+                  "
+                >
+                  Our signature Sukun methodology eliminates anxiety, keeping
+                  the focus on your joy.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 reveal">
+              <div class="value-card">
+                <div class="value-icon-wrap">
+                  <span class="material-symbols-outlined"
+                    >workspace_premium</span
+                  >
+                </div>
+                <h4
+                  style="
+                    font-family: var(--font-display);
+                    font-size: 1.3rem;
+                    color: var(--color-on-surface);
+                    margin-bottom: 0.75rem;
+                  "
+                >
+                  Exceptional Curation
+                </h4>
+                <p
+                  style="
+                    color: var(--color-muted-text);
+                    font-size: 0.9rem;
+                    line-height: 1.7;
+                    margin: 0;
+                  "
+                >
+                  We partner only with the most refined vendors who meet our
+                  rigorous quality pillars.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Testimonial ── -->
+      <section class="py-5">
+        <div class="container" style="max-width: 1200px">
+          <div class="testimonial-bg reveal">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnUoISIKAM_kP1sRTdUCZzBfuR--vBS2SRGoCUR0vk7zFEOGwnNAMz4rfB8tkkJfATFz17mTCY4RpuoEuR7D3f7ur4IuEniB_shThwMosDlU6-onnuNvrIs_9GfgyZsi2YYiNxB6g5IykwMI5-d5bubDYoNO3KK3I5HHGPzRHkh9glHxCsce3PlleIW3PVd0E3V0RhOXloEUQBNOrnQlzo3ftqm0Jj5Sf9zEHlPApapd-rWsAHREzkweiTw-tTJBQWSUjjix91arw"
+              alt="Beautiful wedding reception"
+            />
+            <div class="testimonial-overlay"></div>
+            <div class="testimonial-content">
+              <span
+                class="material-symbols-outlined mb-3 d-block"
+                style="
+                  font-size: 3rem;
+                  color: #eab9ce;
+                  font-variation-settings:
+                    &quot;FILL&quot; 1,
+                    &quot;wght&quot; 300,
+                    &quot;GRAD&quot; 0,
+                    &quot;opsz&quot; 24;
+                "
+                >format_quote</span
+              >
+              <blockquote class="testimonial-quote mb-4">
+                "Stackly Weddings didn't just plan a ceremony; they curated an
+                experience that felt like a quiet, beautiful dream. We were
+                guests at our own wedding, completely at peace."
+              </blockquote>
+              <cite class="testimonial-cite"
+                >— Sophia &amp; James, Lake Como</cite
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CTA ── -->
+      <section class="py-5 about-section-bg">
+        <div class="container py-4" style="max-width: 1200px">
+          <div
+            class="cta-banner p-5 text-center position-relative overflow-hidden"
+            style="border-radius: 2.5rem; background: rgba(212, 165, 185, 0.12)"
+          >
+            <div
+              style="
+                position: absolute;
+                width: 280px;
+                height: 280px;
+                border-radius: 50%;
+                background: rgba(233, 213, 255, 0.35);
+                filter: blur(60px);
+                top: -80px;
+                right: -80px;
+                pointer-events: none;
+              "
+            ></div>
+            <div
+              style="
+                position: absolute;
+                width: 280px;
+                height: 280px;
+                border-radius: 50%;
+                background: rgba(252, 231, 243, 0.35);
+                filter: blur(60px);
+                bottom: -80px;
+                left: -80px;
+                pointer-events: none;
+              "
+            ></div>
+            <div class="position-relative" style="z-index: 1">
+              <h2 class="section-title mb-4">Begin Your Journey With Us</h2>
+              <p
+                style="
+                  max-width: 520px;
+                  margin: 0 auto 2rem;
+                  font-size: 1.05rem;
+                  line-height: 1.7;
+                  color: var(--color-muted-text);
+                "
+              >
+                Let's sit down and discuss how we can bring Sukun tranquility to
+                your celebration.
+              </p>
+              <div
+                class="d-flex flex-column flex-sm-row gap-3 justify-content-center"
+              >
+                <a href="contact.html" class="btn-primary-c"
+                  >Book a Consultation</a
+                >
+                <a href="services.html" class="btn-outline-gold"
+                  >Our Services</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <div class="custom-cursor"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/load-component.js"></script>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

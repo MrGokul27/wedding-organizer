@@ -445,3 +445,23 @@ window.addEventListener("load", () => {
     document.getElementById("preloader").classList.add("hide");
   }, 2000);
 });
+
+/* ---- 16. REVEAL ANIMATIONS (inner pages) ---- */
+(function initReveal() {
+  const reveals = document.querySelectorAll(".reveal");
+  if (!reveals.length) return;
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+
+  reveals.forEach((el) => io.observe(el));
+})();

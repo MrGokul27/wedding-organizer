@@ -1523,3 +1523,126 @@ MEET THE COUPLE
     font-size: 1.5rem;
   }
 }
+
+/* =============================================
+   INNER PAGE UTILITIES (Gallery, Services, Pricing, Contact, About)
+   ============================================= */
+
+/* ── Page hero text ── */
+.page-kicker {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-gold);
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.15;
+}
+
+.page-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-muted-text);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+/* ── Buttons used in inner pages ── */
+.btn-primary-c {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-full);
+  padding: 0.75rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-base);
+}
+.btn-primary-c:hover {
+  background: transparent;
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.btn-outline-gold {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-muted-gold);
+  border: 2px solid var(--color-muted-gold);
+  border-radius: var(--border-radius-full);
+  padding: 0.75rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-base);
+}
+.btn-outline-gold:hover {
+  background: var(--color-muted-gold);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ── Gallery / card shapes ── */
+.arched-frame {
+  border-top-left-radius: 500px;
+  border-top-right-radius: 500px;
+  overflow: hidden;
+}
+.rounded-card {
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+/* ── Reveal animation (scroll-triggered via IntersectionObserver in script.js) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Text muted custom (used in footer etc.) ── */
+.text-muted-custom {
+  color: var(--color-muted-text);
+}
+
+/* ── Inner pages: navbar should always have background (no hero image) ── */
+body.inner-page #mainNav {
+  background: rgba(251, 249, 245, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-outline);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
