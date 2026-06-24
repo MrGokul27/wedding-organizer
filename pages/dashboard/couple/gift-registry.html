@@ -189,7 +189,7 @@
               <div
                 class="card-luxury p-4 p-md-5 bg-primary text-white h-100 d-flex flex-column flex-md-row align-items-center gap-4 relative overflow-hidden"
               >
-                <div
+                <!-- <div
                   class="position-absolute bottom-0 end-0 opacity-10"
                   style="transform: translate(15%, 15%) scale(1.5)"
                 >
@@ -198,7 +198,7 @@
                     style="font-size: 100px"
                     >flight_takeoff</span
                   >
-                </div>
+                </div> -->
                 <div class="position-relative z-1 flex-grow-1">
                   <span
                     class="badge bg-white bg-opacity-20 text-white rounded-pill px-3 py-1.5 uppercase font-jakarta mb-3"
@@ -246,24 +246,29 @@
 
             <!-- Add New Gift CTA -->
             <div class="col-lg-4 col-md-6">
-              <div
-                class="card-luxury p-4 h-100 border-dashed border-2 d-flex flex-column align-items-center justify-content-center text-center cursor-pointer hover:bg-light transition-all"
-                style="border: 2px dashed var(--color-primary) !important"
-              >
+              <a href="#" class="text-decoration-none d-block h-100">
                 <div
-                  class="w-16 h-16 rounded-circle bg-light d-flex align-items-center justify-content-center mb-3"
+                  class="card-luxury p-4 h-100 d-flex flex-column align-items-center justify-content-center text-center add-gift-card"
+                  style="border: 2px dashed var(--color-primary)"
                 >
-                  <span class="material-symbols-outlined text-primary fs-3"
-                    >add</span
+                  <div
+                    class="rounded-circle bg-light d-flex align-items-center justify-content-center mb-3"
+                    style="width: 64px; height: 64px"
                   >
+                    <span class="material-symbols-outlined text-primary fs-3">
+                      add
+                    </span>
+                  </div>
+
+                  <h6 class="fw-bold text-dark font-playfair-display">
+                    Add New Gift
+                  </h6>
+
+                  <p class="text-muted small mb-0">
+                    Paste a URL or browse partner collections
+                  </p>
                 </div>
-                <h6 class="fw-bold text-dark font-playfair-display">
-                  Add New Gift
-                </h6>
-                <p class="text-muted small mb-0">
-                  Paste a URL or browse partner collections
-                </p>
-              </div>
+              </a>
             </div>
 
             <!-- Item 1 -->
