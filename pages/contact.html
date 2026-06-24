@@ -285,7 +285,7 @@
                   >
                     Send us a Message
                   </h2>
-                  <form novalidate>
+                  <form id="contactForm" novalidate>
                     <div class="row g-4 mb-4">
                       <div class="col-12 col-sm-6">
                         <label class="form-label-custom" for="contactName"
@@ -297,8 +297,13 @@
                           class="input-underline"
                           placeholder="Your full name"
                           maxlength="16"
+                          required
                         />
+                        <div class="invalid-feedback">
+                          Please enter your name.
+                        </div>
                       </div>
+
                       <div class="col-12 col-sm-6">
                         <label class="form-label-custom" for="contactEmail"
                           >Email</label
@@ -308,9 +313,14 @@
                           type="email"
                           class="input-underline"
                           placeholder="hello@example.com"
+                          required
                         />
+                        <div class="invalid-feedback">
+                          Please enter a valid email.
+                        </div>
                       </div>
                     </div>
+
                     <div class="mb-4">
                       <label class="form-label-custom" for="contactSubject"
                         >Subject</label
@@ -320,8 +330,13 @@
                         type="text"
                         class="input-underline"
                         placeholder="Wedding Planning / Inquiry"
+                        required
                       />
+                      <div class="invalid-feedback">
+                        Please enter a subject.
+                      </div>
                     </div>
+
                     <div class="mb-4">
                       <label class="form-label-custom" for="contactMessage"
                         >Message</label
@@ -332,8 +347,13 @@
                         rows="4"
                         placeholder="Tell us about your special day..."
                         style="resize: none"
+                        required
                       ></textarea>
+                      <div class="invalid-feedback">
+                        Please enter your message.
+                      </div>
                     </div>
+
                     <button type="submit" class="btn-primary-c">
                       Send Message
                     </button>
@@ -344,87 +364,120 @@
                   <!-- RSVP -->
                   <div>
                     <div class="d-flex align-items-center gap-2 mb-4">
-                      <span class="material-symbols-outlined text-gold"
-                        >auto_awesome</span
-                      >
+                      <span class="material-symbols-outlined text-gold">
+                        auto_awesome
+                      </span>
                       <h2 class="section-title mb-0" style="font-size: 1.5rem">
                         Guest RSVP
                       </h2>
                     </div>
 
                     <div class="rsvp-card">
-                      <!-- Attendance -->
-                      <div class="mb-4">
-                        <p class="fw-semibold mb-3" style="font-size: 0.95rem">
-                          Are You Attending?
-                        </p>
-                        <div class="d-flex gap-4 flex-wrap">
-                          <label
-                            class="d-flex align-items-center gap-2"
-                            style="cursor: pointer"
+                      <form id="guestRsvpForm" novalidate>
+                        <!-- Attendance -->
+                        <div class="mb-4">
+                          <p
+                            class="fw-semibold mb-3"
+                            style="font-size: 0.95rem"
                           >
-                            <input
-                              type="radio"
-                              name="attending"
-                              class="rsvp-radio"
-                            />
-                            <span
-                              style="
-                                color: var(--color-muted-text);
-                                font-size: 0.9rem;
-                              "
-                              >Yes, I'll be there</span
-                            >
-                          </label>
-                          <label
-                            class="d-flex align-items-center gap-2"
-                            style="cursor: pointer"
-                          >
-                            <input
-                              type="radio"
-                              name="attending"
-                              class="rsvp-radio"
-                            />
-                            <span
-                              style="
-                                color: var(--color-muted-text);
-                                font-size: 0.9rem;
-                              "
-                              >Regretfully, No</span
-                            >
-                          </label>
-                        </div>
-                      </div>
+                            Are You Attending?
+                          </p>
 
-                      <!-- Dropdowns -->
-                      <div class="row g-3 mb-4">
-                        <div class="col-12 col-sm-6">
-                          <label class="form-label-custom"
-                            >Number of Guests</label
-                          >
-                          <select class="select-themed">
-                            <option>1 Guest</option>
-                            <option>2 Guests</option>
-                            <option>3 Guests</option>
-                            <option>Family (4+)</option>
-                          </select>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                          <label class="form-label-custom"
-                            >Meal Preference</label
-                          >
-                          <select class="select-themed">
-                            <option>Standard</option>
-                            <option>Vegetarian</option>
-                            <option>Vegan</option>
-                            <option>Gluten-Free</option>
-                          </select>
-                        </div>
-                      </div>
+                          <div class="d-flex gap-4 flex-wrap">
+                            <label
+                              class="d-flex align-items-center gap-2"
+                              style="cursor: pointer"
+                            >
+                              <input
+                                type="radio"
+                                name="attending"
+                                value="yes"
+                                class="rsvp-radio"
+                                required
+                              />
+                              <span
+                                style="
+                                  color: var(--color-muted-text);
+                                  font-size: 0.9rem;
+                                "
+                              >
+                                Yes, I'll be there
+                              </span>
+                            </label>
 
-                      <button type="button" class="btn-outline-gold w-100">
-                        Confirm RSVP
-                      </button>
+                            <label
+                              class="d-flex align-items-center gap-2"
+                              style="cursor: pointer"
+                            >
+                              <input
+                                type="radio"
+                                name="attending"
+                                value="no"
+                                class="rsvp-radio"
+                                required
+                              />
+                              <span
+                                style="
+                                  color: var(--color-muted-text);
+                                  font-size: 0.9rem;
+                                "
+                              >
+                                Regretfully, No
+                              </span>
+                            </label>
+                          </div>
+
+                          <div
+                            id="attendanceError"
+                            class="invalid-feedback d-none"
+                          >
+                            Please select an attendance option.
+                          </div>
+                        </div>
+
+                        <!-- Dropdowns -->
+                        <div class="row g-3 mb-4">
+                          <div class="col-12 col-sm-6">
+                            <label class="form-label-custom">
+                              Number of Guests
+                            </label>
+
+                            <select class="select-themed" required>
+                              <option value="">Select Guests</option>
+                              <option>1 Guest</option>
+                              <option>2 Guests</option>
+                              <option>3 Guests</option>
+                              <option>Family (4+)</option>
+                            </select>
+
+                            <div class="invalid-feedback">
+                              Please select number of guests.
+                            </div>
+                          </div>
+
+                          <div class="col-12 col-sm-6">
+                            <label class="form-label-custom">
+                              Meal Preference
+                            </label>
+
+                            <select class="select-themed" required>
+                              <option value="">Select Meal Preference</option>
+                              <option>Standard</option>
+                              <option>Vegetarian</option>
+                              <option>Vegan</option>
+                              <option>Gluten-Free</option>
+                            </select>
+
+                            <div class="invalid-feedback">
+                              Please select a meal preference.
+                            </div>
+                          </div>
+                        </div>
+
+                        <button type="submit" class="btn-outline-gold w-100">
+                          Confirm RSVP
+                        </button>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -436,7 +489,7 @@
               <!-- Arched image -->
               <div class="contact-img-wrap reveal">
                 <img
-                  src="https://lh3.googleusercontent.com/aida/AP1WRLtvRenKLYnhFkemotLXFtjKxTowb6GDKgUYTIk1RecvBK6Bt5iVkVEeFNQ6ECOvL_N1tF5tzMAQ8eBltMvyJG72xI3UEDpNpchQjJ2n3nD45c6BLqmnf1ywp9vZms527vJcFkkj9m3iPT250hHqlfc10GTr2yrJVWyA2b5oDMKqnvdWNxbstr1nhkRZcW2o0rBoiJEcOAu6mVxAxelU_dDrEALipl6F67v8SQMX9h3KDV9UQYnfpHXVk2E"
+                  src="../assets/images/gallery/gallery-img-3.webp"
                   alt="Romantic illustration"
                 />
                 <div class="contact-img-accent"></div>
@@ -553,6 +606,72 @@
           const label = el.closest("div")?.querySelector(".form-label-custom");
           el.addEventListener("focus", () => label?.classList.add("focused"));
           el.addEventListener("blur", () => label?.classList.remove("focused"));
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contactForm");
+        const nameInput = document.getElementById("contactName");
+
+        /* Prevent numbers and special characters */
+        nameInput.addEventListener("input", function () {
+          this.value = this.value.replace(/[^A-Za-z\s]/g, "");
+        });
+
+        nameInput.addEventListener("keypress", function (e) {
+          const char = String.fromCharCode(e.which);
+
+          if (!/[A-Za-z\s]/.test(char)) {
+            e.preventDefault();
+          }
+        });
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          if (!form.checkValidity()) {
+            form.classList.add("was-validated");
+            return;
+          }
+
+          window.location.href = "common/404.html";
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("guestRsvpForm");
+        const attendanceError = document.getElementById("attendanceError");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          let valid = true;
+
+          const attendance = document.querySelector(
+            'input[name="attending"]:checked',
+          );
+
+          if (!attendance) {
+            attendanceError.classList.remove("d-none");
+            valid = false;
+          } else {
+            attendanceError.classList.add("d-none");
+          }
+
+          const selects = form.querySelectorAll("select");
+
+          selects.forEach((select) => {
+            if (!select.value) {
+              select.classList.add("is-invalid");
+              valid = false;
+            } else {
+              select.classList.remove("is-invalid");
+            }
+          });
+
+          if (valid) {
+            window.location.href = "common/404.html";
+          }
         });
       });
     </script>

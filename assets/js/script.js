@@ -192,42 +192,6 @@
   targets.forEach((el) => io.observe(el));
 })();
 
-/* ---- 7. RSVP FORM SUBMISSION ---- */
-(function initRsvpForm() {
-  const form = document.getElementById("rsvpForm");
-  if (!form) return;
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const nameInput = form.querySelector('input[type="text"]');
-    const emailInput = form.querySelector('input[type="email"]');
-    const attending = form.querySelector('input[name="attending"]:checked');
-
-    if (!nameInput.value.trim() || !emailInput.value.trim()) {
-      showToast("Please fill in your name and email.", "warning");
-      return;
-    }
-    if (!attending) {
-      showToast("Please let us know if you're attending.", "warning");
-      return;
-    }
-
-    const msg =
-      attending.value === "yes"
-        ? `🎉 Thank you, ${nameInput.value.split(" ")[0]}! We can't wait to celebrate with you.`
-        : `We'll miss you, ${nameInput.value.split(" ")[0]}. Thank you for letting us know.`;
-
-    showToast(msg, "success");
-
-    form.reset();
-
-    setTimeout(() => {
-      window.location.href = "pages/common/404.html";
-    }, 2000);
-  });
-})();
-
 /* ---- 8. WISH FORM SUBMISSION ---- */
 (function initWishForm() {
   const wishBtn = document.querySelector(

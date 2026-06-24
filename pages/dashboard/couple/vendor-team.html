@@ -56,6 +56,38 @@
       .favorite-card:hover img {
         transform: scale(1.05);
       }
+
+      .favorite-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.5rem;
+        color: #fff;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.78) 0%,
+          rgba(0, 0, 0, 0.45) 35%,
+          rgba(0, 0, 0, 0.08) 70%,
+          transparent 100%
+        );
+      }
+
+      .favorite-overlay h6 {
+        margin-bottom: 0.75rem;
+      }
+
+      .favorite-overlay a {
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        transition: all 0.3s ease;
+      }
+
+      .favorite-overlay a:hover {
+        border-color: #fff;
+      }
     </style>
   </head>
   <body class="bg-surface">
@@ -301,9 +333,7 @@
                   src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=250"
                   alt="String Quartet"
                 />
-                <div
-                  class="position-absolute bottom-0 start-0 w-100 p-4 text-white bg-dark bg-opacity-50"
-                >
+                <div class="favorite-overlay">
                   <span
                     class="small text-primary-light uppercase tracking-wider block mb-1"
                     style="font-size: 9px"
@@ -312,7 +342,9 @@
                   <h6 class="fw-bold font-playfair-display text-white mb-3">
                     Vesper String Quartet
                   </h6>
-                  <div class="d-flex justify-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
                     <a
                       href="#"
                       class="text-white text-decoration-none small underline fw-semibold"
@@ -335,9 +367,7 @@
                   src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=250"
                   alt="Bakery"
                 />
-                <div
-                  class="position-absolute bottom-0 start-0 w-100 p-4 text-white bg-dark bg-opacity-50"
-                >
+                <div class="favorite-overlay">
                   <span
                     class="small text-primary-light uppercase tracking-wider block mb-1"
                     style="font-size: 9px"
@@ -346,7 +376,9 @@
                   <h6 class="fw-bold font-playfair-display text-white mb-3">
                     Sugar & Silk Artistry
                   </h6>
-                  <div class="d-flex justify-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
                     <a
                       href="#"
                       class="text-white text-decoration-none small underline fw-semibold"

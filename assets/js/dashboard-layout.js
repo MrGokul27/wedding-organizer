@@ -167,10 +167,23 @@ function initDashboardLayout() {
     // 3a. Inject Sidebar
     const sidebarHtml = `
       <aside class="dashboard-sidebar" id="dashboardSidebar">
-        <div class="px-4 py-4 d-flex align-items-center justify-content-between border-bottom border-outline-variant">
+        <div class="px-4 py-2 d-flex align-items-center justify-content-between border-bottom border-outline-variant">
           <div>
-            <h4 class="text-primary mb-0 font-playfair-display fw-bold">Stackly Weddings</h4>
-            <span class="text-muted text-uppercase small tracking-wider font-jakarta" style="font-size: 10px">${role} suite</span>
+            <a href="../../../index.html" class="logo-wrapper">
+              <img
+                src="../../../assets/images/logoStackly.webp"
+                width="150"
+                alt="stackly-logo"
+                class="logo-img"
+              />
+            </a>
+            <style>
+              .logo-img {
+                width: 150px;
+                filter: brightness(0) saturate(100%) invert(37%) sepia(18%)
+                  saturate(820%) hue-rotate(292deg) brightness(92%) contrast(90%);
+              }
+            </style>
           </div>
           <button class="btn btn-sm d-lg-none text-primary" id="sidebarCloseBtn">
             <span class="material-symbols-outlined">close</span>
@@ -482,6 +495,12 @@ function setupRedirectTo404() {
       // 4. Logout action
       if (element.id === "logoutBtn" || element.closest("#logoutBtn")) return;
 
+      // Allow logo navigation
+      if (
+        element.classList.contains("logo-wrapper") ||
+        element.closest(".logo-wrapper")
+      )
+        return;
       // Resolve path to pages/common/404.html dynamically
       const isSubdir =
         window.location.pathname.includes("/admin/") ||

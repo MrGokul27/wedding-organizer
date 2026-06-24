@@ -1809,24 +1809,23 @@ body.inner-page #mainNav {
 
 /* ── Unique background images per page ── */
 .page-banner--about .page-banner__bg {
-  background-image: url("https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&auto=format&fit=crop&q=80");
+  background-image: url("../images/about-banner-image.webp");
 }
 
 .page-banner--services .page-banner__bg {
-  background-image: url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1600&auto=format&fit=crop&q=80");
+  background-image: url("../images/services-banner-image.webp");
 }
 
 .page-banner--gallery .page-banner__bg {
-  background-image: url("https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1600&auto=format&fit=crop&q=80");
+  background-image: url("../images/gallery-banner-image.webp");
 }
 
 .page-banner--pricing .page-banner__bg {
-  background-image: url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1600&auto=format&fit=crop&q=80");
+  background-image: url("../images/pricing-banner-image.webp");
 }
 
 .page-banner--contact .page-banner__bg {
-  background-image: url("https://lh3.googleusercontent.com/aida/AP1WRLtvRenKLYnhFkemotLXFtjKxTowb6GDKgUYTIk1RecvBK6Bt5iVkVEeFNQ6ECOvL_N1tF5tzMAQ8eBltMvyJG72xI3UEDpNpchQjJ2n3nD45c6BLqmnf1ywp9vZms527vJcFkkj9m3iPT250hHqlfc10GTr2yrJVWyA2b5oDMKqnvdWNxbstr1nhkRZcW2o0rBoiJEcOAu6mVxAxelU_dDrEALipl6F67v8SQMX9h3KDV9UQYnfpHXVk2E");
-  background-size: contain;
+  background-image: url("../images/contact-banner-image.webp");
 }
 
 /* ── Responsive ── */

@@ -55,7 +55,7 @@ body {
   background: var(--surface-lowest);
 }
 .visual-panel {
-  background-image: url("https://lh3.googleusercontent.com/aida/AP1WRLtLGldTOxin-PwYnhUaqFuSSCYW73lgLlMVJnk2VEpLr_M4_elI2KYfFjg0hOwzgEUgWawlquTOupEYbyoWeAsjp24BCan7rDVmqEdJN7rvB3jf8PXXXqC3bd2Qv07BSDyYUXep7G5kLGZNEKEAj1ErQxIqW6jjQXehvhSwpNx562MR_mkqXxj4ps56sYxl1Gg5i98hXp1hncLMSDQ1Rpjh1azYtyCknwlguSuvxyM9r3IrfR-Giqudbg");
+  background-image: url("../images/gallery/gallery-img-2.webp");
   background-size: cover;
   background-position: center;
   min-height: 560px;

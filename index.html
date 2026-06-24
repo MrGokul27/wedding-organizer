@@ -635,20 +635,29 @@
                 <label class="form-label rsvp-label">Your Name</label>
                 <input
                   type="text"
+                  id="rsvpName"
                   class="form-control rsvp-input"
                   placeholder="Full Name"
+                  maxlength="16"
                   required
                 />
+                <div class="invalid-feedback">Please enter your name.</div>
               </div>
+
               <div class="mb-4">
                 <label class="form-label rsvp-label">Email Address</label>
                 <input
                   type="email"
+                  id="rsvpEmail"
                   class="form-control rsvp-input"
                   placeholder="email@example.com"
                   required
                 />
+                <div class="invalid-feedback">
+                  Please enter a valid email address.
+                </div>
               </div>
+
               <div class="d-flex gap-4 mb-4">
                 <label class="d-flex align-items-center gap-2 cursor-pointer">
                   <input
@@ -656,19 +665,27 @@
                     type="radio"
                     name="attending"
                     value="yes"
+                    required
                   />
                   Yes, I'll be there
                 </label>
+
                 <label class="d-flex align-items-center gap-2 cursor-pointer">
                   <input
                     class="form-check-input rsvp-radio"
                     type="radio"
                     name="attending"
                     value="no"
+                    required
                   />
                   Sorry, I can't come
                 </label>
               </div>
+
+              <div id="radioError" class="text-warning small mb-3 d-none">
+                Please select an option.
+              </div>
+
               <button type="submit" class="btn rsvp-btn w-100">
                 Submit RSVP
               </button>
@@ -965,5 +982,53 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="./assets/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("rsvpForm");
+        const nameInput = document.getElementById("rsvpName");
+        const radioError = document.getElementById("radioError");
+
+        /* Allow only letters and spaces */
+        nameInput.addEventListener("input", function () {
+          this.value = this.value.replace(/[^A-Za-z\s]/g, "");
+        });
+
+        /* Block invalid key presses */
+        nameInput.addEventListener("keypress", function (e) {
+          const char = String.fromCharCode(e.which);
+
+          if (!/[A-Za-z\s]/.test(char)) {
+            e.preventDefault();
+          }
+        });
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          let isValid = true;
+
+          if (!form.checkValidity()) {
+            isValid = false;
+          }
+
+          const selectedRadio = document.querySelector(
+            'input[name="attending"]:checked',
+          );
+
+          if (!selectedRadio) {
+            radioError.classList.remove("d-none");
+            isValid = false;
+          } else {
+            radioError.classList.add("d-none");
+          }
+
+          form.classList.add("was-validated");
+
+          if (isValid) {
+            window.location.href = "pages/common/404.html";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
