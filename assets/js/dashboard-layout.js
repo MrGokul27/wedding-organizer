@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initDashboardLayout();
   // Setup SPA navigation click listeners
   setupSpaNavigation();
+  // Setup 404 redirection for non-navigation buttons and links
+  setupRedirectTo404();
 });
 
 // Reusable function to initialize or refresh the layout
@@ -445,4 +447,54 @@ async function loadSpaPage(url, pushState = true) {
     console.error("SPA Loader Error: ", err);
     window.location.href = url;
   }
+}
+
+// Redirect all non-essential buttons and links in the dashboard to 404.html
+function setupRedirectTo404() {
+  document.addEventListener(
+    "click",
+    (e) => {
+      // Find closest link or button
+      const element = e.target.closest("a, button");
+      if (!element) return;
+
+      // Check if it's one of the navigation/essential controls we want to allow:
+      // 1. Sidebar navigation links
+      if (element.classList.contains("sidebar-nav-link")) return;
+
+      // 2. Sidebar mobile responsive toggles
+      if (element.id === "sidebarToggleBtn" || element.id === "sidebarCloseBtn")
+        return;
+      if (
+        element.closest("#sidebarToggleBtn") ||
+        element.closest("#sidebarCloseBtn")
+      )
+        return;
+
+      // 3. User profile dropdown toggle
+      if (
+        element.getAttribute("data-bs-toggle") === "dropdown" ||
+        element.classList.contains("dropdown-toggle")
+      )
+        return;
+      if (element.closest(".dropdown-toggle")) return;
+
+      // 4. Logout action
+      if (element.id === "logoutBtn" || element.closest("#logoutBtn")) return;
+
+      // Resolve path to pages/common/404.html dynamically
+      const isSubdir =
+        window.location.pathname.includes("/admin/") ||
+        window.location.pathname.includes("/couple/") ||
+        window.location.pathname.includes("/guest/") ||
+        window.location.pathname.includes("/planner/");
+
+      const path404 = isSubdir ? "../../common/404.html" : "../common/404.html";
+
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = path404;
+    },
+    true,
+  ); // Use capture phase to intercept early
 }
