@@ -1,5 +1,19 @@
 "use strict";
 
+// Inject Favicon dynamically
+(function injectFavicon() {
+  if (!document.querySelector("link[rel='icon']")) {
+    const favicon = document.createElement("link");
+    favicon.rel = "icon";
+    favicon.type = "image/webp";
+    const isInsidePages = window.location.pathname.includes("/pages/");
+    favicon.href = isInsidePages
+      ? "../assets/images/logoStackly.webp"
+      : "./assets/images/logoStackly.webp";
+    document.head.appendChild(favicon);
+  }
+})();
+
 /* ---- 1. FALLING PETALS ---- */
 (function initPetals() {
   const container = document.getElementById("petal-container");
@@ -322,22 +336,24 @@ window.addEventListener("scroll", () => {
 /* ---- 12 custom cursor ---- */
 const cursor = document.querySelector(".custom-cursor");
 
-document.addEventListener("mousemove", (e) => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
-
-document.querySelectorAll("a, button").forEach((el) => {
-  el.addEventListener("mouseenter", () => {
-    cursor.style.width = "45px";
-    cursor.style.height = "45px";
+if (cursor) {
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
   });
 
-  el.addEventListener("mouseleave", () => {
-    cursor.style.width = "28px";
-    cursor.style.height = "28px";
+  document.querySelectorAll("a, button").forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      cursor.style.width = "45px";
+      cursor.style.height = "45px";
+    });
+
+    el.addEventListener("mouseleave", () => {
+      cursor.style.width = "28px";
+      cursor.style.height = "28px";
+    });
   });
-});
+}
 
 /* ---- 13 LIVE DATE & TIME ---- */
 (function initCountdown() {
@@ -405,9 +421,12 @@ document.addEventListener("click", function (e) {
 
 /* ---- 15 Pre Loader ---- */
 window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.getElementById("preloader").classList.add("hide");
-  }, 2000);
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add("hide");
+    }, 2000);
+  }
 });
 
 /* ---- 16. REVEAL ANIMATIONS (inner pages) ---- */
