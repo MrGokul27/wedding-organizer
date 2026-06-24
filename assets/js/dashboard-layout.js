@@ -424,6 +424,34 @@ async function loadSpaPage(url, pushState = true) {
       window.history.pushState({ url }, "", url);
     }
 
+    // Remove previously injected SPA styles/links to avoid memory/style leak and style conflicts
+    document
+      .querySelectorAll("[data-spa-injected]")
+      .forEach((el) => el.remove());
+
+    // Inject styles and stylesheets from the new document
+    const newStyles = doc.querySelectorAll('link[rel="stylesheet"], style');
+    newStyles.forEach((style) => {
+      // Check if it already exists in the current document to avoid double-loading common styles (like bootstrap, dashboard.css)
+      const isCommon = Array.from(
+        document.querySelectorAll('link[rel="stylesheet"], style'),
+      ).some((existing) => {
+        if (style.tagName === "LINK" && existing.tagName === "LINK") {
+          return style.getAttribute("href") === existing.getAttribute("href");
+        }
+        if (style.tagName === "STYLE" && existing.tagName === "STYLE") {
+          return style.textContent === existing.textContent;
+        }
+        return false;
+      });
+
+      if (!isCommon) {
+        const clone = style.cloneNode(true);
+        clone.setAttribute("data-spa-injected", "true");
+        document.head.appendChild(clone);
+      }
+    });
+
     // Swap content
     const currentContent = document.querySelector(".dashboard-content");
     if (currentContent) {
@@ -436,9 +464,18 @@ async function loadSpaPage(url, pushState = true) {
     // Re-initialize layout configuration & relative links
     initDashboardLayout();
 
-    // Re-execute scripts nested within the fetched content container
-    const scripts = newContent.querySelectorAll("script");
+    // Re-execute all scripts from the fetched document, excluding common/layout scripts
+    const scripts = doc.querySelectorAll("script");
     scripts.forEach((oldScript) => {
+      const src = oldScript.getAttribute("src") || "";
+      // Exclude Bootstrap and dashboard-layout to prevent duplicate initialization
+      if (
+        src.includes("bootstrap.bundle") ||
+        src.includes("dashboard-layout.js")
+      ) {
+        return;
+      }
+
       const newScript = document.createElement("script");
       Array.from(oldScript.attributes).forEach((attr) =>
         newScript.setAttribute(attr.name, attr.value),
