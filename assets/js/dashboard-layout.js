@@ -165,13 +165,18 @@ function initDashboardLayout() {
   const wrapper = document.getElementById("dashboard-wrapper");
   if (wrapper) {
     // 3a. Inject Sidebar
+    const logoHref = isSubdir ? "../../../index.html" : "../../index.html";
+    const logoImgSrc = isSubdir
+      ? "../../../assets/images/logoStackly.webp"
+      : "../../assets/images/logoStackly.webp";
+
     const sidebarHtml = `
       <aside class="dashboard-sidebar" id="dashboardSidebar">
         <div class="px-4 py-2 d-flex align-items-center justify-content-between border-bottom border-outline-variant">
           <div>
-            <a href="../../../index.html" class="logo-wrapper">
+            <a href="${logoHref}" class="logo-wrapper">
               <img
-                src="../../../assets/images/logoStackly.webp"
+                src="${logoImgSrc}"
                 width="150"
                 alt="stackly-logo"
                 class="logo-img"
