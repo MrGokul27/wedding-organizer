@@ -209,6 +209,120 @@
           transform: translateY(-20px) rotate(10deg);
         }
       }
+
+      /* Contact Benefits */
+      .contact-benefits {
+        background: rgba(212, 165, 185, 0.08);
+      }
+
+      .benefit-box {
+        background: #fff;
+        border-radius: 28px;
+        padding: 2rem;
+        text-align: center;
+        height: 100%;
+        transition: 0.4s ease;
+      }
+
+      .benefit-box:hover {
+        transform: translateY(-10px);
+      }
+
+      .benefit-box span {
+        font-size: 3rem;
+        color: var(--color-muted-gold);
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      /* Timeline */
+
+      .timeline-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        position: relative;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .timeline-step {
+        flex: 0 0 240px;
+        text-align: center;
+        position: relative;
+        padding: 1.5rem;
+      }
+
+      .step-circle {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--color-primary),
+          var(--color-muted-gold)
+        );
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        font-weight: 600;
+        box-shadow: 0 15px 30px rgba(122, 83, 101, 0.15);
+      }
+
+      .timeline-step h5 {
+        font-family: var(--font-display);
+        color: var(--color-primary);
+        margin-bottom: 0.75rem;
+        font-size: 1.25rem;
+      }
+
+      .timeline-step p {
+        color: var(--color-muted-text);
+        line-height: 1.7;
+        max-width: 220px;
+        margin: 0 auto;
+      }
+
+      /* ========================
+   Testimonials
+======================== */
+
+      .love-notes {
+        background: #fff;
+      }
+
+      .testimonial-card {
+        background: rgba(212, 165, 185, 0.08);
+        border-radius: 28px;
+        padding: 2rem;
+        position: relative;
+        height: 100%;
+      }
+
+      .testimonial-card::before {
+        content: "❝";
+        font-size: 4rem;
+        color: rgba(122, 83, 101, 0.15);
+        position: absolute;
+        top: 10px;
+        left: 20px;
+      }
+
+      .testimonial-card h6 {
+        margin-top: 1.5rem;
+        color: var(--color-primary);
+      }
+
+      @media (max-width: 768px) {
+        .timeline-wrapper {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body class="inner-page">
@@ -579,6 +693,136 @@
                 >
                   <span class="map-badge">View Map</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Why Connect With Us ── -->
+      <section class="contact-benefits py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="page-kicker">Why Choose Us</span>
+            <h2 class="section-title">Your Wedding Journey Starts Here</h2>
+            <p
+              class="mx-auto"
+              style="max-width: 650px; color: var(--color-muted-text)"
+            >
+              Every conversation begins with understanding your vision and
+              creating a celebration that feels uniquely yours.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="benefit-box reveal">
+                <span class="material-symbols-outlined"> diamond </span>
+                <h4>Bespoke Planning</h4>
+                <p>
+                  Every detail is tailored around your story, style, and
+                  celebration goals.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="benefit-box reveal">
+                <span class="material-symbols-outlined"> groups </span>
+                <h4>Dedicated Experts</h4>
+                <p>
+                  Work directly with experienced planners from concept to final
+                  execution.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="benefit-box reveal">
+                <span class="material-symbols-outlined"> auto_awesome </span>
+                <h4>Stress-Free Experience</h4>
+                <p>
+                  We manage logistics, vendors, timelines, and guest experiences
+                  seamlessly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Consultation Process ── -->
+      <section class="consultation-process py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="page-kicker">Simple Process</span>
+            <h2 class="section-title">What Happens After You Contact Us</h2>
+          </div>
+
+          <div class="timeline-wrapper">
+            <div class="timeline-step reveal">
+              <div class="step-circle">01</div>
+              <h5>Inquiry Received</h5>
+              <p>Tell us about your celebration and vision.</p>
+            </div>
+
+            <div class="timeline-step reveal">
+              <div class="step-circle">02</div>
+              <h5>Discovery Call</h5>
+              <p>A complimentary consultation with our planning team.</p>
+            </div>
+
+            <div class="timeline-step reveal">
+              <div class="step-circle">03</div>
+              <h5>Custom Proposal</h5>
+              <p>Receive a personalized planning roadmap and package.</p>
+            </div>
+
+            <div class="timeline-step reveal">
+              <div class="step-circle">04</div>
+              <h5>Let's Celebrate</h5>
+              <p>Begin your journey toward an unforgettable wedding.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Testimonials ── -->
+      <section class="love-notes py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="page-kicker">Love Notes</span>
+            <h2 class="section-title">Kind Words From Our Couples</h2>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="testimonial-card reveal">
+                <p>
+                  “Every detail felt effortless. The team transformed our dream
+                  wedding into a breathtaking reality.”
+                </p>
+                <h6>Emma & James</h6>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="testimonial-card reveal">
+                <p>
+                  “From the first consultation to the final dance, everything
+                  was perfectly orchestrated.”
+                </p>
+                <h6>Sophia & Daniel</h6>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="testimonial-card reveal">
+                <p>
+                  “Our guests still talk about the experience. Truly exceptional
+                  planning and service.”
+                </p>
+                <h6>Olivia & Michael</h6>
               </div>
             </div>
           </div>

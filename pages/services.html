@@ -128,6 +128,139 @@
         left: -80px;
       }
 
+      /* ==========================
+   Planning Process
+========================== */
+
+      .planning-process {
+        background: rgba(212, 165, 185, 0.08);
+      }
+
+      .process-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 24px;
+        text-align: center;
+        height: 100%;
+        transition: 0.4s ease;
+      }
+
+      .process-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .process-number {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 1rem;
+        border-radius: 50%;
+        background: var(--color-primary);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+
+      /* ==========================
+   Why Us
+========================== */
+
+      .why-list {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .why-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 1rem 1.25rem;
+        border-radius: 16px;
+        background: rgba(212, 165, 185, 0.08);
+      }
+
+      .why-item .material-symbols-outlined {
+        color: var(--color-muted-gold);
+      }
+
+      .stats-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .stats-item {
+        background: white;
+        border-radius: 24px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: var(--shadow-card);
+      }
+
+      .stats-item h3 {
+        font-size: 2.5rem;
+        color: var(--color-primary);
+      }
+
+      /* ==========================
+   Packages
+========================== */
+
+      .service-packages {
+        background: #fff;
+      }
+
+      .package-card {
+        background: rgba(212, 165, 185, 0.08);
+        border-radius: 28px;
+        padding: 2.5rem;
+        height: 100%;
+        position: relative;
+        transition: 0.4s ease;
+      }
+
+      .package-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .package-card.featured {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 165, 185, 0.18),
+          rgba(255, 255, 255, 0.8)
+        );
+        border: 2px solid var(--color-muted-gold);
+      }
+
+      .package-badge {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background: var(--color-muted-gold);
+        color: white;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+      }
+
+      .package-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+      }
+
+      .package-card li {
+        padding: 0.6rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      @media (max-width: 768px) {
+        .stats-box {
+          grid-template-columns: 1fr;
+        }
+      }
+
       /* md stagger offset */
       @media (min-width: 768px) {
         .service-offset {
@@ -337,6 +470,271 @@
                     ><button class="btn-service">See Portfolio</button></a
                   >
                 </div>
+              </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="col-12 col-md-6">
+              <div class="service-card reveal">
+                <div class="service-img-wrap mb-4">
+                  <img
+                    src="../assets/images/services/services-img-5.webp"
+                    alt="Live wedding entertainment"
+                  />
+                  <div class="service-img-overlay"></div>
+                </div>
+
+                <div class="text-center text-md-start px-2">
+                  <div
+                    class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mb-2"
+                  >
+                    <span class="material-symbols-outlined service-icon filled">
+                      music_note
+                    </span>
+                    <h3 class="service-title mb-0">
+                      Entertainment & Live Experiences
+                    </h3>
+                  </div>
+
+                  <p
+                    style="
+                      color: var(--color-muted-text);
+                      font-size: 0.95rem;
+                      line-height: 1.65;
+                    "
+                    class="mb-3"
+                  >
+                    Elevate your celebration with live bands, DJs, cultural
+                    performances, celebrity hosts, and unforgettable guest
+                    experiences tailored to your vision.
+                  </p>
+
+                  <a href="#">
+                    <button class="btn-service">View Options</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="col-12 col-md-6 service-offset">
+              <div class="service-card reveal">
+                <div class="service-img-wrap mb-4">
+                  <img
+                    src="../assets/images/services/services-img-6.webp"
+                    alt="Luxury destination wedding"
+                  />
+                  <div class="service-img-overlay"></div>
+                </div>
+
+                <div class="text-center text-md-start px-2">
+                  <div
+                    class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mb-2"
+                  >
+                    <span class="material-symbols-outlined service-icon filled">
+                      travel_explore
+                    </span>
+                    <h3 class="service-title mb-0">
+                      Destination Wedding Planning
+                    </h3>
+                  </div>
+
+                  <p
+                    style="
+                      color: var(--color-muted-text);
+                      font-size: 0.95rem;
+                      line-height: 1.65;
+                    "
+                    class="mb-3"
+                  >
+                    From beachfront ceremonies to royal palace celebrations, we
+                    manage travel logistics, guest hospitality, venue
+                    coordination, and local vendor partnerships worldwide.
+                  </p>
+
+                  <a href="#">
+                    <button class="btn-service">Discover Destinations</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="planning-process py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="page-kicker">How We Work</span>
+            <h2 class="section-title">Our Signature Planning Process</h2>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-3">
+              <div class="process-card reveal">
+                <div class="process-number">01</div>
+                <h4>Discovery</h4>
+                <p>
+                  Understanding your vision, style preferences, priorities, and
+                  expectations.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="process-card reveal">
+                <div class="process-number">02</div>
+                <h4>Design</h4>
+                <p>
+                  Creating mood boards, concepts, themes, and visual direction.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="process-card reveal">
+                <div class="process-number">03</div>
+                <h4>Coordination</h4>
+                <p>
+                  Vendor management, scheduling, logistics, and guest planning.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="process-card reveal">
+                <div class="process-number">04</div>
+                <h4>Celebration</h4>
+                <p>
+                  Flawless execution so you can enjoy every moment stress-free.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="why-us-section py-5">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <span class="page-kicker">Why Stackly Weddings</span>
+              <h2 class="section-title mb-4">
+                Crafted With Elegance & Precision
+              </h2>
+
+              <div class="why-list">
+                <div class="why-item">
+                  <span class="material-symbols-outlined">verified</span>
+                  Dedicated wedding specialists
+                </div>
+
+                <div class="why-item">
+                  <span class="material-symbols-outlined">diamond</span>
+                  Luxury design expertise
+                </div>
+
+                <div class="why-item">
+                  <span class="material-symbols-outlined">groups</span>
+                  Trusted vendor network
+                </div>
+
+                <div class="why-item">
+                  <span class="material-symbols-outlined"
+                    >workspace_premium</span
+                  >
+                  Premium guest experiences
+                </div>
+
+                <div class="why-item">
+                  <span class="material-symbols-outlined">favorite</span>
+                  Personalized planning journey
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="stats-box reveal">
+                <div class="stats-item">
+                  <h3>500+</h3>
+                  <span>Events Planned</span>
+                </div>
+
+                <div class="stats-item">
+                  <h3>98%</h3>
+                  <span>Client Satisfaction</span>
+                </div>
+
+                <div class="stats-item">
+                  <h3>12+</h3>
+                  <span>Years Experience</span>
+                </div>
+
+                <div class="stats-item">
+                  <h3>50+</h3>
+                  <span>Premium Partners</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="service-packages py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="page-kicker">Tailored Packages</span>
+            <h2 class="section-title">Choose Your Perfect Experience</h2>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="package-card reveal">
+                <h3>Essential</h3>
+                <p>
+                  Perfect for intimate weddings and focused event coordination.
+                </p>
+                <ul>
+                  <li>Venue Coordination</li>
+                  <li>Vendor Assistance</li>
+                  <li>Timeline Management</li>
+                  <li>Wedding Day Support</li>
+                </ul>
+                <a href="#" class="btn-outline-gold mt-3"> Learn More </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="package-card featured reveal">
+                <span class="package-badge">Most Popular</span>
+
+                <h3>Signature</h3>
+                <p>Complete wedding planning with premium design services.</p>
+
+                <ul>
+                  <li>Full Planning</li>
+                  <li>Luxury Decor</li>
+                  <li>Guest Management</li>
+                  <li>Vendor Coordination</li>
+                </ul>
+
+                <a href="#" class="btn-primary-c mt-3"> Get Started </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="package-card reveal">
+                <h3>Royal</h3>
+                <p>Bespoke destination weddings with white-glove execution.</p>
+
+                <ul>
+                  <li>Destination Planning</li>
+                  <li>Travel Management</li>
+                  <li>Luxury Hospitality</li>
+                  <li>Dedicated Concierge</li>
+                </ul>
+
+                <a href="#" class="btn-outline-gold mt-3"> Learn More </a>
               </div>
             </div>
           </div>

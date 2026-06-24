@@ -114,6 +114,105 @@
         }
       }
 
+      /* Love Story Timeline */
+
+      .love-story-section {
+        background: linear-gradient(
+          180deg,
+          rgba(212, 165, 185, 0.08),
+          transparent
+        );
+      }
+
+      .story-timeline {
+        max-width: 850px;
+        margin: auto;
+      }
+
+      .story-item {
+        display: flex;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(122, 83, 101, 0.15);
+      }
+
+      .story-number {
+        min-width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.25rem;
+      }
+
+      /* Memory Stats */
+
+      .memory-stats {
+        background: #fff;
+      }
+
+      .memory-card {
+        padding: 2rem;
+        border-radius: 24px;
+        background: rgba(212, 165, 185, 0.08);
+        transition: all 0.4s ease;
+      }
+
+      .memory-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .memory-card h3 {
+        font-size: 3rem;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .memory-card p {
+        margin: 0;
+        color: var(--color-muted-text);
+      }
+
+      /* Featured Collection */
+
+      .featured-gallery {
+        background: #fff;
+      }
+
+      .collection-features {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 1rem 1.25rem;
+        border-radius: 16px;
+        background: rgba(212, 165, 185, 0.08);
+      }
+
+      .feature-item .material-symbols-outlined {
+        color: var(--color-primary);
+      }
+
+      @media (max-width: 768px) {
+        .story-item {
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+        }
+
+        .memory-card h3 {
+          font-size: 2.2rem;
+        }
+      }
+
       /* CTA */
       .cta-section {
         background: rgba(212, 165, 185, 0.1);
@@ -157,7 +256,7 @@
       </header>
 
       <!-- ── Gallery Grid ── -->
-      <section class="py-5">
+      <section class="py-3">
         <div class="container px-3 px-md-4" style="max-width: 1200px">
           <!-- Row 1: 8 + 4 -->
           <div class="row g-4 mb-4">
@@ -286,6 +385,142 @@
                     </div>
                     <span class="overlay-label">View Details</span>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Love Stories Timeline ── -->
+      <section class="love-story-section py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="page-kicker">Every Picture Has A Story</span>
+            <h2 class="section-title">Moments We Treasure Forever</h2>
+            <p class="section-subtitle mx-auto">
+              Behind every photograph lies a beautiful chapter of love, joy, and
+              celebration.
+            </p>
+          </div>
+
+          <div class="story-timeline">
+            <div class="story-item reveal">
+              <div class="story-number">01</div>
+              <div>
+                <h4>First Look</h4>
+                <p>
+                  The magical moment when two hearts meet before the ceremony,
+                  filled with anticipation and emotion.
+                </p>
+              </div>
+            </div>
+
+            <div class="story-item reveal">
+              <div class="story-number">02</div>
+              <div>
+                <h4>Wedding Vows</h4>
+                <p>
+                  Promises exchanged with sincerity and love, creating memories
+                  that last a lifetime.
+                </p>
+              </div>
+            </div>
+
+            <div class="story-item reveal">
+              <div class="story-number">03</div>
+              <div>
+                <h4>Grand Celebration</h4>
+                <p>
+                  Laughter, dancing, and unforgettable moments shared with
+                  family and friends.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Memories Count ── -->
+      <section class="memory-stats py-5">
+        <div class="container">
+          <div class="row g-4 text-center">
+            <div class="col-6 col-lg-3">
+              <div class="memory-card reveal">
+                <h3>500+</h3>
+                <p>Weddings Captured</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <div class="memory-card reveal">
+                <h3>12K+</h3>
+                <p>Photos Delivered</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <div class="memory-card reveal">
+                <h3>98%</h3>
+                <p>Client Satisfaction</p>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+              <div class="memory-card reveal">
+                <h3>10+</h3>
+                <p>Years Experience</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Featured Collection ── -->
+      <section class="featured-gallery py-5">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <div class="arched-frame overflow-hidden reveal">
+                <img
+                  src="../assets/images/gallery/gallery-img-6.webp"
+                  alt="Featured Wedding Collection"
+                  class="img-fluid w-100"
+                />
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <span class="page-kicker">Featured Collection</span>
+              <h2 class="section-title mb-4">
+                Capturing Love In Its Purest Form
+              </h2>
+
+              <p class="mb-4">
+                Every wedding is a unique masterpiece. Our photography captures
+                authentic emotions, elegant details, and unforgettable moments
+                that become treasured memories for generations.
+              </p>
+
+              <div class="collection-features">
+                <div class="feature-item">
+                  <span class="material-symbols-outlined">favorite</span>
+                  Authentic Emotional Moments
+                </div>
+
+                <div class="feature-item">
+                  <span class="material-symbols-outlined">diamond</span>
+                  Luxury Wedding Styling
+                </div>
+
+                <div class="feature-item">
+                  <span class="material-symbols-outlined">photo_camera</span>
+                  High-End Photography Coverage
+                </div>
+
+                <div class="feature-item">
+                  <span class="material-symbols-outlined">auto_awesome</span>
+                  Timeless Artistic Editing
                 </div>
               </div>
             </div>

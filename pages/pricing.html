@@ -206,6 +206,81 @@
         gap: 0.7rem;
         color: var(--color-primary);
       }
+
+      /* Comparison Table */
+
+      .comparison-card {
+        background: #fff;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+      }
+
+      .comparison-table thead {
+        background: rgba(212, 165, 185, 0.12);
+      }
+
+      .comparison-table th {
+        padding: 1.25rem;
+        font-weight: 600;
+      }
+
+      .comparison-table td {
+        padding: 1rem 1.25rem;
+      }
+
+      /* Benefits */
+
+      .included-benefits {
+        background: rgba(212, 165, 185, 0.08);
+      }
+
+      .benefit-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 2rem;
+        text-align: center;
+        height: 100%;
+        transition: 0.4s ease;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .benefit-card span {
+        font-size: 2.5rem;
+        color: var(--color-muted-gold);
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      /* FAQ */
+
+      .custom-faq .accordion-item {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .custom-faq .accordion-button {
+        padding: 1.25rem 1.5rem;
+        font-weight: 600;
+        background: #fff;
+      }
+
+      .custom-faq .accordion-button:not(.collapsed) {
+        background: rgba(212, 165, 185, 0.08);
+        color: var(--color-primary);
+      }
+
+      .custom-faq .accordion-body {
+        padding: 1.25rem 1.5rem;
+        color: var(--color-muted-text);
+        line-height: 1.7;
+      }
     </style>
   </head>
   <body class="inner-page">
@@ -379,6 +454,203 @@
                 <a href="#"
                   ><button class="btn-outline-gold w-100">Get Quote</button></a
                 >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Package Comparison ── -->
+      <section class="comparison-section py-5">
+        <div class="container" style="max-width: 1100px">
+          <div class="text-center mb-5">
+            <span class="page-kicker">Compare Plans</span>
+            <h2 class="section-title">Find Your Perfect Fit</h2>
+            <p
+              class="mx-auto"
+              style="max-width: 650px; color: var(--color-muted-text)"
+            >
+              A side-by-side comparison of our most popular wedding planning
+              packages.
+            </p>
+          </div>
+
+          <div class="comparison-card reveal">
+            <div class="table-responsive">
+              <table class="table comparison-table align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th>Features</th>
+                    <th>Silver</th>
+                    <th>Gold</th>
+                    <th>Platinum</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Planning Sessions</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>Unlimited</td>
+                  </tr>
+
+                  <tr>
+                    <td>Vendor Management</td>
+                    <td>—</td>
+                    <td>Included</td>
+                    <td>Premium</td>
+                  </tr>
+
+                  <tr>
+                    <td>Floral Design</td>
+                    <td>Basic</td>
+                    <td>Advanced</td>
+                    <td>Bespoke Luxury</td>
+                  </tr>
+
+                  <tr>
+                    <td>Guest Concierge</td>
+                    <td>—</td>
+                    <td>Limited</td>
+                    <td>VIP</td>
+                  </tr>
+
+                  <tr>
+                    <td>Multi-Day Events</td>
+                    <td>—</td>
+                    <td>Optional</td>
+                    <td>Included</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Included Benefits ── -->
+      <section class="included-benefits py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="page-kicker">Always Included</span>
+            <h2 class="section-title">Every Package Comes With</h2>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-3">
+              <div class="benefit-card reveal">
+                <span class="material-symbols-outlined"> support_agent </span>
+                <h5>Dedicated Planner</h5>
+                <p>
+                  A personal planning expert guiding every step of your journey.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="benefit-card reveal">
+                <span class="material-symbols-outlined"> calendar_month </span>
+                <h5>Timeline Management</h5>
+                <p>
+                  Detailed scheduling for a smooth and stress-free celebration.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="benefit-card reveal">
+                <span class="material-symbols-outlined"> handshake </span>
+                <h5>Vendor Coordination</h5>
+                <p>Professional communication with trusted event partners.</p>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="benefit-card reveal">
+                <span class="material-symbols-outlined">
+                  workspace_premium
+                </span>
+                <h5>Luxury Experience</h5>
+                <p>Elevated planning standards designed around your vision.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── FAQ ── -->
+      <section class="faq-section py-5">
+        <div class="container" style="max-width: 900px">
+          <div class="text-center mb-5">
+            <span class="page-kicker">Questions</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+          </div>
+
+          <div class="accordion custom-faq" id="pricingFaq">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqOne"
+                >
+                  Can packages be customized?
+                </button>
+              </h2>
+              <div
+                id="faqOne"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#pricingFaq"
+              >
+                <div class="accordion-body">
+                  Absolutely. Every celebration is unique, and we tailor
+                  services according to your requirements.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqTwo"
+                >
+                  Do you handle destination weddings?
+                </button>
+              </h2>
+              <div
+                id="faqTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#pricingFaq"
+              >
+                <div class="accordion-body">
+                  Yes. We coordinate travel logistics, venues, accommodations,
+                  and guest experiences worldwide.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqThree"
+                >
+                  How far in advance should we book?
+                </button>
+              </h2>
+              <div
+                id="faqThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#pricingFaq"
+              >
+                <div class="accordion-body">
+                  We recommend securing your date 9–18 months before your
+                  wedding for maximum flexibility and vendor availability.
+                </div>
               </div>
             </div>
           </div>
